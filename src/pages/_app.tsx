@@ -1,7 +1,18 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+
+import { Seo } from "../components/Infra/Seo";
+
+import { globalStyles } from "../styles/globalStyles";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	globalStyles();
+
+	return (
+		<>
+			<Seo />
+			<Component {...pageProps} />
+		</>
+	);
 }
 
-export default MyApp
+export default MyApp;

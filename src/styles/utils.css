@@ -1,0 +1,4 @@
+.menu-active {
+	overflow: hidden;
+	pointer-events: none;
+}
