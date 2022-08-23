@@ -8,10 +8,14 @@ const LIST_DEFAULT_STYLE: CSS = {
 };
 
 const LINES_DEFAULT_STYLE: CSS = {
+	afterOrBefore: "block",
+
 	width: "25px",
 	height: "2px",
 
 	position: "absolute",
+
+	defaultTransition: "all",
 
 	borderRadius: "5px",
 	backgroundColor: "$util__accent",
@@ -26,7 +30,7 @@ export const AsideContainer = styled("aside", {
 	top: "0",
 	right: "0",
 
-	transition: "all 0.4s ease",
+	defaultTransition: "all",
 	background: "$util__default",
 	opacity: "0.9",
 
@@ -93,13 +97,13 @@ export const AnchorText = styled("a", {
 	textTransform: "capitalize",
 	position: "relative",
 
-	color: "$util__accent",
+	color: "$font__accent",
 	fontWeight: 500,
 	fontSize: "$font__default",
 	padding: "20px",
 
 	borderRadius: "10px",
-	background: "linear-gradient(to right, #D8E2E8 0%, $util__default 100%)",
+	background: "linear-gradient(to right, $util 0%, $util__default 100%)",
 
 	"&:hover, &:focus": {
 		background: "$util__default",
@@ -140,7 +144,7 @@ export const AnchorText = styled("a", {
 
 			bottom: "-8px",
 
-			transition: "width 0.3s ease-in-out",
+			defaultTransition: "width",
 		},
 
 		"&:hover::after": {
@@ -175,18 +179,16 @@ export const Hamburguer = styled("span", {
 
 	"&::after": {
 		...LINES_DEFAULT_STYLE,
-		afterOrBefore: "block",
 
 		bottom: "12px",
-		transition: "all 0.4s ease",
 	},
 
 	"&::before": {
 		...LINES_DEFAULT_STYLE,
+		defaultTransition: "all",
 		afterOrBefore: "block",
 
 		top: "12px",
-		transition: "all 0.5s ease",
 	},
 
 	variants: {

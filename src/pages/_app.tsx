@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 
 import { Seo } from "../components/Infra/Seo";
+import { ThemeContextProvider } from "../contexts/ThemeContext";
 
 import { globalStyles } from "../styles/globalStyles";
 
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Seo />
-			<Component {...pageProps} />
+			<ThemeContextProvider>
+				<Component {...pageProps} />
+			</ThemeContextProvider>
 		</>
 	);
 }

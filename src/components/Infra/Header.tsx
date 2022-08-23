@@ -12,10 +12,12 @@ const Container = styled("header", {
 	padding: "20px 40px",
 });
 
-export const Header = () => (
-	<Container>
-		<Logo />
-		<NavigationMenu />
-		<ThemeButton />
-	</Container>
-);
+export const Header = () => {
+	return (
+		<Container>
+			<Logo />
+			<NavigationMenu />
+			<ThemeButton />
+		</Container>
+	);
+};

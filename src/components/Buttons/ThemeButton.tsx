@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { BsFillSunFill } from "react-icons/bs";
 
 import { styled } from "../../../stitches.config";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const Button = styled("button", {
 	padding: "10px",
@@ -10,6 +12,7 @@ const Button = styled("button", {
 
 	border: "none",
 	borderRadius: "10px",
+	cursor: "pointer",
 
 	variants: {
 		isClicked: {
@@ -29,10 +32,14 @@ const Icon = styled("i", {
 	justifyContent: "center",
 });
 
-export const ThemeButton = () => (
-	<Button isClicked="true">
-		<Icon>
-			<BsFillSunFill />
-		</Icon>
-	</Button>
-);
+export const ThemeButton = () => {
+	const { currentTheme, changeCurrentTheme } = useContext(ThemeContext);
+
+	return (
+		<Button isClicked={currentTheme === "light"} onClick={changeCurrentTheme}>
+			<Icon>
+				<BsFillSunFill />
+			</Icon>
+		</Button>
+	);
+};
