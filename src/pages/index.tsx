@@ -1,7 +1,13 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
+
+import { Default } from "../layouts/Default";
 
 const Home: NextPage = () => {
-  return <h1>Iniciando Portfólio!</h1>
-}
+	return (
+		<Default>
+			<main></main>
+		</Default>
+	);
+};
 
-export default Home
+export default Home;
