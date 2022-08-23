@@ -1,4 +1,7 @@
 import { createStitches } from "@stitches/react";
+import type * as Stitches from "@stitches/react";
+
+export { Stitches };
 
 export const {
 	styled,
@@ -18,6 +21,8 @@ export const {
 
 			blue: "#0E95F6",
 			green: "#15EEC7",
+
+			overlay: "#f5eeeeac",
 
 			font: "#131414",
 		},
@@ -45,5 +50,16 @@ export const {
 		bp2: "(min-width: 768px)",
 		bp3: "(min-width: 1024px)",
 	},
-	utils: {},
+	utils: {
+		afterOrBefore: (display: Stitches.PropertyValue<"display">) => ({
+			content: "",
+			display,
+		}),
+		flexCenter: (direction: Stitches.PropertyValue<"flexDirection">) => ({
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			flexDirection: direction,
+		}),
+	},
 });
