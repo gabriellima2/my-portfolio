@@ -9,6 +9,7 @@ import {
 	Hamburguer,
 	AsideContainer,
 	ListItem,
+	Container,
 } from "./styles";
 
 import { anchors } from "../../../mocks";
@@ -105,7 +106,7 @@ export const NavigationMenu = () => {
 				isActive={mobileMenuIsActive}
 				disableDialog={() => setMobileMenuIsActive(false)}
 			/>
-			<div ref={navigationMenuRef} onKeyDown={handleKeyDown}>
+			<Container ref={navigationMenuRef} onKeyDown={handleKeyDown}>
 				<MobileNavigationMenuButton
 					isActive={mobileMenuIsActive}
 					toggleMenu={() => setMobileMenuIsActive((prevState) => !prevState)}
@@ -125,7 +126,7 @@ export const NavigationMenu = () => {
 						))}
 					</List>
 				</nav>
-			</div>
+			</Container>
 		</>
 	);
 };

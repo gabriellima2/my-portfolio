@@ -2,6 +2,8 @@ import { CSS } from "@stitches/react/types/css-util";
 import { styled } from "../../../../stitches.config";
 
 const LIST_DEFAULT_STYLE: CSS = {
+	width: "fit-content",
+
 	position: "static",
 	flexCenter: "row",
 	transform: "translate(0%, 0%)",
@@ -21,6 +23,17 @@ const LINES_DEFAULT_STYLE: CSS = {
 	backgroundColor: "$util__accent",
 };
 
+export const Container = styled("div", {
+	width: "fit-content",
+	order: 1,
+
+	"@bp1": {
+		width: "100%",
+		order: 0,
+		flexCenter: "row",
+	},
+});
+
 export const AsideContainer = styled("aside", {
 	display: "block",
 
@@ -30,7 +43,6 @@ export const AsideContainer = styled("aside", {
 	top: "0",
 	right: "0",
 
-	defaultTransition: "all",
 	background: "$util__default",
 	opacity: "0.9",
 
@@ -70,6 +82,7 @@ export const List = styled("ul", {
 		visibility: {
 			visible: {
 				display: "flex",
+
 				"@bp1": {
 					...LIST_DEFAULT_STYLE,
 				},
@@ -175,8 +188,6 @@ export const Button = styled("button", {
 });
 
 export const Hamburguer = styled("span", {
-	display: "block",
-
 	"&::after": {
 		...LINES_DEFAULT_STYLE,
 
@@ -201,7 +212,9 @@ export const Hamburguer = styled("span", {
 					transform: "rotate(-55deg)",
 				},
 			},
-			default: {},
+			default: {
+				display: "block",
+			},
 		},
 	},
 });
