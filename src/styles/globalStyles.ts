@@ -11,6 +11,8 @@ export const globalStyles = globalCss({
 		color: "$font",
 		fontFamily: "$font__main",
 		backgroundColor: "$main",
+
+		overflowX: "hidden",
 	},
 
 	ul: {

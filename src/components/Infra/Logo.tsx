@@ -9,7 +9,7 @@ const Responsive = styled("div", {
 	width: "40px",
 	height: "40px",
 
-	zIndex: 1500,
+	zIndex: 10000,
 	position: "relative",
 });
 
