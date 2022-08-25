@@ -7,7 +7,7 @@ import {
 	List,
 	Button,
 	Hamburguer,
-	AsideContainer,
+	Navigation,
 	ListItem,
 	Container,
 } from "./styles";
@@ -37,6 +37,8 @@ export const NavigationMenu = () => {
 	const [mobileMenuIsActive, setMobileMenuIsActive] = useState(false);
 
 	let lastFocusableElementBeforeOpenMenu: Element;
+
+	const disableMobileMenu = () => setMobileMenuIsActive(false);
 
 	const handleFocus = (e: KeyboardEvent<HTMLDivElement>) => {
 		if (!navigationMenuRef.current) return;
@@ -70,7 +72,7 @@ export const NavigationMenu = () => {
 	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 		if (e.key === "Tab" || e.key === "Shift") return handleFocus(e);
 
-		if (e.key === "Escape") return setMobileMenuIsActive(false);
+		if (e.key === "Escape") return disableMobileMenu();
 	};
 
 	useEffect(() => {
@@ -93,7 +95,7 @@ export const NavigationMenu = () => {
 	}, [mobileMenuIsActive]);
 
 	useEffect(() => {
-		const handleResize = () => setMobileMenuIsActive(false);
+		const handleResize = () => disableMobileMenu();
 
 		window.addEventListener("resize", handleResize);
 
@@ -104,28 +106,31 @@ export const NavigationMenu = () => {
 		<>
 			<Overlay
 				isActive={mobileMenuIsActive}
-				disableDialog={() => setMobileMenuIsActive(false)}
+				disableDialog={disableMobileMenu}
 			/>
 			<Container ref={navigationMenuRef} onKeyDown={handleKeyDown}>
 				<MobileNavigationMenuButton
 					isActive={mobileMenuIsActive}
 					toggleMenu={() => setMobileMenuIsActive((prevState) => !prevState)}
 				/>
-				<nav aria-label="Menu de navegação">
-					<AsideContainer
-						visibility={mobileMenuIsActive ? "visible" : "hidden"}
-					/>
-
-					<List visibility={mobileMenuIsActive ? "visible" : "hidden"}>
+				<Navigation
+					aria-label="Menu de navegação"
+					visibility={mobileMenuIsActive ? "visible" : "hidden"}
+				>
+					<List>
 						{anchors.map((anchor) => (
 							<ListItem key={anchor.name}>
-								<AnchorText className="anchors" href={anchor.idBy}>
+								<AnchorText
+									onClick={disableMobileMenu}
+									className="anchors"
+									href={anchor.idBy}
+								>
 									{anchor.name}
 								</AnchorText>
 							</ListItem>
 						))}
 					</List>
-				</nav>
+				</Navigation>
 			</Container>
 		</>
 	);

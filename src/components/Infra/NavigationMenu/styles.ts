@@ -15,8 +15,7 @@ const LINES_DEFAULT_STYLE: CSS = {
 	width: "25px",
 	height: "2px",
 
-	position: "absolute",
-
+	zIndex: 0,
 	defaultTransition: "all",
 
 	borderRadius: "5px",
@@ -34,34 +33,41 @@ export const Container = styled("div", {
 	},
 });
 
-export const AsideContainer = styled("aside", {
-	display: "block",
-
-	width: "0vw",
+export const Navigation = styled("nav", {
+	width: "90vw",
+	height: "fit-content",
 
 	position: "absolute",
-	top: "0",
-	right: "0",
+	top: "50%",
+	left: "50%",
+	transform: "translate(-50%, 50%)",
 
-	background: "$util__default",
-	opacity: "0.9",
+	borderRadius: "20px",
+	padding: "40px 0px",
+
+	background: "$glassmorphism",
+	backdropFilter: "blur(10px)",
 
 	variants: {
 		visibility: {
 			visible: {
-				width: "100vw",
-				opacity: "0.9",
-				height: "50vh",
+				display: "block",
 			},
 			hidden: {
-				opacity: "0",
-				height: "0vh",
+				display: "none",
+
+				"@bp1": {
+					width: "fit-content",
+
+					display: "block",
+					position: "static",
+					transform: "translate(0, 0)",
+
+					background: "none",
+					padding: 0,
+				},
 			},
 		},
-	},
-
-	"@bp1": {
-		display: "none",
 	},
 });
 
@@ -74,28 +80,12 @@ export const List = styled("ul", {
 
 	padding: "0px 40px",
 
-	position: "absolute",
-	right: "0",
-	top: "10%",
+	"@bp1": {
+		width: "fit-content",
 
-	variants: {
-		visibility: {
-			visible: {
-				display: "flex",
-
-				"@bp1": {
-					...LIST_DEFAULT_STYLE,
-				},
-			},
-			hidden: {
-				display: "none",
-
-				"@bp1": {
-					display: "flex",
-					...LIST_DEFAULT_STYLE,
-				},
-			},
-		},
+		alignItems: "center",
+		flexDirection: "row",
+		padding: "5px",
 	},
 });
 
@@ -110,16 +100,16 @@ export const AnchorText = styled("a", {
 	textTransform: "capitalize",
 	position: "relative",
 
-	color: "$font__accent",
-	fontWeight: 500,
+	color: "$font",
+	fontWeight: 400,
 	fontSize: "$font__default",
 	padding: "20px",
 
-	borderRadius: "10px",
-	background: "linear-gradient(to right, $util 0%, $util__default 100%)",
+	borderTop: "1px solid $util__default",
+	borderBottom: "1px solid $util__default",
 
 	"&:hover, &:focus": {
-		background: "$util__default",
+		opacity: 0.7,
 	},
 
 	"&::after": {
@@ -128,8 +118,6 @@ export const AnchorText = styled("a", {
 		width: "3px",
 		height: "100%",
 
-		position: "absolute",
-		bottom: "0",
 		left: "1px",
 
 		opacity: "0",
@@ -145,11 +133,7 @@ export const AnchorText = styled("a", {
 	"@bp1": {
 		padding: "10px",
 		background: "none",
-
-		"&:hover, &:focus": {
-			background: "none",
-			opacity: 0.7,
-		},
+		border: "none",
 
 		"&::after": {
 			width: 0,
@@ -176,7 +160,7 @@ export const Button = styled("button", {
 	background: "none",
 	border: "none",
 
-	zIndex: "1000",
+	zIndex: 10000,
 	cursor: "pointer",
 
 	padding: "5px",
@@ -206,10 +190,10 @@ export const Hamburguer = styled("span", {
 		format: {
 			customized: {
 				"&::after": {
-					transform: "rotate(55deg) translate(-7px, -5px)",
+					transform: "rotate(55deg) translate(-2px, -5px)",
 				},
 				"&::before": {
-					transform: "rotate(-55deg)",
+					transform: "rotate(-55deg) translate(-2px, 5px)",
 				},
 			},
 			default: {
