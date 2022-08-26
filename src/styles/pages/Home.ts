@@ -4,10 +4,17 @@ export const BackgroundDetails = styled("div", {
 	width: "100vw",
 	height: "100vh",
 
-	background: "url(/bg-details.svg)",
+	background: "url(/bg-details-mobile.svg)",
 	backgroundPosition: "center",
 	backgroundRepeat: "no-repeat",
 	backgroundSize: "cover",
+
+	"@bp5": {
+		background: "url(/bg-details-desktop.svg)",
+		backgroundPosition: "center",
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
+	},
 });
 
 export const Section = styled("section", {
