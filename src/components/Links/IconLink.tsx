@@ -22,6 +22,10 @@ const Container = styled("a", {
 	"&:hover": {
 		opacity: 0.6,
 	},
+
+	"@bp1": {
+		fontSize: "$font__large",
+	},
 });
 
 export const IconLink = ({ icon, ...props }: IconLinkProps) => (

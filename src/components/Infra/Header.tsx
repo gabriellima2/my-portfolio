@@ -18,6 +18,7 @@ const Container = styled("header", {
 	zIndex: 1000,
 
 	"@bp1": {
+		padding: "20px 60px",
 		justifyContent: "space-between",
 	},
 });

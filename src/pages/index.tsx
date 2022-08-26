@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import { BsDownload } from "react-icons/bs";
 
+import { ScrollIndicator } from "../components/ScrollIndicator";
+import { SocialNetworks } from "../components/SocialNetworks";
 import { MainTitle } from "../components/Titles/MainTitle";
 import { IconLink } from "../components/Links/IconLink";
 import { MainLink } from "../components/Links/MainLink";
@@ -13,6 +15,7 @@ import {
 	Section,
 	Subtitle,
 	BackgroundDetails,
+	SectionFooter,
 } from "../styles/pages/Home";
 
 const Home: NextPage = () => {
@@ -41,7 +44,12 @@ const Home: NextPage = () => {
 								/>
 							</Links>
 						</Content>
-						<footer></footer>
+						<SectionFooter>
+							<section>
+								<SocialNetworks />
+							</section>
+							<ScrollIndicator />
+						</SectionFooter>
 					</Section>
 				</BackgroundDetails>
 			</main>
