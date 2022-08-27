@@ -3,8 +3,7 @@ import type { NextPage } from "next";
 import { ScrollIndicator } from "../components/ScrollIndicator";
 import { SocialNetworks } from "../components/SocialNetworks";
 import { MainTitle } from "../components/Titles/MainTitle";
-import { MainLink } from "../components/Links/MainLink";
-import { TextLink } from "../components/Links/TextLink";
+import { MainLink, TextLink } from "../components/Links";
 
 import { Default } from "../layouts/Default";
 

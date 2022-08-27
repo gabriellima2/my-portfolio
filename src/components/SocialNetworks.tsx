@@ -1,4 +1,5 @@
-import { IconLink } from "./Links/IconLink";
+import { IconLink } from "./Links";
+
 import { contacts } from "../mocks";
 import { styled } from "../../stitches.config";
 
