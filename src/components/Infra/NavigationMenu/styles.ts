@@ -43,7 +43,7 @@ export const Navigation = styled("nav", {
 	transform: "translate(-50%, 50%)",
 
 	borderRadius: "20px",
-	padding: "40px 0px",
+	padding: "15px 0px",
 
 	background: "$glassmorphism",
 	backdropFilter: "blur(10px)",
@@ -63,6 +63,7 @@ export const Navigation = styled("nav", {
 					position: "static",
 					transform: "translate(0, 0)",
 
+					backdropFilter: "none",
 					background: "none",
 					padding: 0,
 				},

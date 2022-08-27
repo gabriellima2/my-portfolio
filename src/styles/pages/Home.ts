@@ -55,11 +55,6 @@ export const Subtitle = styled("h2", {
 	},
 });
 
-export const Links = styled("div", {
-	flexCenter: "row",
-	gap: "15px",
-});
-
 export const SectionFooter = styled("footer", {
 	width: "100%",
 

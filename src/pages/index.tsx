@@ -1,17 +1,14 @@
 import type { NextPage } from "next";
-import { BsDownload } from "react-icons/bs";
 
 import { ScrollIndicator } from "../components/ScrollIndicator";
 import { SocialNetworks } from "../components/SocialNetworks";
 import { MainTitle } from "../components/Titles/MainTitle";
-import { IconLink } from "../components/Links/IconLink";
 import { MainLink } from "../components/Links/MainLink";
 
 import { Default } from "../layouts/Default";
 
 import {
 	Content,
-	Links,
 	Section,
 	Subtitle,
 	BackgroundDetails,
@@ -27,22 +24,12 @@ const Home: NextPage = () => {
 						<Content>
 							<MainTitle>Gabriel Lima</MainTitle>
 							<Subtitle>
-								Desenvolvedor Front-End. Desenvolvo interfaces com tecnologias
-								atuais do mercado
+								Desenvolvedor Front-End. A primeira impressão é a que fica, por
+								isso uma boa interface é importante!
 							</Subtitle>
-							<Links>
-								<MainLink title="Entrar em contato" href="#">
-									Contatar agora
-								</MainLink>
-								<IconLink
-									href="#"
-									title="Baixar arquivo em PDF do currículo"
-									icon={{
-										element: BsDownload,
-										label: "Icone de Download",
-									}}
-								/>
-							</Links>
+							<MainLink title="Entrar em contato" href="#">
+								Contatar agora
+							</MainLink>
 						</Content>
 						<SectionFooter>
 							<section>

@@ -5,7 +5,7 @@ const Title = styled("h1", {
 	flexCenter: "column",
 	alignItems: "flex-start",
 
-	fontSize: "2.8rem",
+	fontSize: "3rem",
 	fontWeight: 900,
 	textAlign: "center",
 
@@ -13,11 +13,11 @@ const Title = styled("h1", {
 	setGradientText: "black",
 
 	"@bp0.5": {
-		fontSize: "3rem",
+		fontSize: "4rem",
 	},
 
 	"@bp1": {
-		fontSize: "4rem",
+		fontSize: "5rem",
 	},
 });
 
