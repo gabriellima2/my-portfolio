@@ -79,7 +79,7 @@ export const {
 		) => ({
 			transition: `${property} 0.3s ease-in-out`,
 		}),
-		setGradientText: (contrastColor: Stitches.PropertyValue<"color">) => ({
+		setupGradientText: (contrastColor: Stitches.PropertyValue<"color">) => ({
 			backgroundClip: "text",
 			WebkitBackgroundClip: "text",
 			WebkitTextFillColor: "transparent",

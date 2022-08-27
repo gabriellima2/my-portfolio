@@ -16,7 +16,7 @@ export const BackgroundDetails = styled("div", {
 	},
 });
 
-export const Section = styled("section", {
+export const Glassmorphism = styled("section", {
 	background: "$transparent__main",
 	backdropFilter: "blur(22px)",
 });
@@ -34,27 +34,6 @@ export const Content = styled("div", {
 	},
 });
 
-export const Subtitle = styled("h2", {
-	fontSize: "$font__default",
-	textAlign: "center",
-	fontWeight: 600,
-	color: "$util__accent",
-
-	margin: "5px 0px 20px 0px",
-
-	"@bp0.5": {
-		width: "100%",
-		maxWidth: "420px",
-	},
-
-	"@bp1": {
-		maxWidth: "500px",
-		fontSize: "$font__large",
-
-		margin: "6px 0px 25px 0px",
-	},
-});
-
 export const SectionFooter = styled("footer", {
 	width: "100%",
 
@@ -67,4 +46,11 @@ export const SectionFooter = styled("footer", {
 	"@bp1": {
 		padding: "0px 60px",
 	},
+});
+
+export const Links = styled("div", {
+	flexCenter: "row",
+	gap: "30px",
+
+	marginTop: "40px",
 });

@@ -8,7 +8,7 @@ const Container = styled("a", {
 
 	color: "$util__accent",
 	fontWeight: 600,
-	fontSize: "$font__small",
+	fontSize: "$font__xSmall",
 	textTransform: "capitalize",
 
 	padding: "20px 20px",
@@ -39,11 +39,12 @@ const Container = styled("a", {
 	},
 
 	"@bp0.5": {
-		fontSize: "$font__default",
-		padding: "20px 25px",
+		fontSize: "$font__small",
+		padding: "18px 23px",
 	},
 
 	"@bp1": {
+		fontSize: "$font__default",
 		padding: "21px 30px",
 	},
 });
