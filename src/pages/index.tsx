@@ -42,6 +42,10 @@ const Home: NextPage = () => {
 					</main>
 				</Glassmorphism>
 			</BackgroundDetails>
+
+			<section id="projects"></section>
+
+			<section id="contacts"></section>
 		</Default>
 	);
 };

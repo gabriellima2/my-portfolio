@@ -4,10 +4,6 @@ export const anchors = [
 		idBy: "#top",
 	},
 	{
-		name: "sobre",
-		idBy: "#about",
-	},
-	{
 		name: "projetos",
 		idBy: "#projects",
 	},
