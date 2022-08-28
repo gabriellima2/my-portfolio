@@ -27,10 +27,18 @@ export const Content = styled("div", {
 	padding: "20px",
 
 	flexCenter: "column",
+	gap: "35px",
 
 	"@bp0.5": {
 		padding: "10px 40px",
+		gap: "60px",
 	},
+});
+
+export const Text = styled("div", {
+	width: "full",
+	flexCenter: "column",
+	gap: "40px",
 });
 
 export const SectionFooter = styled("footer", {
@@ -47,17 +55,27 @@ export const SectionFooter = styled("footer", {
 	},
 });
 
-export const Links = styled("div", {
-	flexCenter: "row",
-	gap: "30px",
-
-	marginTop: "40px",
-});
-
-export const Subtitle = styled("h2", {
+export const Small = styled("small", {
 	color: "$util__accent",
 	fontWeight: 600,
+	fontSize: "$font__default",
+	marginBottom: "-25px",
+
+	"@bp0.5": {
+		fontSize: "$font__large",
+		marginBottom: "0px",
+	},
+});
+
+export const GradientText = styled("span", {
+	background: "linear-gradient(to right, $green 0%, $pink 100%)",
+	setupGradientText: "black",
+});
+
+export const Hello = styled("span", {
 	fontSize: "$font__large",
 
-	marginTop: "10px",
+	"@bp0.5": {
+		fontSize: "$font__2xLarge",
+	},
 });

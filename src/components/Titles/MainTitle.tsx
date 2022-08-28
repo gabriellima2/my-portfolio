@@ -2,34 +2,28 @@ import { styled } from "../../../stitches.config";
 import { WithChildren } from "../../types";
 
 const Title = styled("h1", {
-	flexCenter: "column",
-	alignItems: "flex-start",
-
+	color: "$font",
 	fontFamily: "$font__util",
-	fontSize: "2.6rem",
+	fontSize: "1.9rem",
 	fontWeight: 900,
 	textAlign: "center",
-	letterSpacing: "1px",
-	wordBreak: "break-word",
-	textTransform: "capitalize",
-
-	background: "linear-gradient(to bottom right, $green 0%, $pink 100%)",
-	setupGradientText: "black",
 
 	"@bp0.5": {
-		wordBreak: "normal",
-		maxWidth: "550px",
-		fontSize: "3rem",
+		fontSize: "2.2rem",
+	},
+
+	"@bp1": {
+		fontSize: "2.7rem",
 	},
 
 	"@bp2": {
-		maxWidth: "800px",
-		fontSize: "4rem",
+		maxWidth: "990px",
+		fontSize: "3.2rem",
 	},
 
 	"@bp4": {
-		maxWidth: "1000px",
-		fontSize: "4.5rem",
+		maxWidth: "1280px",
+		fontSize: "4.4rem",
 	},
 });
 

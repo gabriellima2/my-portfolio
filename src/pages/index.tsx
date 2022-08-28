@@ -12,8 +12,10 @@ import {
 	Glassmorphism,
 	BackgroundDetails,
 	SectionFooter,
-	Links,
-	Subtitle,
+	Small,
+	GradientText,
+	Text,
+	Hello,
 } from "../styles/pages/Home";
 
 const Home: NextPage = () => {
@@ -23,19 +25,18 @@ const Home: NextPage = () => {
 				<Glassmorphism>
 					<main>
 						<Content>
-							<MainTitle>Desenvolvendo interfaces com códigos</MainTitle>
-							<Subtitle>
-								Sou Gabriel, um desenvolvedor front-end autodidata!
-							</Subtitle>
-							<Links>
-								<MainLink
-									title="Precisando de alguém para o seu time?"
-									href="#"
-								>
-									Contatar agora
-								</MainLink>
-								<TextLink href="#projects">Projetos</TextLink>
-							</Links>
+							<Text>
+								<Small>
+									<Hello>👋</Hello> Gabriel Lima
+								</Small>
+								<MainTitle>
+									Desenvolvedor Front-End, construindo aplicações com{" "}
+									<GradientText>tecnologias atuais</GradientText>
+								</MainTitle>
+							</Text>
+							<MainLink title="Precisando de alguém para o seu time?" href="#">
+								Contatar agora
+							</MainLink>
 						</Content>
 						<SectionFooter>
 							<section>
