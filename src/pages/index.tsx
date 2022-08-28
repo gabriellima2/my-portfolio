@@ -13,6 +13,7 @@ import {
 	BackgroundDetails,
 	SectionFooter,
 	Links,
+	Subtitle,
 } from "../styles/pages/Home";
 
 const Home: NextPage = () => {
@@ -23,6 +24,9 @@ const Home: NextPage = () => {
 					<main>
 						<Content>
 							<MainTitle>Desenvolvendo interfaces com códigos</MainTitle>
+							<Subtitle>
+								Sou Gabriel, um desenvolvedor front-end autodidata!
+							</Subtitle>
 							<Links>
 								<MainLink
 									title="Precisando de alguém para o seu time?"

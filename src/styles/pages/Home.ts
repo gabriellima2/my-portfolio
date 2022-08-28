@@ -18,7 +18,6 @@ export const BackgroundDetails = styled("div", {
 
 export const Glassmorphism = styled("section", {
 	background: "$transparent__main",
-	backdropFilter: "blur(22px)",
 });
 
 export const Content = styled("div", {
@@ -53,4 +52,12 @@ export const Links = styled("div", {
 	gap: "30px",
 
 	marginTop: "40px",
+});
+
+export const Subtitle = styled("h2", {
+	color: "$util__accent",
+	fontWeight: 600,
+	fontSize: "$font__large",
+
+	marginTop: "10px",
 });

@@ -4,7 +4,6 @@ import { LinkProps } from "../../types";
 type TextLinkProps = LinkProps;
 
 const Container = styled("a", {
-	fontFamily: "$font__util",
 	fontSize: "$font__default",
 	fontWeight: 600,
 	color: "$util__accent",
@@ -22,6 +21,7 @@ const Container = styled("a", {
 
 		bottom: "-5px",
 		background: "$util__accent",
+		opacity: 0.5,
 		defaultTransition: "all",
 	},
 
@@ -30,11 +30,8 @@ const Container = styled("a", {
 
 		"&::after": {
 			width: "100%",
+			opacity: 0.9,
 		},
-	},
-
-	"@bp1": {
-		fontSize: "$font__large",
 	},
 });
 

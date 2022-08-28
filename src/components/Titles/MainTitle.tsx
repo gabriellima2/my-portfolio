@@ -11,6 +11,7 @@ const Title = styled("h1", {
 	textAlign: "center",
 	letterSpacing: "1px",
 	wordBreak: "break-word",
+	textTransform: "capitalize",
 
 	background: "linear-gradient(to bottom right, $green 0%, $pink 100%)",
 	setupGradientText: "black",
@@ -22,7 +23,7 @@ const Title = styled("h1", {
 	},
 
 	"@bp2": {
-		maxWidth: "750px",
+		maxWidth: "800px",
 		fontSize: "4rem",
 	},
 

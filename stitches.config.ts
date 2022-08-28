@@ -16,7 +16,7 @@ export const {
 	theme: {
 		colors: {
 			main: "#EFF6FB",
-			transparent__main: "#eff6fbeb",
+			transparent__main: "#eff6fbaa",
 			glassmorphism: "#25252518",
 
 			util: "#D8E2E8",
@@ -97,7 +97,7 @@ export const {
 export const darkTheme = createTheme("dark", {
 	colors: {
 		main: "#0a0a0a",
-		transparent__main: "#0a0a0af5",
+		transparent__main: "#0a0a0aea",
 		glassmorphism: "#dddddd18",
 
 		util: "#101111",
