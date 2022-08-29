@@ -79,3 +79,11 @@ export const Hello = styled("span", {
 		fontSize: "$font__2xLarge",
 	},
 });
+
+export const Section = styled("section", {
+	padding: "30px",
+
+	"@bp1": {
+		padding: "60px",
+	},
+});

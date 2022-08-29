@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { ScrollIndicator } from "../components/ScrollIndicator";
 import { SocialNetworks } from "../components/SocialNetworks";
 import { MainTitle } from "../components/Titles/MainTitle";
-import { MainLink, TextLink } from "../components/Links";
+import { MainLink } from "../components/Links";
 
 import { Default } from "../layouts/Default";
 
@@ -16,7 +16,11 @@ import {
 	GradientText,
 	Text,
 	Hello,
+	Section,
 } from "../styles/pages/Home";
+import { Subtitle } from "../components/Titles/Subtitle";
+import { Projects } from "../components/Projects";
+import { projects } from "../mocks";
 
 const Home: NextPage = () => {
 	return (
@@ -48,9 +52,14 @@ const Home: NextPage = () => {
 				</Glassmorphism>
 			</BackgroundDetails>
 
-			<section id="projects"></section>
+			<Section id="projects">
+				<Subtitle>
+					Projetos únicos. Todas as etapas de criação feitas por mim
+				</Subtitle>
+				<Projects projects={projects} />
+			</Section>
 
-			<section id="contacts"></section>
+			<Section id="contacts"></Section>
 		</Default>
 	);
 };

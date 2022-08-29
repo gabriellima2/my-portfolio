@@ -1,7 +1,8 @@
 import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
+import type { Property } from "@stitches/react/types/css";
 
-export { Stitches };
+export { Stitches, Property };
 
 export const {
 	styled,
