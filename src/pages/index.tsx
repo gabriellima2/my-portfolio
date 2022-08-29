@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 
+import { MainTitle, Subtitle } from "../components/Titles/MainTitle";
 import { ScrollIndicator } from "../components/ScrollIndicator";
-import { SocialNetworks } from "../components/SocialNetworks";
-import { MainTitle } from "../components/Titles/MainTitle";
+import { Projects } from "../components/Projects";
+import { Contacts } from "../components/Contacts";
 import { MainLink } from "../components/Links";
 
 import { Default } from "../layouts/Default";
@@ -18,8 +19,7 @@ import {
 	Hello,
 	Section,
 } from "../styles/pages/Home";
-import { Subtitle } from "../components/Titles/Subtitle";
-import { Projects } from "../components/Projects";
+
 import { projects } from "../mocks";
 
 const Home: NextPage = () => {
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 						</Content>
 						<SectionFooter>
 							<section>
-								<SocialNetworks />
+								<Contacts withDisplay={false} />
 							</section>
 							<ScrollIndicator />
 						</SectionFooter>
@@ -59,7 +59,10 @@ const Home: NextPage = () => {
 				<Projects projects={projects} />
 			</Section>
 
-			<Section id="contacts"></Section>
+			<Section id="contacts">
+				<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
+				<Contacts withDisplay={true} />
+			</Section>
 		</Default>
 	);
 };

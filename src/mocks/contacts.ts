@@ -1,18 +1,23 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 
-const socialNetworks = [
+export const contacts = [
 	{
 		name: "github",
-		value: "",
+		value: "https://github.com/gabriellima2",
 		icon: BsGithub,
+		display: "gabriellima2",
+	},
+	{
+		name: "email",
+		value: "mailto:gabriel.rslima10@gmail.com",
+		icon: HiOutlineMail,
+		display: "gabriel.rslima10@gmail.com",
 	},
 	{
 		name: "linkedin",
-		value: "",
+		value: "https://www.linkedin.com/in/gabriel-lima-860612236",
 		icon: BsLinkedin,
+		display: "Gabriel Lima",
 	},
 ];
-
-const all = [...socialNetworks, {}];
-
-export const contacts = { socialNetworks, all };

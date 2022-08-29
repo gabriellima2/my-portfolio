@@ -1,13 +1,14 @@
 import React from "react";
 import { IconType } from "react-icons";
 
-import { styled } from "../../../stitches.config";
+import { styled, Property } from "../../../stitches.config";
 import { LinkProps } from "../../types";
 
 interface IconLinkProps extends LinkProps {
 	icon: {
 		element: IconType;
 		label: string;
+		size?: Property.FontSize;
 	};
 }
 
@@ -29,7 +30,7 @@ const Container = styled("a", {
 });
 
 export const IconLink = ({ icon, ...props }: IconLinkProps) => (
-	<Container {...props}>
+	<Container css={{ fontSize: icon.size }} {...props}>
 		<i aria-label={icon.label}>{React.createElement(icon.element)}</i>
 	</Container>
 );
