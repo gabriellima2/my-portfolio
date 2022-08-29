@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
-import { MainTitle, Subtitle } from "../components/Titles/MainTitle";
 import { ScrollIndicator } from "../components/ScrollIndicator";
+import { MainTitle, Subtitle } from "../components/Titles";
 import { Projects } from "../components/Projects";
 import { Contacts } from "../components/Contacts";
 import { MainLink } from "../components/Links";
