@@ -17,7 +17,7 @@ export const {
 	theme: {
 		colors: {
 			main: "#EFF6FB",
-			transparent__main: "#eff6fbaa",
+			transparent__main: "#eff6fbea",
 			glassmorphism: "#25252518",
 
 			util: "#D8E2E8",

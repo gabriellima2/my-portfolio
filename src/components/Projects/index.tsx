@@ -3,8 +3,6 @@ import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
 
 import { IconLink } from "../Links";
 
-import { projects } from "../../mocks";
-
 import {
 	Container,
 	Project,
@@ -15,27 +13,36 @@ import {
 	Header,
 	Circle,
 	ContainerText,
+	ContainerImage,
 } from "./styles";
 
-type Project = typeof projects[0];
+import { ProjectContent } from "../../lib/getProjects";
+import { Overlay } from "../Infra/Overlay";
 
 interface ProjectsProps {
-	projects: Project[];
+	projects: ProjectContent[];
 }
 
-type ProjectTextInfoProps = Omit<Project, "image" | "id">;
+type ProjectTextInfoProps = Omit<ProjectContent, "image" | "id">;
 
-type ProjectImageInfoProps = Pick<Project, "image" | "name">;
+type ProjectImageInfoProps = Pick<ProjectContent, "image" | "name">;
 
 const ProjectTextInfo = (props: ProjectTextInfoProps) => (
 	<ContainerText>
-		<Name>{props.name}</Name>
+		<Name
+			css={{
+				background: `linear-gradient(to bottom right, ${props.textColor.hex} 0%, $font 100%)`,
+				setupGradientText: "",
+			}}
+		>
+			{props.name}
+		</Name>
 		<Description>{props.description}</Description>
 
 		<Links>
-			<IconLink href={props.url} icon={{ element: BsGithub, label: "" }} />
+			<IconLink href={props.doc} icon={{ element: BsGithub, label: "" }} />
 			<IconLink
-				href={props.doc}
+				href={props.url}
 				icon={{ element: BsBoxArrowUpRight, label: "" }}
 			/>
 		</Links>
@@ -47,11 +54,14 @@ const ProjectImageInfo = (props: ProjectImageInfoProps) => (
 		<Header>
 			<Circle />
 		</Header>
-		<Image
-			src={props.image}
-			alt={`Image do projeto ${props.name}`}
-			layout="fill"
-		/>
+		<ContainerImage>
+			<Image
+				src={props.image.url}
+				alt={`Image do projeto ${props.name}`}
+				layout="fill"
+				style={{ borderRadius: "5px 5px 15px 15px" }}
+			/>
+		</ContainerImage>
 	</Mac>
 );
 

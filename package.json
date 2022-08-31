@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@radix-ui/react-dialog": "^1.0.0",
     "@stitches/react": "^1.2.8",
+    "graphql": "^16.6.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",

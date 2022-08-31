@@ -6,37 +6,31 @@ export const Container = styled("ul", {
 	flexCenter: "column",
 	gap: "40px",
 
-	marginTop: "40px",
+	margin: "40px 0px 15px 0px",
 });
 
 export const Project = styled("li", {
-	width: "100%",
-
 	display: "grid",
 	gridTemplateColumns: "1fr",
-	gridTemplateRows: "300px 0.5fr",
+	gridTemplateRows: "minmax(auto, 350px) 1fr",
 	placeItems: "center",
-	gap: "30px",
+	gap: "5px",
 
 	"@bp1": {
-		gridTemplateRows: "350px 0.5fr",
+		gridTemplateRows: "minmax(auto, 600px) 1fr",
 	},
 
-	"@bp2": {
-		gridTemplateColumns: "auto 0.8fr",
-		gridTemplateRows: "300px",
-		gap: "20px",
-	},
+	"@bp4": {
+		maxWidth: "1200px",
 
-	"@bp3": {
-		gridTemplateColumns: "auto minmax(auto, 600px)",
-		gridTemplateRows: "400px",
+		gridTemplateColumns: "repeat(2, 1fr)",
 	},
 });
 
 export const ContainerText = styled("section", {
-	justifySelf: "center",
+	justifySelf: "start",
 	width: "100%",
+	height: "fit-content",
 
 	order: 1,
 
@@ -46,18 +40,25 @@ export const ContainerText = styled("section", {
 	flexDirection: "column",
 	gap: "10px",
 
-	"@bp0.5": {
-		justifySelf: "start",
-	},
+	padding: "20px 10px",
 
-	"@bp2": {
-		order: 0,
-
+	"@bp1": {
 		width: "fit-content",
+
+		border: "5px solid $util__default",
+		borderRadius: "5px",
+
+		padding: "20px",
+
+		background: "$transparent__main",
+		transform: "translate(30px, -80px)",
+		zIndex: 1000,
 	},
 
 	"@bp4": {
-		justifySelf: "center",
+		justifySelf: "end",
+		order: 0,
+		transform: "translateX(50px)",
 	},
 });
 
@@ -72,18 +73,6 @@ export const Description = styled("p", {
 	fontWeight: 500,
 	color: "$util__accent",
 	fontSize: "$font__default",
-
-	"@bp2": {
-		maxWidth: "320px",
-	},
-
-	"@bp3": {
-		maxWidth: "400px",
-	},
-
-	"@bp4": {
-		maxWidth: "500px",
-	},
 });
 
 export const Links = styled("div", {
@@ -93,13 +82,16 @@ export const Links = styled("div", {
 });
 
 export const Mac = styled("section", {
-	width: "100%",
+	width: "90vw",
 	height: "100%",
-
-	position: "relative",
 
 	border: "5px solid $util__default",
 	borderRadius: "15px",
+
+	"@bp3": {
+		width: "800px",
+		height: "600px",
+	},
 });
 
 export const Header = styled("header", {
@@ -122,24 +114,28 @@ export const Circle = styled("span", {
 
 	position: "relative",
 
-	"&::before": {
+	"&::before, &::after": {
 		afterOrBefore: "block",
 		left: "20px",
 
 		width: "inherit",
-
 		padding: "inherit",
 		background: "inherit",
 		borderRadius: "inherit",
 	},
 
 	"&::after": {
-		afterOrBefore: "block",
 		left: "40px",
+	},
+});
 
-		width: "inherit",
-		padding: "inherit",
-		background: "inherit",
-		borderRadius: "inherit",
+export const ContainerImage = styled("div", {
+	width: "100%",
+	height: "89%",
+
+	position: "relative",
+
+	"@bp1": {
+		height: "94%",
 	},
 });

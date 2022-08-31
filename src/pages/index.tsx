@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
 import { ScrollIndicator } from "../components/ScrollIndicator";
 import { MainTitle, Subtitle } from "../components/Titles";
+import { Error } from "../components/Infra/Error";
 import { Projects } from "../components/Projects";
 import { Contacts } from "../components/Contacts";
 import { MainLink } from "../components/Links";
@@ -20,9 +21,14 @@ import {
 	Section,
 } from "../styles/pages/Home";
 
-import { projects } from "../mocks";
+import { getProjects, ProjectContent } from "../lib/getProjects";
 
-const Home: NextPage = () => {
+interface HomeProps {
+	projects: ProjectContent[] | null;
+}
+
+const Home: NextPage<HomeProps> = ({ projects }) => {
+	console.log(projects);
 	return (
 		<Default>
 			<BackgroundDetails>
@@ -38,7 +44,7 @@ const Home: NextPage = () => {
 									<GradientText>tecnologias atuais</GradientText>
 								</MainTitle>
 							</Text>
-							<MainLink title="Precisando de alguém para o seu time?" href="#">
+							<MainLink title="Contato rápido" href="#">
 								Contatar agora
 							</MainLink>
 						</Content>
@@ -56,7 +62,7 @@ const Home: NextPage = () => {
 				<Subtitle>
 					Projetos únicos. Todas as etapas de criação feitas por mim
 				</Subtitle>
-				<Projects projects={projects} />
+				{projects ? <Projects projects={projects} /> : <Error />}
 			</Section>
 
 			<Section id="contacts">
@@ -68,3 +74,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+	const data = await getProjects();
+
+	return {
+		props: {
+			projects: data,
+		},
+	};
+};
