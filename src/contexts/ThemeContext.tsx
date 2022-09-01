@@ -3,17 +3,24 @@ import { createContext, useEffect, useState } from "react";
 import { darkTheme } from "../../stitches.config";
 import { WithChildren } from "../types";
 
-type CurrentTheme = "light" | "dark";
+export type CurrentTheme = "light" | "dark";
 
 interface ThemeContextProperties {
 	currentTheme: CurrentTheme;
 	changeCurrentTheme: () => void;
 }
 
+interface ThemeContextProviderProps {
+	specificTheme: CurrentTheme;
+}
+
 export const ThemeContext = createContext({} as ThemeContextProperties);
 
-export const ThemeContextProvider = ({ children }: WithChildren) => {
-	const [currentTheme, setCurrentTheme] = useState<CurrentTheme>("light");
+export const ThemeContextProvider = ({
+	children,
+	specificTheme,
+}: WithChildren<ThemeContextProviderProps>) => {
+	const [currentTheme, setCurrentTheme] = useState<CurrentTheme>(specificTheme);
 
 	const changeCurrentTheme = () => {
 		if (currentTheme === "light") return setCurrentTheme("dark");
