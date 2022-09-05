@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { BsFillSunFill } from "react-icons/bs";
 
+import { ClientOnly } from "../../HOC/ClientOnly";
+
 import { styled } from "../../../stitches.config";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
@@ -32,7 +34,7 @@ const Icon = styled("i", {
 	justifyContent: "center",
 });
 
-export const ThemeButton = () => {
+export const ThemeButton = ClientOnly(() => {
 	const { currentTheme, changeCurrentTheme } = useContext(ThemeContext);
 
 	return (
@@ -42,4 +44,4 @@ export const ThemeButton = () => {
 			</Icon>
 		</Button>
 	);
-};
+});
