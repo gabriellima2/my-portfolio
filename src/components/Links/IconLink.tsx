@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { IconType } from "react-icons";
 
 import { styled, Property } from "../../../stitches.config";
@@ -10,9 +10,12 @@ interface IconLinkProps extends LinkProps {
 		label: string;
 		size?: Property.FontSize;
 	};
+	children?: ReactNode;
 }
 
 const Container = styled("a", {
+	flexCenter: "column",
+
 	fontSize: "$font__default",
 	color: "$util__accent",
 
@@ -29,8 +32,9 @@ const Container = styled("a", {
 	},
 });
 
-export const IconLink = ({ icon, ...props }: IconLinkProps) => (
+export const IconLink = ({ icon, children, ...props }: IconLinkProps) => (
 	<Container css={{ fontSize: icon.size }} {...props}>
 		<i aria-label={icon.label}>{React.createElement(icon.element)}</i>
+		{children}
 	</Container>
 );

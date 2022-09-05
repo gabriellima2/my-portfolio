@@ -37,7 +37,9 @@ const Contact = styled("li", {
 const Display = styled("p", {
 	fontWeight: 600,
 	color: "$util__accent",
-	fontSize: "$font__2xSmall",
+	fontSize: "$font__xSmall",
+
+	opacity: 0.7,
 
 	"@bp2": {
 		fontSize: "$font__small",
@@ -55,8 +57,9 @@ export const Contacts = (props: ContactsProps) => (
 						label: `Link para ${contact.name}`,
 						size: props.withDisplay ? "2.3rem" : undefined,
 					}}
-				/>
-				{props.withDisplay && <Display>{contact.display}</Display>}
+				>
+					{props.withDisplay && <Display>{contact.display}</Display>}
+				</IconLink>
 			</Contact>
 		))}
 	</Container>
