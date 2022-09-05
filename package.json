@@ -12,6 +12,7 @@
     "@apollo/client": "^3.6.9",
     "@radix-ui/react-dialog": "^1.0.0",
     "@stitches/react": "^1.2.8",
+    "framer-motion": "^7.2.1",
     "graphql": "^16.6.0",
     "next": "12.2.5",
     "nookies": "^2.5.2",

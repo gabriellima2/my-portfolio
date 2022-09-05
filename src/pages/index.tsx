@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import { motion } from "framer-motion";
 
 import { ScrollIndicator } from "../components/ScrollIndicator";
 import { MainTitle, Subtitle } from "../components/Titles";
@@ -29,46 +30,52 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ projects }) => {
 	return (
-		<Default>
-			<BackgroundDetails>
-				<Glassmorphism>
-					<main>
-						<Content>
-							<Text>
-								<Small>
-									<Hello>👋</Hello> Gabriel Lima
-								</Small>
-								<MainTitle>
-									Desenvolvedor Front-End, construindo aplicações com{" "}
-									<GradientText>tecnologias atuais</GradientText>
-								</MainTitle>
-							</Text>
-							<MainLink title="Contato rápido" href="#">
-								Contatar agora
-							</MainLink>
-						</Content>
-						<SectionFooter>
-							<section>
-								<Contacts withDisplay={false} />
-							</section>
-							<ScrollIndicator />
-						</SectionFooter>
-					</main>
-				</Glassmorphism>
-			</BackgroundDetails>
+		<motion.div
+			initial={false}
+			animate={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+		>
+			<Default>
+				<BackgroundDetails>
+					<Glassmorphism>
+						<main>
+							<Content>
+								<Text>
+									<Small>
+										<Hello>👋</Hello> Gabriel Lima
+									</Small>
+									<MainTitle>
+										Desenvolvedor Front-End, construindo aplicações com{" "}
+										<GradientText>tecnologias atuais</GradientText>
+									</MainTitle>
+								</Text>
+								<MainLink title="Contato rápido" href="#">
+									Contatar agora
+								</MainLink>
+							</Content>
+							<SectionFooter>
+								<section>
+									<Contacts withDisplay={false} />
+								</section>
+								<ScrollIndicator />
+							</SectionFooter>
+						</main>
+					</Glassmorphism>
+				</BackgroundDetails>
 
-			<Section id="projects">
-				<Subtitle>
-					Projetos únicos. Todas as etapas de criação feitas por mim
-				</Subtitle>
-				{projects ? <Projects projects={projects} /> : <Error />}
-			</Section>
+				<Section id="projects">
+					<Subtitle>
+						Projetos únicos. Todas as etapas de criação feitas por mim
+					</Subtitle>
+					{projects ? <Projects projects={projects} /> : <Error />}
+				</Section>
 
-			<Section id="contacts">
-				<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
-				<Contacts withDisplay={true} />
-			</Section>
-		</Default>
+				<Section id="contacts">
+					<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
+					<Contacts withDisplay={true} />
+				</Section>
+			</Default>
+		</motion.div>
 	);
 };
 

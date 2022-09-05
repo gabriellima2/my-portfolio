@@ -9,7 +9,7 @@ export const Container = styled("ul", {
 	margin: "40px 0px 15px 0px",
 });
 
-export const Project = styled("li", {
+export const Project = styled("div", {
 	display: "grid",
 	gridTemplateColumns: "1fr",
 	gridTemplateRows: "minmax(auto, 350px) 1fr",
