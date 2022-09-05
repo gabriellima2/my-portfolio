@@ -87,3 +87,27 @@ export const Section = styled("section", {
 		padding: "60px",
 	},
 });
+
+export const About = styled("p", {
+	maxWidth: "800px",
+	marginTop: "30px",
+
+	textAlign: "left",
+	fontSize: "$font__small",
+	fontWeight: 500,
+
+	"@bp1": {
+		textAlign: "center",
+		fontSize: "$font__default",
+	},
+});
+
+export const Conclusion = styled("div", {
+	flexCenter: "column",
+	alignItems: "flex-start",
+	gap: "30px",
+
+	"@bp1": {
+		alignItems: "center",
+	},
+});

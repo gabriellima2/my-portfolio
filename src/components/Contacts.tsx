@@ -14,16 +14,13 @@ const Container = styled("ul", {
 				flexCenter: "row",
 			},
 			true: {
-				flexCenter: "column",
-				justifyContent: "center",
-				gap: "60px",
+				display: "flex",
+				alignItems: "flex-start",
+				flexDirection: "column",
+				gap: "30px",
 
-				margin: "40px 0px 10px 0px",
-
-				"@bp2": {
+				"@bp1": {
 					flexDirection: "row",
-					justifyContent: "space-evenly",
-					gap: "5px",
 				},
 			},
 		},
@@ -55,7 +52,6 @@ export const Contacts = (props: ContactsProps) => (
 					icon={{
 						element: contact.icon,
 						label: `Link para ${contact.name}`,
-						size: props.withDisplay ? "2.3rem" : undefined,
 					}}
 				>
 					{props.withDisplay && <Display>{contact.display}</Display>}

@@ -14,7 +14,8 @@ interface IconLinkProps extends LinkProps {
 }
 
 const Container = styled("a", {
-	flexCenter: "column",
+	flexCenter: "row",
+	gap: "10px",
 
 	fontSize: "$font__default",
 	color: "$util__accent",
@@ -32,9 +33,13 @@ const Container = styled("a", {
 	},
 });
 
+const Icon = styled("i", {
+	flexCenter: "row",
+});
+
 export const IconLink = ({ icon, children, ...props }: IconLinkProps) => (
 	<Container css={{ fontSize: icon.size }} {...props}>
-		<i aria-label={icon.label}>{React.createElement(icon.element)}</i>
+		<Icon aria-label={icon.label}>{React.createElement(icon.element)}</Icon>
 		{children}
 	</Container>
 );

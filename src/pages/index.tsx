@@ -20,6 +20,8 @@ import {
 	Text,
 	Hello,
 	Section,
+	About,
+	Conclusion,
 } from "../styles/pages/Home";
 
 import { getProjects, ProjectContent } from "../lib/getProjects";
@@ -72,7 +74,14 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 
 				<Section id="contacts">
 					<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
-					<Contacts withDisplay={true} />
+					<Conclusion>
+						<About>
+							Eu sou Gabriel, um desenvolvedor Front-End autodidata. Como você
+							viu, gosto de criar projetos únicos que surgem a partir das minhas
+							idéias. Para saber mais ou entrar em contato, essas são as opções
+						</About>
+						<Contacts withDisplay={true} />
+					</Conclusion>
 				</Section>
 			</Default>
 		</motion.div>
