@@ -7,6 +7,10 @@ export const globalStyles = globalCss({
 		boxSizing: "border-box",
 	},
 
+	html: {
+		scrollBehavior: "smooth",
+	},
+
 	body: {
 		color: "$font",
 		fontFamily: "$font__main",

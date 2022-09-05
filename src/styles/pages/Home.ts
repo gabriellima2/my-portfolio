@@ -84,7 +84,7 @@ export const Section = styled("section", {
 	padding: "30px",
 
 	"@bp1": {
-		padding: "60px",
+		padding: "30px 60px",
 	},
 });
 
