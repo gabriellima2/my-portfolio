@@ -28,7 +28,6 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ projects }) => {
-	console.log(projects);
 	return (
 		<Default>
 			<BackgroundDetails>

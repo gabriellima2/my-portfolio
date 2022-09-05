@@ -1,20 +1,29 @@
-import { NextPageContext } from "next";
-import type { AppProps } from "next/app";
-import nookies from "nookies";
+import { AppProps } from "next/app";
+import { parseCookies } from "nookies";
 
 import { Seo } from "../components/Infra/Seo";
-import { CurrentTheme, ThemeContextProvider } from "../contexts/ThemeContext";
 
+import { ThemeContextProvider, Themes } from "../contexts/ThemeContext";
+
+import { CurrentTheme } from "../types";
 import { globalStyles } from "../styles/globalStyles";
 
-function MyApp({ Component, pageProps, ...props }: AppProps) {
-	const currentTheme: CurrentTheme = "light";
+function getThemeInCookies(): CurrentTheme | undefined {
+	const { ["theme"]: theme } = parseCookies();
+
+	if (!theme || (theme != Themes.light && theme != Themes.dark)) return;
+
+	return theme;
+}
+
+function MyApp({ Component, pageProps }: AppProps) {
+	const currentTheme: CurrentTheme = getThemeInCookies() || Themes.light;
 	globalStyles();
 
 	return (
 		<>
 			<Seo />
-			<ThemeContextProvider specificTheme={currentTheme}>
+			<ThemeContextProvider initialTheme={currentTheme}>
 				<Component {...pageProps} />
 			</ThemeContextProvider>
 		</>
@@ -22,11 +31,3 @@ function MyApp({ Component, pageProps, ...props }: AppProps) {
 }
 
 export default MyApp;
-
-MyApp.getInitialProps = async (ctx: NextPageContext) => {
-	const { ["theme"]: cookie } = nookies.get(ctx);
-
-	return {
-		preferenceTheme: cookie,
-	};
-};

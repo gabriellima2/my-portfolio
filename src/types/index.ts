@@ -5,3 +5,5 @@ export type WithChildren<T extends object = object> = {
 } & T;
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export type CurrentTheme = "light" | "dark";
