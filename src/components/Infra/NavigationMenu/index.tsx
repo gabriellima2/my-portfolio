@@ -122,10 +122,13 @@ export const NavigationMenu = () => {
 					visibility={mobileMenuIsActive ? "visible" : "hidden"}
 				>
 					<List>
-						{anchors.map((anchor) => (
+						{anchors.map((anchor, index) => (
 							<ListItem key={anchor.name}>
 								<AnchorText
-									onClick={disableMobileMenu}
+									onClick={() => {
+										if (index !== 0) return;
+										disableMobileMenu();
+									}}
 									className="anchors"
 									href={anchor.idBy}
 								>
