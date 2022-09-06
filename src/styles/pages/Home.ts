@@ -1,36 +1,22 @@
 import { styled } from "../../../stitches.config";
 
-export const BackgroundDetails = styled("div", {
+export const Main = styled("main", {
 	width: "100vw",
-
-	background: "url(/bg-details-mobile.svg)",
-	backgroundPosition: "center",
-	backgroundRepeat: "no-repeat",
-	backgroundSize: "cover",
-
-	"@bp5": {
-		background: "url(/bg-details-desktop.svg)",
-		backgroundPosition: "center",
-		backgroundRepeat: "no-repeat",
-		backgroundSize: "cover",
-	},
-});
-
-export const Glassmorphism = styled("section", {
-	background: "$transparent__main",
+	minHeight: "fit-content",
 });
 
 export const Content = styled("div", {
 	width: "100%",
-	height: "85vh",
 
 	padding: "20px",
+	margin: "150px 0px",
 
 	flexCenter: "column",
 	gap: "35px",
 
 	"@bp0.5": {
 		padding: "10px 40px",
+		margin: "190px 0px",
 		gap: "60px",
 	},
 });
@@ -88,8 +74,14 @@ export const Section = styled("section", {
 	},
 });
 
+export const Conclusion = styled("div", {
+	flexCenter: "column",
+	alignItems: "flex-start",
+	gap: "30px",
+});
+
 export const About = styled("p", {
-	maxWidth: "800px",
+	maxWidth: "600px",
 	marginTop: "30px",
 
 	textAlign: "left",
@@ -97,17 +89,6 @@ export const About = styled("p", {
 	fontWeight: 500,
 
 	"@bp1": {
-		textAlign: "center",
 		fontSize: "$font__default",
-	},
-});
-
-export const Conclusion = styled("div", {
-	flexCenter: "column",
-	alignItems: "flex-start",
-	gap: "30px",
-
-	"@bp1": {
-		alignItems: "center",
 	},
 });

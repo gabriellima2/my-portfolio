@@ -82,7 +82,7 @@ export const Links = styled("div", {
 });
 
 export const Mac = styled("section", {
-	width: "90vw",
+	width: "85vw",
 	height: "100%",
 
 	border: "5px solid $util__default",

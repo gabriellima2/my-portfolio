@@ -12,8 +12,7 @@ import { Default } from "../layouts/Default";
 
 import {
 	Content,
-	Glassmorphism,
-	BackgroundDetails,
+	Main,
 	SectionFooter,
 	Small,
 	GradientText,
@@ -39,32 +38,28 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 			whileInView={{ opacity: 1 }}
 		>
 			<Default>
-				<BackgroundDetails>
-					<Glassmorphism>
-						<main>
-							<Content>
-								<Text>
-									<Small>
-										<Hello>👋</Hello> Gabriel Lima
-									</Small>
-									<MainTitle>
-										Desenvolvedor Front-End, construindo aplicações com{" "}
-										<GradientText>tecnologias atuais</GradientText>
-									</MainTitle>
-								</Text>
-								<MainLink title="Contato rápido" href="#">
-									Contatar agora
-								</MainLink>
-							</Content>
-							<SectionFooter>
-								<section>
-									<Contacts withDisplay={false} />
-								</section>
-								<ScrollIndicator />
-							</SectionFooter>
-						</main>
-					</Glassmorphism>
-				</BackgroundDetails>
+				<Main>
+					<Content>
+						<Text>
+							<Small>
+								<Hello>👋</Hello> Gabriel Lima
+							</Small>
+							<MainTitle>
+								Desenvolvedor Front-End, construindo aplicações com{" "}
+								<GradientText>tecnologias atuais</GradientText>
+							</MainTitle>
+						</Text>
+						<MainLink title="Contato rápido" href="#">
+							Contatar agora
+						</MainLink>
+					</Content>
+					<SectionFooter>
+						<section>
+							<Contacts withDisplay={false} />
+						</section>
+						<ScrollIndicator />
+					</SectionFooter>
+				</Main>
 
 				<div>
 					<TopButton />
@@ -75,18 +70,23 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 						{projects ? <Projects projects={projects} /> : <Error />}
 					</Section>
 
-					<Section id="contacts">
-						<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
-						<Conclusion>
-							<About>
-								Eu sou Gabriel, um desenvolvedor Front-End autodidata. Como você
-								viu, gosto de criar projetos únicos que surgem a partir das
-								minhas idéias. Para saber mais ou entrar em contato, essas são
-								as opções
-							</About>
-							<Contacts withDisplay={true} />
-						</Conclusion>
-					</Section>
+					<motion.div
+						initial={false}
+						animate={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+					>
+						<Section id="contacts">
+							<Subtitle>Precisando de um dev? Entre em contato</Subtitle>
+							<Conclusion>
+								<About>
+									Como você viu, gosto de criar projetos únicos que surgem a
+									partir das minhas idéias. Para saber mais ou entrar em
+									contato, essas são as opções
+								</About>
+								<Contacts withDisplay={true} />
+							</Conclusion>
+						</Section>
+					</motion.div>
 				</div>
 			</Default>
 		</motion.div>
