@@ -1,14 +1,6 @@
 import { CSS } from "@stitches/react/types/css-util";
 import { styled } from "../../../../stitches.config";
 
-const LIST_DEFAULT_STYLE: CSS = {
-	width: "fit-content",
-
-	position: "static",
-	flexCenter: "row",
-	transform: "translate(0%, 0%)",
-};
-
 const LINES_DEFAULT_STYLE: CSS = {
 	afterOrBefore: "block",
 
