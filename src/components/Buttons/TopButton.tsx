@@ -19,6 +19,7 @@ const Button = styled("button", {
 	borderRadius: "100%",
 	border: "none",
 
+	zIndex: 10000,
 	cursor: "pointer",
 
 	defaultTransition: "all",
