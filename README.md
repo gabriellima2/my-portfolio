@@ -4,7 +4,7 @@ Foquei em unir em um só lugar, meus melhores projetos e meus contatos.
 
 Usei um HeadlessCMS para facilitar a adição de novos projetos que estão por vir.
 
-<a align="center" href="https://vercel.com/gabriellima2/my-portfolio">Acessar Projeto</a>
+<p align="center"><a href="https://gabriellima-frontend.vercel.app">Ver Projeto</a></p>
 
 # Tecnologias
 
