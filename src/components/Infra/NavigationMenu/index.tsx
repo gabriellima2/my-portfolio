@@ -126,8 +126,9 @@ export const NavigationMenu = () => {
 							<ListItem key={anchor.name}>
 								<AnchorText
 									onClick={() => {
-										if (!mobileMenuIsActive) return;
-										disableMobileMenu();
+										if (mobileMenuIsActive) {
+											disableMobileMenu();
+										}
 									}}
 									className="anchors"
 									href={anchor.idBy}
