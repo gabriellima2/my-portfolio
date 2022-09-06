@@ -49,7 +49,10 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 								<GradientText>tecnologias atuais</GradientText>
 							</MainTitle>
 						</Text>
-						<MainLink title="Contato rápido" href="#">
+						<MainLink
+							title="Contato rápido"
+							href="https://www.linkedin.com/in/gabriel-lima-860612236"
+						>
 							Contatar agora
 						</MainLink>
 					</Content>
