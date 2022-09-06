@@ -34,7 +34,7 @@ export const Navigation = styled("nav", {
 	left: "50%",
 	transform: "translate(-50%, 50%)",
 
-	borderRadius: "20px",
+	borderRadius: "5px",
 	padding: "15px 0px",
 
 	background: "$glassmorphism",
@@ -97,9 +97,6 @@ export const AnchorText = styled("a", {
 	fontWeight: 400,
 	fontSize: "$font__default",
 	padding: "20px",
-
-	borderTop: "1px solid $util__default",
-	borderBottom: "1px solid $util__default",
 
 	"&:hover, &:focus": {
 		opacity: 0.7,

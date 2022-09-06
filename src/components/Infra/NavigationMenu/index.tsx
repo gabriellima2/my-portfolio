@@ -75,6 +75,7 @@ export const NavigationMenu = () => {
 		if (e.key === "Escape") return disableMobileMenu();
 	};
 
+	// Ativa/Desativa menu de maneira visual e acessivel
 	useEffect(() => {
 		const html = document.documentElement;
 		const currentFocusabelEl = document.activeElement;
@@ -94,12 +95,15 @@ export const NavigationMenu = () => {
 		html.classList.remove("menu-active");
 	}, [mobileMenuIsActive]);
 
+	// Lidar com eventos do usuário desativando o menu
 	useEffect(() => {
-		const handleResize = () => disableMobileMenu();
+		window.addEventListener("scroll", disableMobileMenu);
+		window.addEventListener("resize", disableMobileMenu);
 
-		window.addEventListener("resize", handleResize);
-
-		return () => window.removeEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("scroll", disableMobileMenu);
+			window.removeEventListener("resize", disableMobileMenu);
+		};
 	}, []);
 
 	return (
