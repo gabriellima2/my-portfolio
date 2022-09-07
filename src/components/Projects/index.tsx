@@ -40,9 +40,16 @@ const ProjectTextInfo = (props: ProjectTextInfoProps) => (
 		<Description>{props.description}</Description>
 
 		<Links>
-			<IconLink href={props.doc} icon={{ element: BsGithub, label: "" }} />
+			<IconLink
+				href={props.doc}
+				target="_blank"
+				rel="noreferrer"
+				icon={{ element: BsGithub, label: "" }}
+			/>
 			<IconLink
 				href={props.url}
+				target="_blank"
+				rel="noreferrer"
 				icon={{ element: BsBoxArrowUpRight, label: "" }}
 			/>
 		</Links>

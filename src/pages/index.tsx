@@ -51,7 +51,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 						</Text>
 						<MainLink
 							title="Contato rápido"
-							href="https://www.linkedin.com/in/gabriel-lima-860612236"
+							href="https://www.linkedin.com/in/gabriel-lima-860612236/"
 						>
 							Contatar agora
 						</MainLink>
@@ -68,7 +68,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 					<TopButton />
 					<Section id="projects">
 						<Subtitle>
-							Projetos únicos. Todas as etapas de criação feitas por mim
+							Projetos únicos. Realizei todas as etapas de criação
 						</Subtitle>
 						{projects ? <Projects projects={projects} /> : <Error />}
 					</Section>
