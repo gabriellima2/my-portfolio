@@ -15,6 +15,8 @@ Usei um HeadlessCMS para facilitar a adição de novos projetos que estão por v
 
 # Rodando o projeto:
 
+<small><strong>OBS: </strong>Os projetos são consumidos de uma API privada criada no [Hygraph](https://hygraph.com), onde adicionei meus projetos. Você pode fazer o mesmo, basta criar uma conta e adicionar seus projetos.</small>
+
 Você precisa ter o [Node](https://nodejs.org/en/), o [Git](https://git-scm.com/) e algum gerenciador de pacotes([NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/) | [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)) instalados em sua máquina.
 
 ```bash
@@ -28,6 +30,15 @@ $ yarn / npm install
 $ yarn dev / npm run dev
 
 4. O servidor será aberto em http://localhost:3000
+```
+
+Adicione as credenciais para sua API do Hygraph
+
+```bash
+	.env.local
+
+	NEXT_PUBLIC_API_TOKEN=Seu Token de autenticação.
+	NEXT_PUBLIC_API_URL=URL da sua API.
 ```
 
 <p align="center">Projeto feito com 💙 por <a href="https://www.linkedin.com/in/gabriel-lima-860612236">Gabriel Lima</a></p>
