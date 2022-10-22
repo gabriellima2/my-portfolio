@@ -1,7 +1,6 @@
 import { setCookie } from "nookies";
 import { createContext, useEffect, useState } from "react";
 
-import { darkTheme } from "../../stitches.config";
 import { CurrentTheme, WithChildren } from "../types";
 
 export enum Themes {
@@ -44,10 +43,10 @@ export const ThemeContextProvider = ({
 
 		// Para mudar o tema, adiciona classes correspondentes
 		if (html.classList.contains(Themes.dark)) {
-			html.classList.remove(darkTheme);
+			html.classList.remove("dark");
 		}
 
-		if (currentTheme === Themes.dark) return html.classList.add(darkTheme);
+		if (currentTheme === Themes.dark) return html.classList.add("dark");
 	}, [currentTheme]);
 
 	return (
