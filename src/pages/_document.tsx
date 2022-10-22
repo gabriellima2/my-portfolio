@@ -1,14 +1,13 @@
 import React from "react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
-import { getCssText } from "../../stitches.config";
-
 export default class Document extends NextDocument {
 	render() {
 		return (
 			<Html lang="en">
 				<Head>
 					<link rel="icon" href="/favicon.svg" />
+
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link
 						rel="preconnect"
@@ -16,13 +15,8 @@ export default class Document extends NextDocument {
 						crossOrigin="true"
 					/>
 					<link
-						href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&family=Noto+Sans:wght@400;500;600;700;900&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
 						rel="stylesheet"
-					/>
-
-					<style
-						id="stitches"
-						dangerouslySetInnerHTML={{ __html: getCssText() }}
 					/>
 				</Head>
 				<body>

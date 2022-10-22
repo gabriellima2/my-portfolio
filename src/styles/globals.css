@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+	@apply bg-main text-fontMain font-main;
+}
+
+h1, h2, h3, h4 {
+	@apply font-accent;
+}
+
+button {
+	@apply bg-accent text-contrast;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
