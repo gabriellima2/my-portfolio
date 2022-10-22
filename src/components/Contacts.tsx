@@ -26,7 +26,9 @@ export const Contacts = (props: ContactsProps) => (
 				<a
 					href={contact.href}
 					title={contact.name.toUpperCase()}
+					target="_blank"
 					className="uppercase hover:underline"
+					rel="noreferrer"
 				>
 					{contact.abbreviation}
 				</a>
