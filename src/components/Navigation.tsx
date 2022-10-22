@@ -9,11 +9,12 @@ const navigations = [
 export const Navigation = () => (
 	<ul>
 		{navigations.map((navigation, index) => (
-			<li
-				key={index}
-				className="font-accent capitalize text-5xl font-normal mt-8 transition ease-in focus:italic focus:line-through hover:italic hover:line-through sm:text-7xl lg:text-9xl"
-			>
-				<Link href={navigation.href}>{navigation.name}</Link>
+			<li key={index} className="mt-8">
+				<Link href={navigation.href}>
+					<a className="font-accent capitalize text-5xl font-normal sm:text-7xl lg:text-9xl transition ease-in focus:italic focus:line-through hover:italic hover:line-through">
+						{navigation.name}
+					</a>
+				</Link>
 			</li>
 		))}
 	</ul>
