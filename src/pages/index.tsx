@@ -8,10 +8,10 @@ import { AppLayout } from "../layouts/AppLayout";
 const Home: NextPage = () => (
 	<AppLayout>
 		<div>
-			<h1 className="uppercase font-bold font-main text-xl sm:text-2xl">
+			<h1 className="uppercase font-bold font-main text-lg sm:text-xl xl:text-2xl">
 				Gabriel Lima
 			</h1>
-			<h2 className="font-main font-normal text-lg sm:text-xl">
+			<h2 className="font-main font-normal text-base sm:text-lg xl:text-xl">
 				Desenvolvedor Front-end
 			</h2>
 		</div>
