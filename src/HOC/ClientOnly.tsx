@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-type ComponentType<P = object> = React.ComponentType<P>;
+import type { Component } from "../types";
 
 // Renderizar componente somente no Client
-export function ClientOnly<P extends object>(Component: ComponentType) {
+export function ClientOnly<P extends object>(Component: Component) {
 	return function HighOrder(props: P) {
 		const [hasMounted, setHasMounted] = useState(false);
 
