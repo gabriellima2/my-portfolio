@@ -6,9 +6,12 @@ interface Props
 	href: Url | string;
 }
 
-const Text = ({ href, ...props }: Props) => (
+const Text = ({ href, className, ...props }: Props) => (
 	<Link href={href}>
-		<a {...props} className="text-fontMain hover:underline" />
+		<a
+			{...props}
+			className={`${className} text-fontMain uppercase hover:underline`}
+		/>
 	</Link>
 );
 

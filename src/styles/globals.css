@@ -7,6 +7,19 @@ body {
 	@apply bg-main text-fontMain font-main;
 }
 
+body::-webkit-scrollbar {
+	width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+	@apply bg-main;
+}
+
+body::-webkit-scrollbar-thumb {
+	@apply bg-accent/50;
+}
+
+
 h1, h2, h3, h4 {
 	@apply font-accent;
 }
