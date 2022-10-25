@@ -18,8 +18,8 @@ export function WithFakeLoading<P extends object>(Component: Component) {
 			<>
 				<Loading isVisible={isLoading} />
 				<motion.div
-					initial={{ translateY: "-30px", opacity: 0 }}
-					animate={{ translateY: "0px", opacity: 1 }}
+					initial={{ translateY: "-30px", opacity: 0, visibility: "hidden" }}
+					animate={{ translateY: "0px", opacity: 1, visibility: "visible" }}
 					transition={{ duration: 1, delay: 1.9 }}
 				>
 					<Component {...props} />
