@@ -1,3 +1,12 @@
+import { motion } from "framer-motion";
+
 export const Copyright = () => (
-	<span className="fixed bottom-8 right-8 italic opacity-60">&#169; 2022</span>
+	<motion.span
+		initial={{ opacity: 0 }}
+		animate={{ opacity: 0.4 }}
+		transition={{ duration: 1.4 }}
+		className="fixed bottom-8 right-8 italic"
+	>
+		&#169; 2022
+	</motion.span>
 );

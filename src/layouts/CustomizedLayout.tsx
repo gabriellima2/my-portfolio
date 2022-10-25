@@ -10,6 +10,7 @@ export const CustomizedLayout = ({ children }: WithChildren) => (
 		<UserInteractions>
 			<HomeLink />
 		</UserInteractions>
+
 		<Layout.Content>{children}</Layout.Content>
 
 		<Copyright />

@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb {
 
 
 h1, h2, h3, h4 {
-	@apply font-accent;
+	@apply font-accent text-fontMain;
 }
 
 button {

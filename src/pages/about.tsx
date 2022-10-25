@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 import { MainLink } from "../components/Links/MainLink";
 import { MySkills } from "../components/MySkills";
@@ -19,8 +20,13 @@ const About: NextPage<AboutProps> = ({ user }) => {
 
 	return (
 		<CustomizedLayout>
-			<main className="flex flex-col gap-16 items-center lg:items-start lg:gap-0 lg:flex-row lg:justify-evenly">
-				<section className="flex-1 flex flex-col gap-14 mr-12 order-last lg:order-first">
+			<main className="flex flex-col gap-16 items-center lg:items-start  lg:mt-4 lg:gap-0 lg:flex-row lg:justify-evenly">
+				<motion.section
+					initial={{ translateY: "15px", opacity: 0 }}
+					animate={{ translateY: "0px", opacity: 1 }}
+					transition={{ duration: 1 }}
+					className="flex-1 flex flex-col gap-14 mr-12 order-last lg:order-first"
+				>
 					<div className="flex flex-col gap-4">
 						<h1 className="text-5xl sm:text-6xl md:text-8xl">Gabriel Lima</h1>
 						<section className="mb-8 flex flex-col gap-3 max-w-[800px]">
@@ -56,16 +62,21 @@ const About: NextPage<AboutProps> = ({ user }) => {
 							<BsArrowRight />
 						</i>
 					</MainLink.Background>
-				</section>
+				</motion.section>
 
-				<section className="md:w-1/4">
+				<motion.section
+					initial={{ translateY: "-15px", opacity: 0 }}
+					animate={{ translateY: "0px", opacity: 1 }}
+					transition={{ duration: 1 }}
+					className="md:w-1/4"
+				>
 					<Avatar
 						src={user.avatar_url}
 						alt="Foto de Gabriel"
 						className="w-52 h-52 md:w-72 md:h-72"
 						text={user.location}
 					/>
-				</section>
+				</motion.section>
 			</main>
 		</CustomizedLayout>
 	);
