@@ -1,10 +1,14 @@
 import type { GetStaticProps, NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
+
+import { MySkills } from "../components/MySkills";
+import { MainLink } from "../components/MainLink";
+import { BsArrowRight } from "react-icons/bs";
+import { Avatar } from "../components/Avatar";
 
 import { AppLayout } from "../layouts/AppLayout";
-import { UserRequest } from "../types";
+
 import { UserInformation } from "../utils/UserInformation";
+import type { UserRequest } from "../types";
 
 interface AboutProps {
 	user: UserRequest;
@@ -15,45 +19,50 @@ const About: NextPage<AboutProps> = ({ user }) => {
 
 	return (
 		<AppLayout>
-			<section>
-				<h1>Gabriel Lima</h1>
-				<section>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat
-					</p>
-				</section>
-				<section>
-					<h2>Habilidades</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat
-					</p>
-					<ul>
-						{user.skills.map((skill, index) => (
-							<li key={index}>{skill}</li>
-						))}
-					</ul>
-				</section>
-				<section>
-					<h2>Para saber mais, acesse:</h2>
-					<div>
-						<a href="#">CV</a>
-						<Link href="/contacts">Contatar</Link>
-					</div>
-				</section>
+			<section className="flex-1 flex flex-col gap-14">
+				<div className="flex flex-col gap-4">
+					<h1 className="text-8xl">Gabriel Lima</h1>
+					<section className="mb-4">
+						<p>
+							Sou um desenvolvedor Front-end, desenvolvo interfaces para
+							Websites e Apps. Autodidata e interessado por Tecnologia e Design
+							de Interfaces.
+						</p>
+						<p>Gosto de desenvolver minhas idéias e criar aplicações únicas.</p>
+					</section>
+
+					<section className="flex flex-col gap-4">
+						<h2 className="text-4xl">Habilidades</h2>
+						<div>
+							<p>
+								Atualmente, estou focado nas ferramentas que englobam o React,
+								mas sempre que possivel vejo outras para se manter atualizado.
+							</p>
+							<p>
+								Todos esses conhecimentos foram adquiridos de forma autodidata e
+								usados em meus projetos.
+							</p>
+						</div>
+						<MySkills skills={user.skills} />
+					</section>
+				</div>
+
+				<MainLink.Background href="/contacts">
+					Contatos
+					<i className="text-xl">
+						<BsArrowRight />
+					</i>
+				</MainLink.Background>
 			</section>
-			<Image src={user.avatar_url} width={100} height={100} alt="" />
+
+			<section className="w-1/4">
+				<Avatar
+					src={user.avatar_url}
+					alt="Foto de Gabriel"
+					className="w-72 h-72"
+					text={user.location}
+				/>
+			</section>
 		</AppLayout>
 	);
 };

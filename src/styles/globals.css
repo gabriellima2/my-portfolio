@@ -22,3 +22,9 @@ li {
 a {
 	text-decoration: none;
 }
+
+@layer components {
+	.button {
+		@apply w-fit flex items-center gap-2 py-3 px-5 text-contrast font-semibold bg-accent rounded-lg hover:animate-pulse focus:animate-pulse;
+	}
+}
