@@ -15,7 +15,7 @@ export const ThemeButton = ClientOnly(() => {
 			type="button"
 			title="Mudar tema"
 			onClick={changeCurrentTheme}
-			className="bg-none border-none w-fit h-fit"
+			className="bg-none border-none w-fit h-fit text-font dark:text-fontDark"
 		>
 			<i className="text-fontMain">
 				<IconTheme />

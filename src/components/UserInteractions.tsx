@@ -14,7 +14,7 @@ export const UserInteractions = ({ children }: WithChildren) => (
 	>
 		<div className="w-full flex justify-end items-center order-last gap-4 md:flex-col md:justify-start md:gap-8 md:order-first">
 			{children}
-			<span className="h-[1px] w-1/2 max-w-[192px] block bg-white/30 order-first md:order-last md:max-w-none md:w-[1px] md:h-48" />
+			<span className="h-[1px] w-1/2 max-w-[192px] block bg-util/30 dark:bg-utilDark/30 order-first md:order-last md:max-w-none md:w-[1px] md:h-48" />
 		</div>
 		<div className="flex flex-row items-center gap-2 md:flex-col">
 			<Contacts className="flex flex-row gap-2 md:flex-col" />

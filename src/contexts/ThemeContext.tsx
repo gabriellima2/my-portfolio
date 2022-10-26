@@ -1,12 +1,8 @@
 import { setCookie } from "nookies";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 
-import { CurrentTheme, WithChildren } from "../types";
-
-export enum Themes {
-	dark = "dark",
-	light = "light",
-}
+import { THEME_CLASSNAME, THEME_ID_COOKIES } from "../constants";
+import type { CurrentTheme, WithChildren } from "../types";
 
 interface ThemeContextProperties {
 	currentTheme: CurrentTheme;
@@ -26,27 +22,30 @@ export const ThemeContextProvider = ({
 	const [currentTheme, setCurrentTheme] = useState<CurrentTheme>(initialTheme);
 
 	const changeCurrentTheme = () => {
-		if (currentTheme === Themes.light) return setCurrentTheme(Themes.dark);
+		if (currentTheme === "light") return setCurrentTheme("dark");
 
-		return setCurrentTheme(Themes.light);
+		return setCurrentTheme("light");
 	};
 
-	useEffect(() => {
-		const html = document.documentElement;
-
-		// Persisitir a preferência de tema nos Cookies.
-		setCookie(null, "theme", currentTheme, {
+	// Persisitir a preferência de tema nos Cookies.
+	const handleThemePersistence = useCallback(() => {
+		setCookie(null, THEME_ID_COOKIES, currentTheme, {
 			maxAge: 60 * 60, // 1 Hora
 			sameSite: "strict",
 			path: "/",
 		});
+	}, [currentTheme]);
+
+	useEffect(() => {
+		const html = document.documentElement;
+		handleThemePersistence();
 
 		// Para mudar o tema, adiciona classes correspondentes
-		if (html.classList.contains(Themes.dark)) {
-			html.classList.remove("dark");
+		if (currentTheme === "dark" || !html.classList.contains(THEME_CLASSNAME)) {
+			return html.classList.add(THEME_CLASSNAME);
 		}
 
-		if (currentTheme === Themes.dark) return html.classList.add("dark");
+		html.classList.remove(THEME_CLASSNAME);
 	}, [currentTheme]);
 
 	return (

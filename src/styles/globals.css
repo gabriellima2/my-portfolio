@@ -2,32 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-	@apply bg-main text-fontMain font-main;
-}
-
-body::-webkit-scrollbar {
-	width: 4px;
-}
-
-body::-webkit-scrollbar-track {
-	@apply bg-main;
-}
-
-body::-webkit-scrollbar-thumb {
-	@apply bg-accent/50;
-}
-
-
-h1, h2, h3, h4 {
-	@apply font-accent text-fontMain;
-}
-
-button {
-	@apply bg-accent text-contrast;
-}
-
 li {
 	list-style: none;
 }
@@ -37,7 +11,28 @@ a {
 }
 
 @layer components {
+	body {
+		@apply bg-main dark:bg-mainDark text-font dark:text-fontDark font-main transition-colors;
+	}
+
+	body::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	body::-webkit-scrollbar-track {
+		@apply bg-main dark:bg-mainDark;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		@apply bg-accent/50 dark:bg-accentDark/50;
+	}
+
+
+	h1, h2, h3, h4 {
+		@apply font-accent;
+	}
+
 	.button {
-		@apply w-fit flex items-center gap-2 py-3 px-5 text-contrast font-semibold bg-accent rounded-lg hover:animate-pulse focus:animate-pulse;
+		@apply w-fit flex items-center gap-2 py-3 px-5 text-contrast dark:text-contrastDark font-semibold bg-accent  dark:bg-accentDark rounded-lg hover:animate-pulse focus:animate-pulse;
 	}
 }

@@ -11,8 +11,8 @@ export const Loading = ({ isVisible }: LoadingProps) => (
 				hidden
 				initial={{ opacity: 1, position: "absolute" }}
 				exit={{ opacity: 0 }}
-				transition={{ duration: 1, delay: 1 }}
-				className="w-screen h-screen flex items-center justify-center bg-main"
+				transition={{ duration: 1, delay: 0.5 }}
+				className="w-screen h-screen flex items-center justify-center bg-main dark:bg-mainDark"
 			>
 				<motion.h1
 					initial={{ opacity: 0 }}
