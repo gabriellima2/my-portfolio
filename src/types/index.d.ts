@@ -1,4 +1,5 @@
 import React, { AnchorHTMLAttributes, ReactNode } from "react";
+import { UserInteractionsProps } from "../components/UserInteractions";
 
 export type WithChildren<T extends object = object> = {
 	children?: ReactNode;
@@ -22,3 +23,6 @@ export interface Skills {
 export interface UserInfo extends GithubInfo, Skills {}
 
 export type UserRequest = UserInfo | null;
+
+export type LayoutProps = WithChildren &
+	Pick<UserInteractionsProps, "showContacts">;

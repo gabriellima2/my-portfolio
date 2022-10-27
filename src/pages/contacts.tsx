@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 
-import { AppLayout } from "../layouts/AppLayout";
+import { CustomizedLayout } from "../layouts/CustomizedLayout";
 
 const Contacts: NextPage = () => {
 	return (
-		<AppLayout>
+		<CustomizedLayout showContacts={false}>
 			<h1>Contatos</h1>
-		</AppLayout>
+		</CustomizedLayout>
 	);
 };
 

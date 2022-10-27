@@ -2,12 +2,12 @@ import { UserInteractions } from "../components/UserInteractions";
 import { Copyright } from "../components/Copyright";
 import { Layout } from "../components/Layout";
 
-import type { WithChildren } from "../types";
+import type { LayoutProps } from "../types";
 
-export const AppLayout = ({ children }: WithChildren) => (
+export const AppLayout = (props: LayoutProps) => (
 	<Layout.Container className="h-screen min-h-full">
-		<UserInteractions />
-		<Layout.Content>{children}</Layout.Content>
+		<UserInteractions showContacts={props.showContacts} />
+		<Layout.Content>{props.children}</Layout.Content>
 
 		<Copyright />
 	</Layout.Container>

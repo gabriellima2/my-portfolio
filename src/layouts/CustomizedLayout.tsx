@@ -3,15 +3,15 @@ import { HomeLink } from "../components/Links/HomeLink";
 import { Copyright } from "../components/Copyright";
 import { Layout } from "../components/Layout";
 
-import type { WithChildren } from "../types";
+import type { LayoutProps } from "../types";
 
-export const CustomizedLayout = ({ children }: WithChildren) => (
+export const CustomizedLayout = (props: LayoutProps) => (
 	<Layout.Container>
-		<UserInteractions>
+		<UserInteractions showContacts={props.showContacts}>
 			<HomeLink />
 		</UserInteractions>
 
-		<Layout.Content>{children}</Layout.Content>
+		<Layout.Content>{props.children}</Layout.Content>
 
 		<Copyright />
 	</Layout.Container>

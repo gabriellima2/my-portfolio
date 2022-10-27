@@ -1,6 +1,14 @@
 import React from "react";
 
-interface ContactsProps extends React.HTMLAttributes<HTMLUListElement> {}
+export type ContactsVariants = "Quick" | "Full";
+
+type ContactProps = Omit<typeof contacts[0], "abbreviation"> & {
+	text: string;
+};
+
+interface ContactsProps extends React.HTMLAttributes<HTMLUListElement> {
+	variants: ContactsVariants;
+}
 
 const contacts = [
 	{
@@ -16,23 +24,39 @@ const contacts = [
 	{
 		name: "email",
 		href: "mailto:gabriel.rslima10@gmail.com",
+		abbreviation: "EM",
 	},
 ];
+
+const Contact = ({ href, name, text }: ContactProps) => (
+	<li className="w-fit h-fit">
+		<a
+			href={href}
+			title={name.toUpperCase()}
+			target="_blank"
+			className="uppercase hover:underline"
+			rel="noreferrer"
+		>
+			{text}
+		</a>
+	</li>
+);
 
 export const Contacts = (props: ContactsProps) => (
 	<ul {...props}>
 		{contacts.map((contact, index) => (
-			<li key={index} className="w-fit h-fit">
-				<a
-					href={contact.href}
-					title={contact.name.toUpperCase()}
-					target="_blank"
-					className="uppercase hover:underline"
-					rel="noreferrer"
-				>
-					{contact.abbreviation}
-				</a>
-			</li>
+			<Contact
+				key={index}
+				href={contact.href}
+				name={contact.name}
+				text={props.variants === "Quick" ? contact.abbreviation : contact.name}
+			/>
 		))}
 	</ul>
 );
+
+const defaultProps: Pick<ContactsProps, "variants"> = {
+	variants: "Quick",
+};
+
+Contacts.defaultProps = defaultProps;
