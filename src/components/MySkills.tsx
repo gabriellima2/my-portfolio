@@ -1,6 +1,8 @@
 import type { Skills } from "../types";
 
-export const MySkills = (props: Skills) => (
+interface MySkillProps extends Skills {}
+
+export const MySkills = (props: MySkillProps) => (
 	<ul>
 		{props.skills.map((skill, index) => (
 			<li key={index}>- {skill}</li>

@@ -9,10 +9,10 @@ import { Avatar } from "../components/Avatar";
 import { CustomizedLayout } from "../layouts/CustomizedLayout";
 
 import { UserInformation } from "../utils/UserInformation";
-import type { UserRequest } from "../types";
+import type { UserInfoResponse } from "../types";
 
 interface AboutProps {
-	user: UserRequest;
+	user: UserInfoResponse;
 }
 
 const About: NextPage<AboutProps> = ({ user }) => {
@@ -92,5 +92,6 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			user: { ...userInformation.data },
 		},
+		revalidate: 60,
 	};
 };

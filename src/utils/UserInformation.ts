@@ -3,18 +3,18 @@ import { gql } from "@apollo/client";
 import { client } from "../lib/client";
 import { github } from "../lib/github";
 
-import type { GithubInfo, UserRequest } from "../types";
+import type { GithubInfo, UserInfoResponse } from "../types";
 
 interface SkillsQuery {
 	skills: [{ result: string[] }];
 }
 
 interface User {
-	data: UserRequest;
+	data: UserInfoResponse;
 }
 
 export class UserInformation implements User {
-	public data: UserRequest;
+	public data: UserInfoResponse;
 	constructor() {
 		this.data = null;
 	}

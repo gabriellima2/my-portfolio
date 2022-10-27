@@ -20,9 +20,24 @@ export interface Skills {
 	skills: string[];
 }
 
+export interface ProjectInfo {
+	id: string;
+	name: string;
+	url: string;
+	image: {
+		url: string;
+	};
+}
+
+export interface ProjectsData {
+	projects: ProjectInfo[];
+}
+
+export type UserProjectsResponse = UserProjects | null;
+
 export interface UserInfo extends GithubInfo, Skills {}
 
-export type UserRequest = UserInfo | null;
+export type UserInfoResponse = UserInfo | null;
 
 export type LayoutProps = WithChildren &
 	Pick<UserInteractionsProps, "showContacts">;
