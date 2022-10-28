@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import { ThemeButton } from "./Buttons/ThemeButton";
-import { Contacts } from "./Contacts";
+import { MyContacts } from "./MyContacts";
 import { Line } from "./Line";
 
 import type { WithChildren } from "../types";
@@ -23,10 +23,7 @@ export const UserInteractions = (props: UserInteractionsProps) => (
 		</div>
 		<div className="flex flex-row items-center gap-2 md:flex-col">
 			{props.showContacts && (
-				<Contacts
-					variants="Quick"
-					className="flex flex-row gap-2 md:flex-col"
-				/>
+				<MyContacts.Quick className="flex flex-row gap-2 md:flex-col" />
 			)}
 			<ThemeButton />
 		</div>

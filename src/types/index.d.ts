@@ -42,3 +42,10 @@ export interface LayoutProps
 		Pick<UserInteractionsProps, "showContacts"> {
 	className?: string;
 }
+
+export interface MockContactType {
+	name: string;
+	href: string;
+	value?: string;
+	abbreviation: string;
+}

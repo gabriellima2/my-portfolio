@@ -7,7 +7,7 @@ interface CommonLayoutProps extends LayoutProps {
 
 export const CommomLayout = (props: CommonLayoutProps) => (
 	<CustomizedLayout
-		className="md:h-screen xl:w-screen"
+		className={`${props.className} md:h-screen xl:w-screen`}
 		showContacts={props.showContacts}
 	>
 		<main className="flex flex-col gap-16 items-center justify-center pb-6 md:pb-0 lg:gap-2 lg:mt-4 lg:flex-row lg:items-center lg:justify-evenly">

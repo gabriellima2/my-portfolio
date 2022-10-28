@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { UserInteractions } from "../components/UserInteractions";
 import { HomeLink } from "../components/Links/HomeLink";
 import { Copyright } from "../components/Copyright";
@@ -11,7 +13,15 @@ export const CustomizedLayout = (props: LayoutProps) => (
 			<HomeLink />
 		</UserInteractions>
 
-		<Layout.Content>{props.children}</Layout.Content>
+		<Layout.Content>
+			<motion.div
+				initial={{ translateY: "-25px", opacity: 0, visibility: "hidden" }}
+				animate={{ translateY: "0px", opacity: 1, visibility: "visible" }}
+				transition={{ duration: 1 }}
+			>
+				{props.children}
+			</motion.div>
+		</Layout.Content>
 
 		<Copyright />
 	</Layout.Container>
