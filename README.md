@@ -47,13 +47,4 @@ $ yarn dev / npm run dev
 5. O servidor será aberto em http://localhost:3000
 ```
 
-Adicione as credenciais para sua API do Hygraph
-
-```bash
-	.env.local
-
-	NEXT_PUBLIC_API_TOKEN=Seu Token de autenticação.
-	NEXT_PUBLIC_API_URL=URL da sua API.
-```
-
 <p align="center">Projeto feito com 💙 por <a href="https://www.linkedin.com/in/gabriel-lima-860612236">Gabriel Lima</a></p>
