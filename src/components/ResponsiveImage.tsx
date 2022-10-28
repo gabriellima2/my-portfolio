@@ -16,7 +16,9 @@ export const ResponsiveImage = ({
 		<Image
 			layout="fill"
 			objectFit="contain"
+			placeholder="blur"
 			alt={props.alt}
+			blurDataURL="/coverImage.jpg"
 			{...props}
 			className={className}
 		/>
