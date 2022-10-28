@@ -1,8 +1,11 @@
 import { BsBoxArrowInUpRight } from "react-icons/bs";
-import type { ProjectInfo, ProjectsData } from "../types";
-import { ResponsiveImage } from "./ResponsiveImage";
 
-interface MyProjectsProps extends ProjectsData {}
+import { ResponsiveImage } from "./ResponsiveImage";
+import type { ProjectInfo, ProjectsInfo } from "../types";
+
+interface MyProjectsProps {
+	projects: ProjectsInfo;
+}
 
 const Project = ({ image, ...props }: ProjectInfo) => (
 	<li className="border border-transparent dark:border-white/10 rounded-sm">

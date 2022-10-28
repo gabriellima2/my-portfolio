@@ -5,14 +5,18 @@ import { MyProjects } from "../components/MyProjects";
 import { CommomLayout } from "../layouts/CommonLayout";
 
 import { UserProjects } from "../utils/UserProjects";
-import type { ProjectsData } from "../types";
+import type { ProjectsInfo } from "../types";
 
-interface ProjectProps extends ProjectsData {}
+interface ProjectProps {
+	projects: ProjectsInfo | undefined;
+}
 
-const Project: NextPage<ProjectProps> = (props) => {
+const Project: NextPage<ProjectProps> = ({ projects }) => {
+	if (!projects) return <p>Error</p>;
+
 	return (
 		<CommomLayout title="Projetos">
-			<MyProjects projects={props.projects} />
+			<MyProjects projects={projects} />
 		</CommomLayout>
 	);
 };

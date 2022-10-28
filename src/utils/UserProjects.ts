@@ -1,9 +1,11 @@
 import { gql } from "@apollo/client";
 
 import { client } from "../lib/client";
-import type { UserProjectsResponse, ProjectsData } from "../types";
+import type { UserProjectsResponse, ProjectsInfo } from "../types";
 
-interface ProjectsQuery extends ProjectsData {}
+interface ProjectsQuery {
+	projects: ProjectsInfo;
+}
 
 interface User {
 	data: UserProjectsResponse;

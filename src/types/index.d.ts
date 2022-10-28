@@ -17,7 +17,7 @@ export interface GithubInfo {
 }
 
 export interface Skills {
-	skills: string[];
+	skills: Array<string>;
 }
 
 export interface ProjectInfo {
@@ -29,11 +29,9 @@ export interface ProjectInfo {
 	};
 }
 
-export interface ProjectsData {
-	projects: ProjectInfo[];
-}
+export type ProjectsInfo = Array<ProjectInfo>;
 
-export type UserProjectsResponse = UserProjects | null;
+export type UserProjectsResponse = ProjectsInfo | null;
 
 export interface UserInfo extends GithubInfo, Skills {}
 
