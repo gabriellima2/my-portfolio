@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MainLink } from "../components/Links/MainLink";
 import { MySkills } from "../components/MySkills";
 import { Avatar } from "../components/Avatar";
+import { Seo } from "../components/Seo";
 
 import { CustomizedLayout } from "../layouts/CustomizedLayout";
 
@@ -20,6 +21,8 @@ const About: NextPage<AboutProps> = ({ user }) => {
 
 	return (
 		<CustomizedLayout>
+			<Seo title="Gabriel Lima - Sobre" />
+
 			<main className="flex flex-col gap-16 items-center lg:items-start lg:mt-4 lg:gap-0 lg:flex-row lg:justify-evenly">
 				<motion.section
 					initial={{ translateY: "15px", opacity: 0 }}
