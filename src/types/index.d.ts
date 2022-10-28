@@ -39,5 +39,8 @@ export interface UserInfo extends GithubInfo, Skills {}
 
 export type UserInfoResponse = UserInfo | null;
 
-export type LayoutProps = WithChildren &
-	Pick<UserInteractionsProps, "showContacts">;
+export interface LayoutProps
+	extends WithChildren,
+		Pick<UserInteractionsProps, "showContacts"> {
+	className?: string;
+}

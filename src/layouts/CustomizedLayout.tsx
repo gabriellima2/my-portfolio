@@ -6,7 +6,7 @@ import { Layout } from "../components/Layout";
 import type { LayoutProps } from "../types";
 
 export const CustomizedLayout = (props: LayoutProps) => (
-	<Layout.Container>
+	<Layout.Container className={props.className}>
 		<UserInteractions showContacts={props.showContacts}>
 			<HomeLink />
 		</UserInteractions>

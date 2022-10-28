@@ -3,10 +3,10 @@ import type { NextPage } from "next";
 import { Navigation } from "../components/Navigation";
 import { WithFakeLoading } from "../HOC/WithFakeLoading";
 
-import { AppLayout } from "../layouts/AppLayout";
+import { DefaultLayout } from "../layouts/DefaultLayout";
 
 const Home: NextPage = () => (
-	<AppLayout>
+	<DefaultLayout>
 		<main className="w-full flex flex-col justify-center gap-6 lg:gap-0 lg:flex-row lg:items-center lg:justify-between lg:p-16 xl:max-w-[1500px]">
 			<div>
 				<h1 className="uppercase font-bold font-main text-lg sm:text-xl xl:text-2xl">
@@ -20,7 +20,7 @@ const Home: NextPage = () => (
 				<Navigation />
 			</section>
 		</main>
-	</AppLayout>
+	</DefaultLayout>
 );
 
 export default WithFakeLoading(Home);

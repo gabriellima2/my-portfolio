@@ -1,12 +1,16 @@
 import type { NextPage } from "next";
 
-import { CustomizedLayout } from "../layouts/CustomizedLayout";
+import { CommomLayout } from "../layouts/CommonLayout";
 
 const Contacts: NextPage = () => {
 	return (
-		<CustomizedLayout showContacts={false}>
-			<h1>Contatos</h1>
-		</CustomizedLayout>
+		<CommomLayout
+			title="Contatos"
+			showContacts={false}
+			className="md:h-screen xl:w-screen"
+		>
+			<p>AQUI</p>
+		</CommomLayout>
 	);
 };
 

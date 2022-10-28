@@ -20,7 +20,7 @@ const About: NextPage<AboutProps> = ({ user }) => {
 
 	return (
 		<CustomizedLayout>
-			<main className="flex flex-col gap-16 items-center lg:items-start  lg:mt-4 lg:gap-0 lg:flex-row lg:justify-evenly">
+			<main className="flex flex-col gap-16 items-center lg:items-start lg:mt-4 lg:gap-0 lg:flex-row lg:justify-evenly">
 				<motion.section
 					initial={{ translateY: "15px", opacity: 0 }}
 					animate={{ translateY: "0px", opacity: 1 }}
