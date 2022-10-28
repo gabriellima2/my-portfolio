@@ -6,14 +6,8 @@ import type { CurrentTheme } from "../types";
 function getPreference(): CurrentTheme {
 	const { [THEME_ID_COOKIES]: theme } = parseCookies();
 
-	console.log(
-		!theme || (theme !== "dark" && theme !== "light")
-			? "Retorna Light"
-			: "Falso"
-	);
 	if (!theme || (theme !== "dark" && theme !== "light")) return "light";
 
-	console.log(`Tema Cookie ${theme}`);
 	return theme;
 }
 

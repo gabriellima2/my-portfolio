@@ -28,12 +28,11 @@ export const ThemeContextProvider = ({
 	};
 
 	useEffect(() => {
-		console.log(`Current ${currentTheme}`);
 		const html = document.documentElement;
 		theme.persist(currentTheme);
 
 		// Para mudar o tema, adiciona classes correspondentes
-		if (currentTheme === "dark" || !html.classList.contains(THEME_CLASSNAME)) {
+		if (currentTheme === "dark" && !html.classList.contains(THEME_CLASSNAME)) {
 			return html.classList.add(THEME_CLASSNAME);
 		}
 
