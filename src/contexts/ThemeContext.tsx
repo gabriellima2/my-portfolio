@@ -27,15 +27,10 @@ export const ThemeContextProvider = ({
 		return setCurrentTheme("light");
 	};
 
-	// Persisitir a preferência de tema nos Cookies.
-	const handleThemePersistence = useCallback(
-		() => theme.persist(currentTheme),
-		[currentTheme]
-	);
-
 	useEffect(() => {
+		console.log(`Current ${currentTheme}`);
 		const html = document.documentElement;
-		handleThemePersistence();
+		theme.persist(currentTheme);
 
 		// Para mudar o tema, adiciona classes correspondentes
 		if (currentTheme === "dark" || !html.classList.contains(THEME_CLASSNAME)) {

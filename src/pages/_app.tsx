@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const preferenceTheme = theme.getPreference();
 	theme.persist(preferenceTheme);
 
+	console.log(`App ${preferenceTheme}`);
+
 	return (
 		<ThemeContextProvider initialTheme={preferenceTheme}>
 			<Component {...pageProps} />
