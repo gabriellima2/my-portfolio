@@ -21,9 +21,9 @@ export const UserInteractions = (props: UserInteractionsProps) => (
 			{props.children}
 			<Line />
 		</div>
-		<div className="flex flex-row items-center gap-2 md:flex-col">
+		<div className="flex flex-row items-center gap-3 md:flex-col">
 			{props.showContacts && (
-				<MyContacts.Quick className="flex flex-row gap-2 md:flex-col" />
+				<MyContacts.Quick className="flex flex-row gap-1 md:flex-col" />
 			)}
 			<ThemeButton />
 		</div>

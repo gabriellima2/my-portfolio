@@ -8,7 +8,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 export const ThemeButton = ClientOnly(() => {
 	const { currentTheme, changeCurrentTheme } = useContext(ThemeContext);
 
-	const IconTheme = currentTheme === "dark" ? BsMoonFill : BsFillSunFill;
+	const IconTheme = currentTheme === "dark" ? BsFillSunFill : BsMoonFill;
 
 	return (
 		<button
