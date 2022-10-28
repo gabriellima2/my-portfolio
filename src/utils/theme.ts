@@ -6,18 +6,7 @@ import type { CurrentTheme } from "../types";
 function getPreference(): CurrentTheme {
 	const { [THEME_ID_COOKIES]: theme } = parseCookies();
 
-	function getOSPreference(): CurrentTheme {
-		if (window.matchMedia("(prefers-color-scheme): dark").matches)
-			return "dark";
-
-		return "light";
-	}
-
-	if (!theme || (theme !== "dark" && theme !== "light")) {
-		if (typeof window !== "undefined") return getOSPreference();
-
-		return "light";
-	}
+	if (!theme || (theme !== "dark" && theme !== "light")) return "light";
 
 	return theme;
 }
