@@ -8,13 +8,12 @@ interface MyProjectsProps {
 }
 
 const Project = ({ image, ...props }: ProjectInfo) => (
-	<li className="border border-transparent dark:border-white/10 rounded-sm">
-		<a
-			href={props.url}
-			title={`Visitar projeto ${props.name}`}
-			className="relative"
-		>
-			<i className="text-main text-lg absolute z-10 top-2 right-2">
+	<li className="border border-transparent dark:border-white/10 rounded-sm relative">
+		<a href={props.url} title={`Visitar projeto ${props.name}`}>
+			<i
+				aria-label="Ícone de seta"
+				className="text-black text-lg absolute z-10 top-2 right-2 bg-white/70 p-1 rounded"
+			>
 				<BsBoxArrowInUpRight />
 			</i>
 			<ResponsiveImage
@@ -22,7 +21,7 @@ const Project = ({ image, ...props }: ProjectInfo) => (
 				alt={`Demonstração do projeto ${props.name}`}
 				layer
 				className="rounded-sm"
-				containerStyle="w-[80vw] h-[60vw] md:w-[300px] md:h-[220px] lg:w-[260px] lg:h-[190px] xl:w-[300px] xl:h-[220px]"
+				containerStyle="w-[90vw] h-[66vw] md:w-[300px] md:h-[220px] lg:w-[260px] lg:h-[190px] xl:w-[300px] xl:h-[220px]"
 			/>
 		</a>
 	</li>
