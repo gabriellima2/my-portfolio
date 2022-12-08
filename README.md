@@ -1,5 +1,9 @@
 # Meu Portfólio
 
+<div align="center">
+  <img src="./public/github/figma.png" alt="Demonstração do protótipo do projeto" >
+</div>
+
 <p align="center"><a href="https://gabriellima-frontend.vercel.app">Acesse aqui</a></p>
 
 # Tecnologias
