@@ -10,9 +10,10 @@ interface ResposiveImageProps extends Omit<ImageProps, "layout"> {
 export const ResponsiveImage = ({
 	className,
 	layer,
+	containerStyle,
 	...props
 }: ResposiveImageProps) => (
-	<div className={`${props.containerStyle} relative`}>
+	<div className={`${containerStyle} relative`}>
 		<Image
 			layout="fill"
 			objectFit="contain"
