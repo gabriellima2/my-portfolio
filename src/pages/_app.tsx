@@ -6,7 +6,6 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const preferenceTheme = theme.getPreference();
-	theme.persist(preferenceTheme);
 
 	return (
 		<ThemeContextProvider initialTheme={preferenceTheme}>

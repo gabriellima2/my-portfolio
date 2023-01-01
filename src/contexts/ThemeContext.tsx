@@ -1,8 +1,9 @@
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { THEME_CLASSNAME } from "../constants";
-import type { CurrentTheme, WithChildren } from "../types";
 import { theme } from "../utils/theme";
+
+import type { CurrentTheme, WithChildren } from "../types";
 
 interface ThemeContextProperties {
 	currentTheme: CurrentTheme;
@@ -36,7 +37,9 @@ export const ThemeContextProvider = ({
 			return html.classList.add(THEME_CLASSNAME);
 		}
 
-		html.classList.remove(THEME_CLASSNAME);
+		if (currentTheme === "light" && html.classList.contains(THEME_CLASSNAME)) {
+			return html.classList.remove(THEME_CLASSNAME);
+		}
 	}, [currentTheme]);
 
 	return (
