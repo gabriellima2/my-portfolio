@@ -7,6 +7,6 @@ export const Copyright = () => (
 		transition={{ duration: 1.4 }}
 		className="fixed bottom-8 right-8 italic"
 	>
-		&#169; 2022
+		&#169; {new Date().getFullYear()}
 	</motion.span>
 );
