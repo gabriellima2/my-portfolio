@@ -6,7 +6,7 @@ import type { MyContactsProps } from ".";
 
 const Item = ({ href, abbreviation, name }: Omit<MockContactType, "value">) => (
 	<li>
-		<a href={href} target="_blank" rel="noreferrer" title={name}>
+		<a href={href} target="_blank" rel="noreferrer" title={name} className="hover:line-through focus:line-through">
 			{abbreviation.toUpperCase()}
 		</a>
 	</li>
