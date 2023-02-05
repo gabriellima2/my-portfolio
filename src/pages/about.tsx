@@ -11,6 +11,7 @@ import { CustomizedLayout } from "../layouts/CustomizedLayout";
 
 import { UserInformation } from "../utils/UserInformation";
 import type { UserInfoResponse } from "../types";
+import Link from "next/link";
 
 interface AboutProps {
 	user: UserInfoResponse;
@@ -34,12 +35,11 @@ const About: NextPage<AboutProps> = ({ user }) => {
 						<h1 className="text-5xl sm:text-6xl md:text-8xl">Gabriel Lima</h1>
 						<section className="mb-8 flex flex-col gap-3 max-w-[800px]">
 							<p>
-								Sou um desenvolvedor Front-end, desenvolvo interfaces para
-								Websites e Apps. Autodidata e interessado por Tecnologia e
-								Design de Interfaces.
+								Trabalho com desenvolvimento de Websites e Apps.
 							</p>
 							<p>
-								Gosto de desenvolver minhas idéias e criar aplicações únicas.
+								Focado em desenvolvimento Front-end desde 2021. Nesse mesmo ano, tive meu primeiro contato com programação.
+								Adquiri muitos conhecimentos e experiência desenvolvendo aplicações para solucionar diferentes problemas que encontrava no cotidiano. Essas aplicações estão listadas na <MainLink.Text href="/projects" title="Ir para seçao de projetos" className="underline">Seção de Projetos.</MainLink.Text>
 							</p>
 						</section>
 
@@ -47,19 +47,15 @@ const About: NextPage<AboutProps> = ({ user }) => {
 							<h2 className="text-3xl md:text-4xl">Habilidades</h2>
 							<div className="flex flex-col gap-3">
 								<p>
-									Atualmente, estou focado nas ferramentas que englobam o React,
-									mas sempre que possivel vejo outras para se manter atualizado.
-								</p>
-								<p>
-									Todos esses conhecimentos foram adquiridos de forma autodidata
-									e usados em meus projetos.
+									Eu aprendi essas ferramentas de forma autodidata
+									e todas foram usadas em projetos que desenvolvi.
 								</p>
 							</div>
 							<MySkills skills={user.skills} />
 						</section>
 					</div>
 
-					<MainLink.Background href="/contacts">
+					<MainLink.Background href="/contacts" title="Ir para seção de contatos">
 						Contatos
 						<i className="text-xl">
 							<BsArrowRight />
