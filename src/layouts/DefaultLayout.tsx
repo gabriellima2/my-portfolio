@@ -12,3 +12,9 @@ export const DefaultLayout = (props: LayoutProps) => (
 		<Copyright />
 	</Layout.Container>
 );
+
+const defaultProps: Pick<LayoutProps, "showContacts"> = {
+	showContacts: true,
+};
+
+DefaultLayout.defaultProps = defaultProps;

@@ -1,5 +1,4 @@
 import React, { AnchorHTMLAttributes, ReactNode } from "react";
-import { Menu } from "../components/Menu";
 
 export type WithChildren<T extends object = object> = {
 	children?: ReactNode;
@@ -37,7 +36,8 @@ export interface UserInfo extends GithubInfo, Skills {}
 
 export type UserInfoResponse = UserInfo | null;
 
-export interface LayoutProps extends WithChildren, Pick<Menu, "showContacts"> {
+export interface LayoutProps extends WithChildren {
+	showContacts?: boolean;
 	className?: string;
 }
 

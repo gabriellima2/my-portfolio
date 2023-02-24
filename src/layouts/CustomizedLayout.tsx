@@ -26,3 +26,9 @@ export const CustomizedLayout = (props: LayoutProps) => (
 		<Copyright />
 	</Layout.Container>
 );
+
+const defaultProps: Pick<LayoutProps, "showContacts"> = {
+	showContacts: true,
+};
+
+CustomizedLayout.defaultProps = defaultProps;

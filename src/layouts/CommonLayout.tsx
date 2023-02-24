@@ -20,3 +20,9 @@ export const CommomLayout = (props: CommonLayoutProps) => (
 		</main>
 	</CustomizedLayout>
 );
+
+const defaultProps: Pick<CommonLayoutProps, "showContacts"> = {
+	showContacts: true,
+};
+
+CommomLayout.defaultProps = defaultProps;
