@@ -6,11 +6,11 @@ import { Line } from "./Line";
 
 import type { WithChildren } from "../types";
 
-export interface UserInteractionsProps extends WithChildren {
+export interface MenuProps extends WithChildren {
 	showContacts?: boolean;
 }
 
-export const UserInteractions = (props: UserInteractionsProps) => (
+export const Menu = (props: MenuProps) => (
 	<motion.aside
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
@@ -30,8 +30,8 @@ export const UserInteractions = (props: UserInteractionsProps) => (
 	</motion.aside>
 );
 
-const defaultProps: Pick<UserInteractionsProps, "showContacts"> = {
+const defaultProps: Pick<MenuProps, "showContacts"> = {
 	showContacts: true,
 };
 
-UserInteractions.defaultProps = defaultProps;
+Menu.defaultProps = defaultProps;

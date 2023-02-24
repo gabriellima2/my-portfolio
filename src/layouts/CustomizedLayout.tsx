@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 
-import { UserInteractions } from "../components/UserInteractions";
 import { HomeLink } from "../components/Links/HomeLink";
 import { Copyright } from "../components/Copyright";
 import { Layout } from "../components/Layout";
+import { Menu } from "../components/Menu";
 
 import type { LayoutProps } from "../types";
 
 export const CustomizedLayout = (props: LayoutProps) => (
 	<Layout.Container className={props.className}>
-		<UserInteractions showContacts={props.showContacts}>
+		<Menu showContacts={props.showContacts}>
 			<HomeLink />
-		</UserInteractions>
+		</Menu>
 
 		<Layout.Content>
 			<motion.div

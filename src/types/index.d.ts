@@ -1,5 +1,5 @@
 import React, { AnchorHTMLAttributes, ReactNode } from "react";
-import { UserInteractionsProps } from "../components/UserInteractions";
+import { Menu } from "../components/Menu";
 
 export type WithChildren<T extends object = object> = {
 	children?: ReactNode;
@@ -39,7 +39,7 @@ export type UserInfoResponse = UserInfo | null;
 
 export interface LayoutProps
 	extends WithChildren,
-		Pick<UserInteractionsProps, "showContacts"> {
+		Pick<Menu, "showContacts"> {
 	className?: string;
 }
 
