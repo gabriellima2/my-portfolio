@@ -8,7 +8,10 @@ interface Props
 
 const Text = ({ href, className, ...props }: Props) => (
 	<Link href={href}>
-		<a {...props} className={`${className} text-fontMain focus:line-through hover:line-through`} />
+		<a
+			{...props}
+			className={`${className} text-fontMain focus:line-through hover:line-through`}
+		/>
 	</Link>
 );
 
