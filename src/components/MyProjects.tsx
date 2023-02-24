@@ -28,7 +28,7 @@ const Project = ({ image, ...props }: ProjectInfo) => (
 );
 
 export const MyProjects = ({ projects }: MyProjectsProps) => (
-	<ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
+	<ul className="w-full md:max-h-[55vh] md:pr-2 md:overflow-y-auto md:overflow-x-hidden grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
 		{projects.map((project) => (
 			<Project {...project} key={project.id} />
 		))}

@@ -15,15 +15,15 @@ a {
 		@apply bg-main dark:bg-mainDark text-font dark:text-fontDark font-main transition-colors;
 	}
 
-	body::-webkit-scrollbar {
+	*::-webkit-scrollbar {
 		width: 4px;
 	}
 
-	body::-webkit-scrollbar-track {
+	*::-webkit-scrollbar-track {
 		@apply bg-main dark:bg-mainDark;
 	}
 
-	body::-webkit-scrollbar-thumb {
+	*::-webkit-scrollbar-thumb {
 		@apply bg-accent/50 dark:bg-accentDark/50;
 	}
 

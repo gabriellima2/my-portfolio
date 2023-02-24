@@ -18,7 +18,6 @@ const Project: NextPage<ProjectProps> = ({ projects }) => {
 	return (
 		<CommomLayout title="Projetos">
 			<Seo title="Gabriel Lima - Projetos" />
-
 			<MyProjects projects={projects} />
 		</CommomLayout>
 	);
