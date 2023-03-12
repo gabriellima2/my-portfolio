@@ -1,6 +1,10 @@
 import type { AppProps } from "next/app";
 
+import { MenuNavigationProvider } from "../contexts/MenuNavigationContext";
 import { ThemeContextProvider } from "../contexts/ThemeContext";
+
+import { MenuNavigation } from "../components/MenuNavigation/MenuNavigation";
+
 import { theme } from "../utils/theme";
 import "../styles/globals.css";
 
@@ -9,7 +13,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeContextProvider initialTheme={preferenceTheme}>
-			<Component {...pageProps} />
+			<MenuNavigationProvider>
+				<MenuNavigation />
+				<Component {...pageProps} />
+			</MenuNavigationProvider>
 		</ThemeContextProvider>
 	);
 }

@@ -15,15 +15,15 @@ export const Menu = (props: MenuProps) => (
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
 		transition={{ duration: 1.4 }}
-		className="h-12 px-8 flex flex-row justify-between items-end md:h-[78%] md:flex-col md:w-18 md:mt-32 md:fixed"
+		className="h-12 px-8 z-50 flex flex-row justify-between items-end md:h-screen md:items-center md:flex-col md:w-18 md:py-32 md:fixed"
 	>
 		<div className="w-full flex justify-end items-center order-last gap-4 md:flex-col md:justify-start md:gap-8 md:order-first">
 			{props.children}
 			<Line />
 		</div>
-		<div className="flex flex-row items-center gap-3 md:flex-col">
+		<div className="flex flex-row items-center gap-4 md:gap-8 md:flex-col">
 			{props.showContacts && (
-				<MyContacts.Quick className="flex flex-row gap-1 md:flex-col" />
+				<MyContacts.Quick className="flex flex-row items-center gap-1 md:flex-col" />
 			)}
 			<ThemeButton />
 		</div>
