@@ -9,6 +9,7 @@ interface INavigationMenuContext {
 	isOpen: boolean;
 	handleToggle: () => void;
 	handleDisable: () => void;
+	handleActive: () => void;
 }
 
 export const NavigationMenuContext = createContext(
@@ -17,13 +18,13 @@ export const NavigationMenuContext = createContext(
 
 export const NavigationMenuProvider = ({ children }: WithChildren) => {
 	const { pathname } = useRouter();
-	const { isOpen, handleToggle, handleDisable } = useToggle();
+	const { isOpen, handleToggle, handleDisable, handleActive } = useToggle();
 
 	useEffect(() => handleDisable(), [pathname]);
 
 	return (
 		<NavigationMenuContext.Provider
-			value={{ isOpen, handleToggle, handleDisable }}
+			value={{ isOpen, handleToggle, handleDisable, handleActive }}
 		>
 			{children}
 		</NavigationMenuContext.Provider>

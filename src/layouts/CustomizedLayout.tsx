@@ -8,7 +8,7 @@ import { Layout } from "../components/Layout";
 import type { LayoutProps } from "../types";
 
 export const CustomizedLayout = (props: LayoutProps) => (
-	<Layout.Container className={props.className + "relative"}>
+	<Layout.Container className={props.className}>
 		<NavigationBar showContacts={props.showContacts}>
 			<NavigationMenuButton />
 			<HomeLink />
