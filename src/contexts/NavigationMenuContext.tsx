@@ -3,19 +3,19 @@ import { useRouter } from "next/router";
 
 import type { WithChildren } from "../types";
 
-interface IMenuNavigationContext {
+interface INavigationMenuContext {
 	isOpen: boolean;
 	handleToggle: () => void;
 	handleDisable: () => void;
 }
 
-export const MenuNavigationContext = createContext(
-	{} as IMenuNavigationContext
+export const NavigationMenuContext = createContext(
+	{} as INavigationMenuContext
 );
 
 const HORIZONTAL_OVERFLOW_HIDDEN_TAILWIND_CLASS = "overflow-x-hidden";
 
-export const MenuNavigationProvider = ({ children }: WithChildren) => {
+export const NavigationMenuProvider = ({ children }: WithChildren) => {
 	const { pathname } = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -52,12 +52,12 @@ export const MenuNavigationProvider = ({ children }: WithChildren) => {
 	useEffect(() => handleDisable(), [pathname]);
 
 	return (
-		<MenuNavigationContext.Provider
+		<NavigationMenuContext.Provider
 			value={{ isOpen, handleToggle, handleDisable }}
 		>
 			{children}
-		</MenuNavigationContext.Provider>
+		</NavigationMenuContext.Provider>
 	);
 };
 
-export const useMenuNavigationContext = () => useContext(MenuNavigationContext);
+export const useNavigationMenuContext = () => useContext(NavigationMenuContext);

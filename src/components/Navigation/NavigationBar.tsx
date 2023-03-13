@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 
-import { ThemeButton } from "./Buttons/ThemeButton";
-import { MyContacts } from "./MyContacts";
-import { Line } from "./Line";
+import { ThemeButton } from "../Buttons/ThemeButton";
+import { MyContacts } from "../MyContacts";
+import { Line } from "../Line";
 
-import type { WithChildren } from "../types";
+import type { WithChildren } from "../../types";
 
-export interface MenuProps extends WithChildren {
+export interface NavigationBarProps extends WithChildren {
 	showContacts?: boolean;
 }
 
-export const Menu = (props: MenuProps) => (
+export const NavigationBar = (props: NavigationBarProps) => (
 	<motion.aside
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
@@ -30,8 +30,8 @@ export const Menu = (props: MenuProps) => (
 	</motion.aside>
 );
 
-const defaultProps: Pick<MenuProps, "showContacts"> = {
+const defaultProps: Pick<NavigationBarProps, "showContacts"> = {
 	showContacts: true,
 };
 
-Menu.defaultProps = defaultProps;
+NavigationBar.defaultProps = defaultProps;

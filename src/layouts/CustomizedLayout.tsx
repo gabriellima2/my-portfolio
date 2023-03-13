@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 
-import { MenuNavigationButton } from "../components/MenuNavigation/MenuNavigationButton";
+import { NavigationBar, NavigationMenuButton } from "../components/Navigation";
 import { HomeLink } from "../components/Links/HomeLink";
 import { Copyright } from "../components/Copyright";
 import { Layout } from "../components/Layout";
-import { Menu } from "../components/Menu";
 
 import type { LayoutProps } from "../types";
 
 export const CustomizedLayout = (props: LayoutProps) => (
 	<Layout.Container className={props.className + "relative"}>
-		<Menu showContacts={props.showContacts}>
-			<MenuNavigationButton />
+		<NavigationBar showContacts={props.showContacts}>
+			<NavigationMenuButton />
 			<HomeLink />
-		</Menu>
+		</NavigationBar>
 
 		<Layout.Content>
 			<motion.div

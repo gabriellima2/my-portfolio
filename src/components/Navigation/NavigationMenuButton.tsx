@@ -1,7 +1,7 @@
-import { useMenuNavigationContext } from "../../contexts/MenuNavigationContext";
+import { useNavigationMenuContext } from "../../contexts/NavigationMenuContext";
 
-export const MenuNavigationButton = () => {
-	const { isOpen, handleToggle } = useMenuNavigationContext();
+export const NavigationMenuButton = () => {
+	const { isOpen, handleToggle } = useNavigationMenuContext();
 
 	return (
 		<button

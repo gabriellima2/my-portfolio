@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-import { useMenuNavigationContext } from "../../contexts/MenuNavigationContext";
+import { useNavigationMenuContext } from "../../contexts/NavigationMenuContext";
 import { Navigation } from "../Navigation";
 
-export const MenuNavigation = () => {
-	const { isOpen, handleDisable } = useMenuNavigationContext();
+export const NavigationMenu = () => {
+	const { isOpen, handleDisable } = useNavigationMenuContext();
 
 	useEffect(() => {
 		return () => handleDisable();
