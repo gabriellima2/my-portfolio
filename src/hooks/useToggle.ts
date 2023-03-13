@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-export function useToggle() {
+interface UseToggleReturn {
+	isOpen: boolean;
+	handleToggle: () => void;
+	handleDisable: () => void;
+	handleActive: () => void;
+}
+
+export function useToggle(): UseToggleReturn {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggle = () => setIsOpen((prevState) => !prevState);
