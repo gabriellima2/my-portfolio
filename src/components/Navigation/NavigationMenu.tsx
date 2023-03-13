@@ -1,14 +1,9 @@
-import { useEffect } from "react";
+import { useNavigationMenu } from "./hooks/useNavigationMenu";
 
-import { useNavigationMenuContext } from "../../contexts/NavigationMenuContext";
 import { Navigation } from "../Navigation";
 
 export const NavigationMenu = () => {
-	const { isOpen, handleDisable } = useNavigationMenuContext();
-
-	useEffect(() => {
-		return () => handleDisable();
-	}, []);
+	const { isOpen } = useNavigationMenu();
 
 	return (
 		<>
