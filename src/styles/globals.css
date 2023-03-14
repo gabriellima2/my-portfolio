@@ -33,6 +33,6 @@ a {
 	}
 
 	.button {
-		@apply w-fit flex items-center gap-2 py-3 px-5 text-contrast dark:text-contrastDark font-semibold bg-accent  dark:bg-accentDark rounded-lg hover:animate-pulse focus:animate-pulse;
+		@apply w-fit flex items-center gap-2 py-3 px-5 border-2 border-contrastDark dark:border-contrast text-contrast dark:text-contrastDark font-semibold bg-accent dark:bg-accentDark rounded-lg transition-colors hover:text-contrastDark hover:bg-transparent dark:hover:bg-transparent dark:hover:text-contrast focus:text-contrastDark focus:bg-transparent dark:focus:bg-transparent dark:focus:text-contrast;
 	}
 }
