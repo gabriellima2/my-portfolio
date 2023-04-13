@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 import { ButtonWithSpecificTheme } from "./mocks/button-with-specific-theme";
 import { useEffect, useState } from "react";
 import { vi } from "vitest";
-import { simulateClick } from "../../__mocks__/simulate-click";
+import { simulateClick } from "@/__mocks__/simulate-click";
 
 type ThemeProviderProps = TWithChildren & {
 	initialTheme: Themes;
