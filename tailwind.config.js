@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
 			colors: {},
-			fontFamily: {},
+			fontFamily: {
+				default: "'Anuphan', sans-serif"
+			},
 		},
   },
   plugins: [],
