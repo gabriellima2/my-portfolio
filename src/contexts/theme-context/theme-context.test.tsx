@@ -1,11 +1,11 @@
 import { TWithChildren } from "@/@types/TWithChildren";
 import { ThemeContext } from "./theme-context";
 import { Themes } from "./@types/Themes";
-import { act, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 import { ButtonWithSpecificTheme } from "./mocks/button-with-specific-theme";
 import { useEffect, useState } from "react";
 import { vi } from "vitest";
+import { simulateClick } from "../../__mocks__/simulate-click";
 
 type ThemeProviderProps = TWithChildren & {
 	initialTheme: Themes;
@@ -94,9 +94,7 @@ describe("<ThemeProvider />", () => {
 					renderComponent({ initialTheme: ThemeNames.light });
 
 					const button = screen.getByRole("button");
-					await act(async () => {
-						await userEvent.click(button);
-					});
+					await simulateClick(button);
 
 					expect(PERSISTOR).toHaveBeenCalledWith(ThemeNames.dark);
 					expect(html).toHaveAttribute("class", DOCUMENT_CLASSNAME);
@@ -106,9 +104,7 @@ describe("<ThemeProvider />", () => {
 					renderComponent({ initialTheme: ThemeNames.dark });
 
 					const button = screen.getByRole("button");
-					await act(async () => {
-						await userEvent.click(button);
-					});
+					await simulateClick(button);
 
 					expect(PERSISTOR).toHaveBeenCalledWith(ThemeNames.light);
 					expect(html).not.toHaveAttribute("class", DOCUMENT_CLASSNAME);
