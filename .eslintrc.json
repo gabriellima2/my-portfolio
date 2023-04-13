@@ -5,9 +5,9 @@
 		"node": true
 	},
 	"extends": [
-		"plugin:prettier/recommended",
 		"eslint:recommended",
 		"plugin:react/recommended",
+		"plugin:prettier/recommended",
 		"plugin:@typescript-eslint/recommended"
 	],
 	"overrides": [
@@ -22,14 +22,10 @@
 	},
 	"plugins": [
 		"react",
-		"@typescript-eslint",
-		"prettier"
+		"prettier",
+		"@typescript-eslint"
 	],
 	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
 		"linebreak-style": [
 			"error",
 			"unix"
@@ -42,9 +38,12 @@
 			"error",
 			"always"
 		],
+		"indent" :"off",
 		"prettier/prettier": "error",
 		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
-		"@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/ban-types": "off"
 	}
 }
