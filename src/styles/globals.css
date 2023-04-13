@@ -9,30 +9,3 @@ li {
 a {
 	text-decoration: none;
 }
-
-@layer components {
-	body {
-		@apply bg-main dark:bg-mainDark text-font dark:text-fontDark font-main transition-colors;
-	}
-
-	*::-webkit-scrollbar {
-		width: 4px;
-	}
-
-	*::-webkit-scrollbar-track {
-		@apply bg-main dark:bg-mainDark;
-	}
-
-	*::-webkit-scrollbar-thumb {
-		@apply bg-accent/50 dark:bg-accentDark/50;
-	}
-
-
-	h1, h2, h3, h4 {
-		@apply font-accent;
-	}
-
-	.button {
-		@apply w-fit flex items-center gap-2 py-3 px-5 border-2 border-contrastDark dark:border-contrast text-contrast dark:text-contrastDark font-semibold bg-accent dark:bg-accentDark rounded-lg transition-colors hover:text-contrastDark hover:bg-transparent dark:hover:bg-transparent dark:hover:text-contrast focus:text-contrastDark focus:bg-transparent dark:focus:bg-transparent dark:focus:text-contrast;
-	}
-}
