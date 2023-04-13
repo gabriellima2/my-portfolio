@@ -5,16 +5,22 @@ import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ButtonWithSpecificTheme } from "./mocks/button-with-specific-theme";
 import { useEffect, useState } from "react";
+import { vi } from "vitest";
 
 type ThemeProviderProps = TWithChildren & {
 	initialTheme: Themes;
 	documentClassName: string;
-	persistor?: (newTheme: Themes) => Promise<void> | void;
+	persistor?: (theme: Themes) => Promise<void> | void;
 };
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
-	const { initialTheme, documentClassName, children } = props;
+	const { initialTheme, documentClassName, persistor, children } = props;
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
+
+	const handlePersistUserPreference = () => {
+		if (!persistor) return;
+		persistor(currentTheme);
+	};
 
 	const handleDocumentClassNameChange = () => {
 		const html = document.documentElement;
@@ -32,6 +38,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
 	useEffect(() => {
 		handleDocumentClassNameChange();
+		handlePersistUserPreference();
 	}, [currentTheme]);
 
 	return (
@@ -46,6 +53,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 	);
 };
 
+const PERSISTOR = vi.fn();
 const DOCUMENT_CLASSNAME = "any_class";
 enum ThemeNames {
 	dark = "dark",
@@ -59,6 +67,7 @@ const renderComponent = (
 		<ThemeProvider
 			initialTheme={props.initialTheme}
 			documentClassName={DOCUMENT_CLASSNAME}
+			persistor={PERSISTOR}
 		>
 			<ButtonWithSpecificTheme />
 		</ThemeProvider>
@@ -89,6 +98,7 @@ describe("<ThemeProvider />", () => {
 						await userEvent.click(button);
 					});
 
+					expect(PERSISTOR).toHaveBeenCalledWith(ThemeNames.dark);
 					expect(html).toHaveAttribute("class", DOCUMENT_CLASSNAME);
 					expect(screen.getByText(ThemeNames.dark)).toBeInTheDocument();
 				});
@@ -100,6 +110,7 @@ describe("<ThemeProvider />", () => {
 						await userEvent.click(button);
 					});
 
+					expect(PERSISTOR).toHaveBeenCalledWith(ThemeNames.light);
 					expect(html).not.toHaveAttribute("class", DOCUMENT_CLASSNAME);
 					expect(screen.getByText(ThemeNames.light)).toBeInTheDocument();
 				});
