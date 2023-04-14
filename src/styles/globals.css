@@ -13,3 +13,13 @@ li {
 a {
 	text-decoration: none;
 }
+
+@layer components {
+	.center--row {
+		@apply flex items-center justify-center;
+	}
+	.center--col {
+		@apply flex items-center justify-center flex-col;
+	}
+}
+
