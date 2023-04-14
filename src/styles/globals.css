@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-main text-defaultText font-default;
+	@apply bg-main text-defaultText font-default dark:bg-mainDark dark:text-defaultTextDark;
 }
 
 li {
