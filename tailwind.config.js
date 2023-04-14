@@ -25,15 +25,15 @@ module.exports = {
 				default: "'Anuphan', sans-serif"
 			},
 			fontSize: {
-				sm: "0.875rem",
+				s: "0.875rem",
 				default: "1rem",
 				normal: "1.125rem",
 				medium: "1.25rem",
-				large: "1.5rem",
-				"x-large": "2",
-				"2x-large": "2.5rem",
-				"4x-large": "48px",
-				"6x-large": "96px"
+				l: "1.5rem",
+				xl: "2",
+				"2xl": "2.5rem",
+				"4xl": "48px",
+				"6xl": "96px"
 			},
 			spacing: {
 				1: "4px",
