@@ -1,4 +1,5 @@
 import { Article, BaseLink, TextGroup } from "@/components";
+import { ArticlePreview } from "@/components/common/ArticlePreview";
 import { DefaultLayout } from "@/layouts/default-layout";
 import { ArrowRight } from "phosphor-react";
 
@@ -20,6 +21,12 @@ export default function Home() {
 					Saber Mais
 				</BaseLink>
 			</Article>
+			<ArticlePreview title="Projetos">
+				<p>Aqui</p>
+			</ArticlePreview>
+			<ArticlePreview title="Blog">
+				<p>Aqui</p>
+			</ArticlePreview>
 		</DefaultLayout>
 	);
 }
