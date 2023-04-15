@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import * as router from "next/router";
+import * as router from "next/navigation";
 import { vi, Mock } from "vitest";
 
 import { Anchor } from "./Anchor";
 import type { IAnchor } from "@/interfaces/IAnchor";
 
-vi.spyOn(router, "useRouter");
-const useRouterMocked = router.useRouter as Mock;
+vi.spyOn(router, "usePathname");
+const usePathnameMocked = router.usePathname as Mock;
 
 const DEFAULT_ANCHOR: IAnchor = { href: "any_href", title: "any_title" };
 const DEFAULT_ANCHOR_POSITION = 1;
@@ -18,7 +18,7 @@ describe("<Anchors />", () => {
 	afterEach(() => vi.clearAllMocks());
 	describe("Render", () => {
 		it("should render correctly with current path", () => {
-			useRouterMocked.mockReturnValue({ pathname: "any_href" });
+			usePathnameMocked.mockReturnValue("any_href");
 			renderComponent();
 
 			const anchorEl = screen.getByTitle(`Ir para ${DEFAULT_ANCHOR.title}`);
@@ -32,7 +32,7 @@ describe("<Anchors />", () => {
 			expect(screen.getByText(DEFAULT_ANCHOR_POSITION)).toBeInTheDocument();
 		});
 		it("should render correctly with different path", () => {
-			useRouterMocked.mockReturnValue({ pathname: "any_href_1" });
+			usePathnameMocked.mockReturnValue("any_href_1");
 			renderComponent();
 
 			const anchorEl = screen.getByTitle(`Ir para ${DEFAULT_ANCHOR.title}`);

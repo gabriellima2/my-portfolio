@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 import type { IAnchor } from "@/interfaces/IAnchor";
 
@@ -9,7 +9,7 @@ type AnchorsProps = IAnchor & {
 
 export const Anchor = (props: AnchorsProps) => {
 	const { href, title, position } = props;
-	const { pathname } = useRouter();
+	const pathname = usePathname();
 
 	const isCurrentPath = pathname === href;
 
