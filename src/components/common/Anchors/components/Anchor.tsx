@@ -21,8 +21,11 @@ export const Anchor = (props: AnchorsProps) => {
 				aria-current={isCurrentPath}
 				aria-disabled={isCurrentPath}
 				tabIndex={isCurrentPath ? -1 : 0}
+				className={`${
+					isCurrentPath && "cursor-default text-heading dark:text-heading-dark"
+				} font-medium whitespace-nowrap hover:text-heading focus:text-heading focus:dark:text-heading-dark hover:dark:text-heading-dark`}
 			>
-				<span>{position}</span> {title}
+				<span className="mr-2">{position}</span> {title}
 			</Link>
 		</li>
 	);
