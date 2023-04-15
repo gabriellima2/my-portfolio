@@ -1,11 +1,11 @@
-import { BaseLink, TextGroup } from "@/components";
+import { Article, BaseLink, TextGroup } from "@/components";
 import { DefaultLayout } from "@/layouts/default-layout";
 import { ArrowRight } from "phosphor-react";
 
 export default function Home() {
 	return (
 		<DefaultLayout>
-			<article className="pb-21 border-b-2 border-b-util-secondary dark:border-b-util-secondary-dark">
+			<Article>
 				<TextGroup
 					title="Gabriel Lima"
 					paragraphs={[
@@ -19,7 +19,7 @@ export default function Home() {
 				>
 					Saber Mais
 				</BaseLink>
-			</article>
+			</Article>
 		</DefaultLayout>
 	);
 }
