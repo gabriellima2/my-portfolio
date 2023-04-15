@@ -1,5 +1,5 @@
-import { Display } from "./display";
-import { Title } from "./title";
-import { Paragraph } from "./paragraph";
+import { Title } from "./Title";
+import { Display } from "./Display";
+import { Paragraph } from "./Paragraph";
 
 export const Typography = { Display, Title, Paragraph };

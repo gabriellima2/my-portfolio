@@ -1,2 +1,2 @@
-export * from "./max-width-container";
-export * from "./typography";
+export * from "./MaxWitdthContainer";
+export * from "./Typography";
