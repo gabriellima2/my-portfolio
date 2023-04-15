@@ -6,7 +6,7 @@ export const DefaultLayout = (props: LayoutDefaultProps) => {
 	return (
 		<MaxWidthContainer>
 			<Header />
-			<main className="py-6 sm:py-11 md:py-16 lg:py-21">{children}</main>
+			<main className="py-21">{children}</main>
 			<footer></footer>
 		</MaxWidthContainer>
 	);
