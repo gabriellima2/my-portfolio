@@ -1,10 +1,11 @@
+import { GoBackButton, ToggleThemeButton } from "../Buttons";
 import { BaseHeader } from "./BaseHeader";
 
 export const StackHeader = () => {
 	return (
-		<BaseHeader>
-			<button>Voltar</button>
-			<button>Tema</button>
+		<BaseHeader className="gap-4">
+			<GoBackButton />
+			<ToggleThemeButton />
 		</BaseHeader>
 	);
 };
