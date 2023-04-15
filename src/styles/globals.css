@@ -26,6 +26,19 @@ h4,h5,h6 {
 	@apply text-medium;
 }
 
+::-webkit-scrollbar {
+	width: 6px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-util-primary dark:bg-util-primary-dark;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-brand dark:bg-brand-dark rounded-sm;
+}
+
 @layer components {
 	.center--row {
 		@apply flex items-center justify-center;
