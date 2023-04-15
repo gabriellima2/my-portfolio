@@ -1,20 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { ArrowLeft } from "phosphor-react";
 import * as navigation from "next/navigation";
 import { vi, Mock } from "vitest";
-import { simulateClick } from "@/__mocks__/simulate-click";
 
-const GoBackButton = () => {
-	const { back } = navigation.useRouter();
-	return (
-		<button type="button" title="Voltar" onClick={back}>
-			<i>
-				<ArrowLeft />
-			</i>
-			Voltar
-		</button>
-	);
-};
+import { GoBackButton } from "./GoBackButton";
+import { simulateClick } from "@/__mocks__/simulate-click";
 
 vi.spyOn(navigation, "useRouter");
 
