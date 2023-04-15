@@ -5,7 +5,7 @@ type GroupTextProps = {
 	paragraphs: string[];
 };
 
-export const GroupText = (props: GroupTextProps) => {
+export const TextGroup = (props: GroupTextProps) => {
 	const { title, paragraphs } = props;
 	return (
 		<section>

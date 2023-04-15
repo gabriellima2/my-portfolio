@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import { GroupText } from "./GroupText";
+import { TextGroup } from "./TextGroup";
 
 const TITLE = "any_title";
 const PARAGRAPHS = ["any_paragraph_1", "any_paragraph_2"];
 const renderComponent = () =>
-	render(<GroupText title={TITLE} paragraphs={PARAGRAPHS} />);
+	render(<TextGroup title={TITLE} paragraphs={PARAGRAPHS} />);
 
-describe("<GroupText />", () => {
+describe("<TextGroup />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
