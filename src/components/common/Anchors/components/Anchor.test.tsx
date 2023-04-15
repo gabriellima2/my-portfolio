@@ -1,34 +1,9 @@
 import { render, screen } from "@testing-library/react";
-
 import * as router from "next/router";
-import Link from "next/link";
-import type { IAnchor } from "@/interfaces/IAnchor";
 import { vi, Mock } from "vitest";
 
-type AnchorsProps = IAnchor & {
-	position: number;
-};
-
-export const Anchor = (props: AnchorsProps) => {
-	const { href, title, position } = props;
-	const { pathname } = router.useRouter();
-
-	const isCurrentPath = pathname === href;
-
-	return (
-		<li key={title}>
-			<Link
-				href={href}
-				title={`Ir para ${title}`}
-				aria-current={isCurrentPath}
-				aria-disabled={isCurrentPath}
-				tabIndex={isCurrentPath ? -1 : 0}
-			>
-				<span>{position}</span> {title}
-			</Link>
-		</li>
-	);
-};
+import { Anchor } from "./Anchor";
+import type { IAnchor } from "@/interfaces/IAnchor";
 
 vi.spyOn(router, "useRouter");
 const useRouterMocked = router.useRouter as Mock;
