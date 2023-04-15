@@ -1,11 +1,18 @@
 import { Header, MaxWidthContainer } from "@/components/common";
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
-export const DefaultLayout = (props: LayoutDefaultProps) => {
-	const { children } = props;
+import { defaultAnchors } from "@/assets";
+import { IAnchor } from "@/interfaces/IAnchor";
+
+type DefaultLayoutProps = LayoutDefaultProps & {
+	anchors?: IAnchor[];
+};
+
+export const DefaultLayout = (props: DefaultLayoutProps) => {
+	const { children, anchors = defaultAnchors } = props;
 	return (
 		<MaxWidthContainer>
-			<Header />
+			<Header anchors={anchors} />
 			<main>{children}</main>
 			<footer></footer>
 		</MaxWidthContainer>

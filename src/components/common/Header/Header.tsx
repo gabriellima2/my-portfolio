@@ -1,25 +1,16 @@
 import { ToggleThemeButton } from "../Buttons";
 import { BaseHeader } from "./BaseHeader";
+import { Anchors } from "../Anchors";
 
-export const Header = () => {
+type HeaderProps = Pick<Parameters<typeof Anchors>[0], "anchors">;
+
+export const Header = (props: HeaderProps) => {
+	const { anchors } = props;
 	return (
 		<BaseHeader>
 			<ToggleThemeButton />
 			<nav>
-				<ul>
-					<li>
-						<a href="#">Âncora 1</a>
-					</li>
-					<li>
-						<a href="#">Âncora 2</a>
-					</li>
-					<li>
-						<a href="#">Âncora 3</a>
-					</li>
-					<li>
-						<a href="#">Âncora 4</a>
-					</li>
-				</ul>
+				<Anchors anchors={anchors} />
 			</nav>
 		</BaseHeader>
 	);
