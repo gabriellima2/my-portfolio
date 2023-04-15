@@ -12,7 +12,7 @@ module.exports = {
 				headingDark: "#F8F8F8",
 				defaultTextDark: "#8C8C8C",
 				utilPrimaryDark: "#1F1F1F",
-				utilSecondaryDark: "#8C8C8C",
+				utilSecondaryDark: "#2f2f2f",
 
 				main: "#F8F8F8",
 				brand: "#202020",
