@@ -1,22 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Typography } from "../Typography";
-
-type GroupTextProps = {
-	title: string;
-	paragraphs: string[];
-};
-
-export const GroupText = (props: GroupTextProps) => {
-	const { title, paragraphs } = props;
-	return (
-		<section>
-			<Typography.Display>{title}</Typography.Display>
-			{paragraphs.map((paragraph) => (
-				<Typography.Paragraph key={paragraph}>{paragraph}</Typography.Paragraph>
-			))}
-		</section>
-	);
-};
+import { GroupText } from "./GroupText";
 
 const TITLE = "any_title";
 const PARAGRAPHS = ["any_paragraph_1", "any_paragraph_2"];
