@@ -1,19 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
 
-import { useThemeContext } from "@/contexts/theme-context";
+import { ToggleThemeButton } from "./ToggleThemeButton";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { simulateClick } from "@/__mocks__/simulate-click";
-
-export const ToggleThemeButton = () => {
-	const { handleToggleTheme } = useThemeContext();
-	return (
-		<button type="button" title="Mudar tema" onClick={handleToggleTheme}>
-			Tema
-		</button>
-	);
-};
 
 const handleToggleTheme = vi.fn();
 
