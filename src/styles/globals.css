@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-main text-defaultText bg-gradient bg-fixed bg-cover bg-no-repeat font-default text-normal dark:bg-mainDark dark:text-defaultTextDark dark:bg-gradientDark;
+	@apply bg-main text-text bg-gradient bg-fixed bg-cover bg-no-repeat font-default text-normal dark:bg-main-dark dark:text-text-dark dark:bg-gradient-dark;
 }
 
 li {
@@ -15,7 +15,7 @@ a {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	@apply text-heading font-medium dark:text-headingDark;
+	@apply text-heading font-medium dark:text-heading-dark;
 }
 
 h3 {

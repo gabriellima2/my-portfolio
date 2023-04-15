@@ -7,23 +7,23 @@ module.exports = {
   theme: {
     extend: {
 			backgroundImage: {
-				gradientDark: "url('../../public/assets/bg-dark.png')",
+				"gradient-dark": "url('../../public/assets/bg-dark.png')",
 				gradient: "url('../../public/assets/bg.png')"
 			},
 			colors: {
-				mainDark: "#1A1A1A",
-				brandDark: "#F8F8F8",
-				headingDark: "#F8F8F8",
-				defaultTextDark: "#8C8C8C",
-				utilPrimaryDark: "#1F1F1F",
-				utilSecondaryDark: "#2f2f2f",
+				"main-dark": "#1A1A1A",
+				"brand-dark": "#F8F8F8",
+				"heading-dark": "#F8F8F8",
+				"text-dark": "#8C8C8C",
+				"util-primary-dark": "#1F1F1F",
+				"util-secondary-dark": "#2f2f2f",
 
 				main: "#F8F8F8",
 				brand: "#202020",
 				heading: "#202020",
-				defaultText: "#5A5A5A",
-				utilPrimary: "#EFEFEF",
-				utilSecondary: "#DDDDDD",
+				text: "#5A5A5A",
+				"util-primary": "#EFEFEF",
+				"util-secondary": "#DDDDDD",
 			},
 			fontFamily: {
 				default: "'Anuphan', sans-serif"
