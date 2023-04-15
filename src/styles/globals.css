@@ -18,6 +18,14 @@ h1,h2,h3,h4,h5,h6 {
 	@apply text-heading font-medium dark:text-headingDark;
 }
 
+h3 {
+	@apply text-l;
+}
+
+h4,h5,h6 {
+	@apply text-medium;
+}
+
 @layer components {
 	.center--row {
 		@apply flex items-center justify-center;

@@ -30,7 +30,7 @@ module.exports = {
 				normal: "1.125rem",
 				medium: "1.25rem",
 				l: "1.5rem",
-				xl: "2",
+				xl: "2rem",
 				"2xl": "2.5rem",
 				"4xl": "48px",
 				"6xl": "96px"
