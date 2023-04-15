@@ -14,7 +14,7 @@ export const Anchor = (props: AnchorsProps) => {
 	const isCurrentPath = pathname === href;
 
 	return (
-		<li key={title}>
+		<li>
 			<Link
 				href={href}
 				title={`Ir para ${title}`}

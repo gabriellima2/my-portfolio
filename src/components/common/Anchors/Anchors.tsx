@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Anchor } from "./components";
 import type { IAnchor } from "@/interfaces/IAnchor";
 
 type AnchorsProps = {
@@ -11,11 +11,7 @@ export const Anchors = (props: AnchorsProps) => {
 	return (
 		<ul className={`${className}`}>
 			{anchors.map((anchor, index) => (
-				<li key={anchor.title}>
-					<Link href={anchor.href} title={`Ir para ${anchor.title}`}>
-						<span>{index + 1}</span> {anchor.title}
-					</Link>
-				</li>
+				<Anchor key={anchor.title} {...anchor} position={index + 1} />
 			))}
 		</ul>
 	);
