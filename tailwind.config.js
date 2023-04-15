@@ -6,6 +6,10 @@ module.exports = {
 	darkMode: "class",
   theme: {
     extend: {
+			backgroundImage: {
+				gradientDark: "url('../../public/assets/bg-dark.png')",
+				gradient: "url('../../public/assets/bg.png')"
+			},
 			colors: {
 				mainDark: "#1A1A1A",
 				brandDark: "#F8F8F8",
