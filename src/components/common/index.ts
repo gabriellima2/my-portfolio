@@ -4,4 +4,4 @@ export * from "./Header";
 export * from "./Buttons";
 export * from "./TextGroup";
 export * from "./Links";
-export * from "./Article";
+export * from "./Articles";

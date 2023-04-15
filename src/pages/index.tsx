@@ -1,5 +1,4 @@
-import { Article, BaseLink, TextGroup } from "@/components";
-import { ArticlePreview } from "@/components/common/ArticlePreview";
+import { Article, ArticlePreview, BaseLink, TextGroup } from "@/components";
 import { DefaultLayout } from "@/layouts/default-layout";
 import { ArrowRight } from "phosphor-react";
 

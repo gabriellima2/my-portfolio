@@ -1,6 +1,5 @@
 import type { HTMLAttributes } from "react";
-import { Typography } from "./Typography";
-import { Article } from "./Article";
+import { Typography, Article } from "..";
 
 type ArticlePreviewProps = HTMLAttributes<HTMLElement> & {
 	title: string;
