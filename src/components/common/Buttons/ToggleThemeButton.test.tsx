@@ -6,21 +6,39 @@ import { ToggleThemeButton } from "./ToggleThemeButton";
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { simulateClick } from "@/__mocks__/simulate-click";
 
-const handleToggleTheme = vi.fn();
+type Props = {
+	currentTheme?: "dark" | "light";
+};
 
-const renderComponent = () =>
+const handleToggleTheme = vi.fn();
+const defaultProps: Props = { currentTheme: "dark" };
+
+const renderComponent = (props: Props = defaultProps) => {
+	const { currentTheme = "dark" } = props;
 	render(
-		<WithThemeProvider value={{ currentTheme: "dark", handleToggleTheme }}>
+		<WithThemeProvider value={{ currentTheme, handleToggleTheme }}>
 			<ToggleThemeButton />
 		</WithThemeProvider>
 	);
+};
 
 describe("<ToggleThemeButton />", () => {
 	describe("Render", () => {
-		it("should render correctly", () => {
+		it("should render correctly with dark theme", () => {
 			renderComponent();
 
-			expect(screen.getByRole("button")).toBeInTheDocument();
+			const button = screen.getByRole("button");
+
+			expect(button).toBeInTheDocument();
+			expect(button).toHaveAttribute("aria-label", "Tema atual dark");
+		});
+		it("should render correctly with light theme", () => {
+			renderComponent({ currentTheme: "light" });
+
+			const button = screen.getByRole("button");
+
+			expect(button).toBeInTheDocument();
+			expect(button).toHaveAttribute("aria-label", "Tema atual light");
 		});
 	});
 	describe("Interactions", () => {
