@@ -1,9 +1,10 @@
+import { ToggleThemeButton } from "../Buttons";
 import { BaseHeader } from "./BaseHeader";
 
 export const Header = () => {
 	return (
 		<BaseHeader>
-			<button>Tema</button>
+			<ToggleThemeButton />
 			<nav>
 				<ul>
 					<li>

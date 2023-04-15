@@ -13,8 +13,9 @@ export const ToggleThemeButton = () => {
 			title="Mudar tema"
 			onClick={handleToggleTheme}
 			aria-label={`Tema atual ${currentTheme}`}
+			className="p-1 rounded-s hover:bg-utilPrimary focus:bg-utilPrimary dark:focus:bg-utilSecondaryDark dark:hover:bg-utilSecondaryDark"
 		>
-			{isDark ? <SunDim /> : <Moon />}
+			{isDark ? <SunDim size={24} /> : <Moon size={24} />}
 		</button>
 	);
 };
