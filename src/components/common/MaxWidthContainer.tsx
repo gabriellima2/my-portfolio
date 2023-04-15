@@ -1,8 +1,8 @@
 import type { TWithChildren } from "@/@types/TWithChildren";
 
-type MaxWitdthContainerProps = TWithChildren;
+type MaxWidthContainerProps = TWithChildren;
 
-export const MaxWitdthContainer = (props: MaxWitdthContainerProps) => {
+export const MaxWidthContainer = (props: MaxWidthContainerProps) => {
 	const { children } = props;
 	return (
 		<div className="center--col p-21">

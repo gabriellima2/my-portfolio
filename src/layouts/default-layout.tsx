@@ -1,13 +1,13 @@
-import { Header, MaxWitdthContainer } from "@/components/common";
+import { Header, MaxWidthContainer } from "@/components/common";
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
 export const DefaultLayout = (props: LayoutDefaultProps) => {
 	const { children } = props;
 	return (
-		<MaxWitdthContainer>
+		<MaxWidthContainer>
 			<Header />
 			<main className="py-21">{children}</main>
 			<footer></footer>
-		</MaxWitdthContainer>
+		</MaxWidthContainer>
 	);
 };
