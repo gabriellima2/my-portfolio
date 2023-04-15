@@ -1,6 +1,6 @@
 export * from "./MaxWidthContainer";
 export * from "./Typography";
-export * from "./Header";
+export * from "./Headers";
 export * from "./Buttons";
 export * from "./TextGroup";
 export * from "./Links";
