@@ -13,7 +13,6 @@ export const BaseLink = (props: BaseLinkProps) => {
 
 	return (
 		<Link
-			type="button"
 			{...rest}
 			className={`group w-full max-w-[587px] flex items-center justify-between border-2 border-util-secondary rounded-full p-2 font-medium text-normal text-heading transition-colors hover:bg-util-primary focus:bg-util-primary dark:text-heading-dark dark:border-util-secondary-dark dark:hover:bg-util-primary-dark dark:focus:bg-util-primary-dark  ${
 				hasLeftIcon && "pl-6"
