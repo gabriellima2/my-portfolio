@@ -14,7 +14,7 @@ export default function Home() {
 				/>
 				<BaseLink
 					href="/sobre"
-					leftIcon={() => <ArrowRight />}
+					rightIcon={() => <ArrowRight />}
 					className="mt-21"
 				>
 					Saber Mais

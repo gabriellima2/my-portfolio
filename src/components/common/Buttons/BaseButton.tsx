@@ -2,13 +2,18 @@ import { type ButtonHTMLAttributes, useMemo } from "react";
 import { buttonDefaultStyles } from "@/functions/button-default-styles";
 
 type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-	leftIcon?: () => JSX.Element;
+	rightIcon?: () => JSX.Element;
 	variants?: "default" | "square";
 };
 
 export const BaseButton = (props: BaseButtonProps) => {
-	const { variants, leftIcon, className, children, ...rest } = props;
-	const defaultStyles = useMemo(() => buttonDefaultStyles({ variants }), []);
+	const { variants, rightIcon, className, children, ...rest } = props;
+
+	const hasRightIcon = !!rightIcon;
+	const defaultStyles = useMemo(
+		() => buttonDefaultStyles({ variants, hasRightIcon }),
+		[]
+	);
 
 	return (
 		<button
@@ -17,7 +22,7 @@ export const BaseButton = (props: BaseButtonProps) => {
 			className={`${defaultStyles.button} ${className}`}
 		>
 			{children}
-			{!!leftIcon && <i className={defaultStyles.icon}>{leftIcon()}</i>}
+			{hasRightIcon && <i className={defaultStyles.icon}>{rightIcon()}</i>}
 		</button>
 	);
 };

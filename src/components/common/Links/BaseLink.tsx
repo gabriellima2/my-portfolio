@@ -6,19 +6,24 @@ import type { TWithChildren } from "@/@types/TWithChildren";
 
 type BaseLinkProps = LinkProps &
 	TWithChildren & {
-		leftIcon?: () => JSX.Element;
+		rightIcon?: () => JSX.Element;
 		className?: string;
 		variants?: "default" | "square";
 	};
 
 export const BaseLink = (props: BaseLinkProps) => {
-	const { variants, leftIcon, className, children, ...rest } = props;
-	const defaultStyles = useMemo(() => buttonDefaultStyles({ variants }), []);
+	const { variants, rightIcon, className, children, ...rest } = props;
+
+	const hasRightIcon = !!rightIcon;
+	const defaultStyles = useMemo(
+		() => buttonDefaultStyles({ variants, hasRightIcon }),
+		[]
+	);
 
 	return (
 		<Link {...rest} className={`${defaultStyles.button} ${className}`}>
 			{children}
-			{!!leftIcon && <i className={defaultStyles.icon}>{leftIcon()}</i>}
+			{hasRightIcon && <i className={defaultStyles.icon}>{rightIcon()}</i>}
 		</Link>
 	);
 };
