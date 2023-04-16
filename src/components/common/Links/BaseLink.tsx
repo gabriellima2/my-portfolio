@@ -8,18 +8,17 @@ type BaseLinkProps = LinkProps &
 	TWithChildren & {
 		leftIcon?: () => JSX.Element;
 		className?: string;
+		variants?: "default" | "square";
 	};
 
 export const BaseLink = (props: BaseLinkProps) => {
-	const { leftIcon, className, children, ...rest } = props;
-
-	const hasLeftIcon = !!leftIcon;
-	const defaultStyles = useMemo(() => buttonDefaultStyles({ hasLeftIcon }), []);
+	const { variants, leftIcon, className, children, ...rest } = props;
+	const defaultStyles = useMemo(() => buttonDefaultStyles({ variants }), []);
 
 	return (
 		<Link {...rest} className={`${defaultStyles.button} ${className}`}>
 			{children}
-			{hasLeftIcon && <i className={defaultStyles.icon}>{leftIcon()}</i>}
+			{!!leftIcon && <i className={defaultStyles.icon}>{leftIcon()}</i>}
 		</Link>
 	);
 };
