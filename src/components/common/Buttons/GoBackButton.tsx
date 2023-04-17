@@ -1,7 +1,12 @@
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { ArrowLeft } from "phosphor-react";
 
-export const GoBackButton = () => {
+type GoBackButtonProps = {
+	withLabelText?: boolean;
+};
+
+export const GoBackButton = (props: GoBackButtonProps) => {
+	const { withLabelText = true } = props;
 	const { back } = useRouter();
 	return (
 		<button
@@ -13,7 +18,7 @@ export const GoBackButton = () => {
 			<i>
 				<ArrowLeft size={20} />
 			</i>
-			Voltar
+			{withLabelText && "Voltar"}
 		</button>
 	);
 };
