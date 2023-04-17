@@ -9,6 +9,9 @@ const meta: Meta<typeof ToggleThemeButton> = {
 	title: "Components/Common/Buttons/ToggleThemeButton",
 	component: ToggleThemeButton,
 	tags: ["autodocs"],
+	parameters: {
+		controls: { hideNoControlsWarning: true },
+	},
 };
 
 export const Light: Story = {
