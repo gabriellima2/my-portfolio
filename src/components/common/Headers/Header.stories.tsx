@@ -5,7 +5,7 @@ import { Header } from ".";
 type Story = StoryObj<typeof Header>;
 
 const meta: Meta<typeof Header> = {
-	title: "Common/Headers/Header",
+	title: "Components/Common/Headers/Header",
 	component: Header,
 	tags: ["autodocs"],
 	args: {

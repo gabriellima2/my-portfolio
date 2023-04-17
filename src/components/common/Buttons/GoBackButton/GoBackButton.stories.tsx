@@ -5,7 +5,7 @@ import { GoBackButton } from ".";
 type Story = StoryObj<typeof GoBackButton>;
 
 const meta: Meta<typeof GoBackButton> = {
-	title: "Common/GoBackButton",
+	title: "Components/Common/Buttons/GoBackButton",
 	component: GoBackButton,
 	tags: ["autodocs"],
 	argTypes: {
