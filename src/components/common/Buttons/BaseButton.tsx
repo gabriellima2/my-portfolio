@@ -2,27 +2,26 @@ import { type ButtonHTMLAttributes } from "react";
 import Link from "next/link";
 
 import type { TWithChildren } from "@/@types/TWithChildren";
-import type { TUrl } from "@/@types/TUrl";
 
-type HTMLElementProps = TWithChildren & {
-	className?: string;
-	title?: string;
-};
+type ButtonAttrs = ButtonHTMLAttributes<HTMLButtonElement>;
+
+type HTMLElementProps = TWithChildren &
+	Pick<ButtonAttrs, "title" | "className" | "onClick">;
 
 type AnchorElementProps = {
-	href?: TUrl;
+	href?: string;
 };
 
 type BaseButtonProps = HTMLElementProps &
 	AnchorElementProps &
-	Pick<ButtonHTMLAttributes<HTMLButtonElement>, "type"> & {
+	Pick<ButtonAttrs, "type"> & {
 		rightIcon?: () => JSX.Element;
 		variants?: keyof typeof modifiers;
 		as?: keyof typeof elements;
 	};
 
 const modifiers = {
-	square: "w-fit rounded-s p-3 gap-3",
+	square: "w-fit p-3 gap-3 rounded-[8px]",
 	default: "",
 };
 
