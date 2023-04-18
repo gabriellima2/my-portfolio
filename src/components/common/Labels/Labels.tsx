@@ -1,13 +1,13 @@
 type LabelsProps = {
-	labels: string[];
+	items: string[];
 };
 
 export const Labels = (props: LabelsProps) => {
-	const { labels } = props;
+	const { items } = props;
 	return (
 		<ul>
-			{labels.map((label) => (
-				<li key={label}>{label}</li>
+			{items.map((item) => (
+				<li key={item}>{item}</li>
 			))}
 		</ul>
 	);
