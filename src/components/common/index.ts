@@ -5,4 +5,4 @@ export * from "./Buttons";
 export * from "./TextGroup";
 export * from "./Articles";
 export * from "./Anchors";
-export * from "./Labels";
+export * from "./Tags";

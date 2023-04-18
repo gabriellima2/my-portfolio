@@ -1,8 +1,8 @@
-type LabelsProps = {
+type TagsProps = {
 	items: string[];
 };
 
-export const Labels = (props: LabelsProps) => {
+export const Tags = (props: TagsProps) => {
 	const { items } = props;
 	const itemsLength = items.length - 1;
 	return (

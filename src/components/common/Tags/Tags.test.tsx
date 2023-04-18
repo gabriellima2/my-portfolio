@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { Labels } from "./Labels";
+import { Tags } from "./Tags";
 
 const ITEMS = ["any_label_1", "any_label_2"];
 
-const renderComponent = () => render(<Labels items={ITEMS} />);
+const renderComponent = () => render(<Tags items={ITEMS} />);
 
-describe("<Labels />", () => {
+describe("<Tags />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
