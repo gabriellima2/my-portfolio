@@ -7,7 +7,7 @@ const renderComponent = () => render(<Labels labels={LABELS} />);
 
 describe("<Labels />", () => {
 	describe("Render", () => {
-		it("should render correclty", () => {
+		it("should render correctly", () => {
 			renderComponent();
 
 			LABELS.forEach((label) =>
