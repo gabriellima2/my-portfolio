@@ -30,8 +30,7 @@ module.exports = {
 			},
 			fontSize: {
 				s: "0.875rem",
-				default: "1rem",
-				normal: "1.125rem",
+				normal: "1rem",
 				medium: "1.25rem",
 				l: "1.5rem",
 				xl: "2rem",
