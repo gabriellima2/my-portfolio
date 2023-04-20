@@ -6,7 +6,7 @@ import { ThemeContext } from "@/contexts/theme-context";
 type Story = StoryObj<typeof ToggleThemeButton>;
 
 const meta: Meta<typeof ToggleThemeButton> = {
-	title: "Components/Common/Buttons/ToggleThemeButton",
+	title: "Components/Buttons/ToggleThemeButton",
 	component: ToggleThemeButton,
 	tags: ["autodocs"],
 	parameters: {

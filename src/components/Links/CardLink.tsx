@@ -1,5 +1,5 @@
 import Link, { LinkProps } from "next/link";
-import { Card } from "../Card";
+import { Card } from "../common/Card";
 
 type CardLinkProps = LinkProps &
 	Omit<Parameters<typeof Card>[0], "hasArrowIcon">;
