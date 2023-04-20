@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { CardLink } from "./CardLink";
+import { Card } from "./Card";
 
 const TAGS = ["any_label_1", "any_label_2", "any_label_3"];
 const TITLE = "any_title";
 const DESCRIPTION = "any_description";
 const ARROW_ICON = "arrow-icon";
 
-const renderComponent = (props: Parameters<typeof CardLink>[0]) =>
-	render(<CardLink {...props} />);
+const renderComponent = (props: Parameters<typeof Card>[0]) =>
+	render(<Card {...props} />);
 
-describe("<CardLink />", () => {
+describe("<Card />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent({

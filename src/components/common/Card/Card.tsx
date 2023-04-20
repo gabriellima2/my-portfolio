@@ -1,17 +1,17 @@
 import { ArrowUpRight } from "phosphor-react";
 
-import { Typography } from "../../Typography";
-import { Icon } from "../../Icon";
-import { Tags } from "../../Tags";
+import { Typography } from "../Typography";
+import { Icon } from "../Icon";
+import { Tags } from "../Tags";
 
-type CardLinkProps = {
+type CardProps = {
 	tags?: string[];
 	title: string;
 	description?: string;
 	hasArrowIcon?: boolean;
 };
 
-export const CardLink = (props: CardLinkProps) => {
+export const Card = (props: CardProps) => {
 	const { title, description, hasArrowIcon, tags } = props;
 	return (
 		<section className="flex flex-col gap-8 bg-util-primary p-6 sm:p-7 rounded-default border-2 border-transparent transition-all dark:bg-util-primary-dark">
