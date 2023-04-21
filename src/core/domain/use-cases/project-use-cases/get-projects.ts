@@ -1,4 +1,4 @@
-import { HttpClient } from "@/core/domain/gateways/http-client";
+import { HttpClientGateway } from "@/core/domain/gateways/http-client-gateway";
 import { ProjectEntity } from "@/core/domain/entities/project-entity";
 
 export interface IGetProjects {
@@ -6,7 +6,7 @@ export interface IGetProjects {
 }
 
 export namespace GetProjects {
-	export type Response = HttpClient.Response<{
+	export type Response = HttpClientGateway.Response<{
 		projects: ProjectEntity[];
 	}>;
 }

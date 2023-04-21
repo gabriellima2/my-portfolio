@@ -1,8 +1,10 @@
-export interface IHttpClient {
-	get<B>(params: HttpClient.Request): Promise<HttpClient.Response<B>>;
+export interface IHttpClientGateway {
+	get<B>(
+		params: HttpClientGateway.Request
+	): Promise<HttpClientGateway.Response<B>>;
 }
 
-export namespace HttpClient {
+export namespace HttpClientGateway {
 	export type Request = {
 		url: string;
 		body?: unknown;
