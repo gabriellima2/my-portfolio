@@ -1,4 +1,4 @@
-import { HttpClient } from "@/core/domain/adapters/http-client";
+import { HttpClient } from "@/core/domain/gateways/http-client";
 import { ProjectEntity } from "@/core/domain/entities/project-entity";
 
 export interface IGetProjects {
