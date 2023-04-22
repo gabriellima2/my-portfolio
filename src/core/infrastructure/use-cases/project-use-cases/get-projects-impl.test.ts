@@ -32,22 +32,30 @@ class GetProjectsImpl implements IGetProjects {
 		params: HttpClientGateway.Request
 	): Promise<GetProjects.Response> {
 		const response = await this.client.get<ProjectEntity[]>(params);
-		return {
-			...response,
-			body: { projects: response.body },
-		};
+		return response;
 	}
 }
 
-const makeGetProjectsImpl = () => new GetProjectsImpl(servicesMock.success);
+const makeGetProjectsSuccessImpl = () =>
+	new GetProjectsImpl(servicesMock.success);
+const makeGetProjectsFailureImpl = () =>
+	new GetProjectsImpl(servicesMock.failure);
 
 describe("GetProjectsImpl use-case", () => {
 	it("should response correctly with success request", async () => {
-		const sut = makeGetProjectsImpl();
+		const sut = makeGetProjectsSuccessImpl();
 		const response = await sut.execute({ url: "any_url", body: query });
 
 		expect(response.ok).toBeTruthy();
 		expect(response.statusCode).toBe(HttpStatusCode.ok);
-		expect(response.body.projects).toMatchObject(projectsMock);
+		expect(response.body).toMatchObject(projectsMock);
+	});
+	it("should response correctly with failure request", async () => {
+		const sut = makeGetProjectsFailureImpl();
+		const response = await sut.execute({ url: "any_url", body: query });
+
+		expect(response.ok).toBeFalsy();
+		expect(response.statusCode).toBe(HttpStatusCode.badRequest);
+		expect(response.body).toBeNull();
 	});
 });
