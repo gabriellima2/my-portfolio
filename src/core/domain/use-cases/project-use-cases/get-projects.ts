@@ -1,10 +1,10 @@
 import { HttpClientGateway } from "@/core/domain/gateways";
-import { ProjectEntity } from "@/core/domain/entities";
+import { GetProjectsProtocol } from "@/core/domain/protocols/project-protocols";
 
 export interface IGetProjects {
 	execute(params: HttpClientGateway.Request): Promise<GetProjects.Response>;
 }
 
 export namespace GetProjects {
-	export type Response = HttpClientGateway.Response<ProjectEntity[]>;
+	export type Response = HttpClientGateway.Response<GetProjectsProtocol>;
 }

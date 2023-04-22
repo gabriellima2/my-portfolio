@@ -9,7 +9,7 @@ const success: IHttpClientGateway = {
 	get: vi.fn().mockResolvedValue({
 		ok: true,
 		statusCode: HttpStatusCode.ok,
-		body: projectsMock,
+		body: { projects: projectsMock },
 	}),
 };
 
@@ -17,7 +17,7 @@ const failure: IHttpClientGateway = {
 	get: vi.fn().mockResolvedValue({
 		ok: false,
 		statusCode: HttpStatusCode.badRequest,
-		body: null,
+		body: { projects: null },
 	}),
 };
 

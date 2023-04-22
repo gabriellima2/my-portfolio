@@ -30,7 +30,7 @@ describe("GetProjectsImpl use-case", () => {
 
 		expect(response.ok).toBeTruthy();
 		expect(response.statusCode).toBe(HttpStatusCode.ok);
-		expect(response.body).toMatchObject(projectsMock);
+		expect(response.body.projects).toMatchObject(projectsMock);
 	});
 	it("should response correctly with failure request", async () => {
 		const sut = makeGetProjectsFailureImpl();
@@ -38,6 +38,6 @@ describe("GetProjectsImpl use-case", () => {
 
 		expect(response.ok).toBeFalsy();
 		expect(response.statusCode).toBe(HttpStatusCode.badRequest);
-		expect(response.body).toBeNull();
+		expect(response.body.projects).toBeNull();
 	});
 });
