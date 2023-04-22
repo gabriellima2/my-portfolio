@@ -1,7 +1,9 @@
-import { HttpStatusCode } from "@/core/domain/helpers/http-status-code";
 import { vi } from "vitest";
+
+import { IHttpClientGateway } from "@/core/domain/gateways";
+import { HttpStatusCode } from "@/core/domain/helpers";
+
 import { projectsMock } from "./projects-mock";
-import { IHttpClientGateway } from "@/core/domain/gateways/http-client-gateway";
 
 const success: IHttpClientGateway = {
 	get: vi.fn().mockResolvedValue({

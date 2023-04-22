@@ -1,5 +1,5 @@
-import { HttpClientGateway } from "@/core/domain/gateways/http-client-gateway";
-import { ProjectEntity } from "@/core/domain/entities/project-entity";
+import { HttpClientGateway } from "@/core/domain/gateways";
+import { ProjectEntity } from "@/core/domain/entities";
 
 export interface IGetProjects {
 	execute(params: HttpClientGateway.Request): Promise<GetProjects.Response>;

@@ -1,15 +1,8 @@
-import { ProjectEntity } from "@/core/domain/entities/project-entity";
-import { HttpStatusCode } from "@/core/domain/helpers/http-status-code";
-import {
-	GetProjects,
-	IGetProjects,
-} from "@/core/domain/use-cases/project-use-cases/get-projects";
-import {
-	HttpClientGateway,
-	IHttpClientGateway,
-} from "@/core/domain/gateways/http-client-gateway";
-
 import { gql } from "@apollo/client";
+
+import { GetProjectsImpl } from "./get-projects-impl";
+import { HttpStatusCode } from "@/core/domain/helpers";
+
 import { servicesMock } from "./mocks/services-mock";
 import { projectsMock } from "./mocks/projects-mock";
 
@@ -24,17 +17,6 @@ const query = gql`
 		}
 	}
 `;
-
-class GetProjectsImpl implements IGetProjects {
-	constructor(private readonly client: IHttpClientGateway) {}
-
-	async execute(
-		params: HttpClientGateway.Request
-	): Promise<GetProjects.Response> {
-		const response = await this.client.get<ProjectEntity[]>(params);
-		return response;
-	}
-}
 
 const makeGetProjectsSuccessImpl = () =>
 	new GetProjectsImpl(servicesMock.success);

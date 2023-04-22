@@ -1,5 +1,5 @@
-import { ProjectEntity } from "@/core/domain/entities/project-entity";
+import { ProjectEntity } from "@/core/domain/entities";
 
 export const projectsMock: ProjectEntity[] = [
-	{ href: "", id: "", tags: [], title: "" },
+	{ href: "any_href", id: "any_id", tags: ["any_tag"], title: "any_title" },
 ];
