@@ -6,7 +6,5 @@ export interface IGetProjects {
 }
 
 export namespace GetProjects {
-	export type Response = HttpClientGateway.Response<{
-		projects: ProjectEntity[];
-	}>;
+	export type Response = HttpClientGateway.Response<ProjectEntity[]>;
 }
