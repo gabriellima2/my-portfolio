@@ -12,7 +12,7 @@ export class HttpClientGatewayImpl implements IHttpClientGateway {
 		});
 		return {
 			body: response.data,
-			ok: !!response.error,
+			ok: !response.error,
 			statusCode: response.networkStatus,
 		};
 	}
