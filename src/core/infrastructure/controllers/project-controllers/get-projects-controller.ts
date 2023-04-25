@@ -7,13 +7,14 @@ import { UnexpectedError } from "@/core/domain/errors";
 
 export class GetProjectsController implements IGetProjectsController {
 	async execute(
-		limitNumberOfProjects: number
+		limitNumberOfProjects?: number
 	): Promise<GetProjects.Response | string> {
-		if (limitNumberOfProjects <= 0) throw new Error("Quantidade inválida");
+		if (limitNumberOfProjects && limitNumberOfProjects <= 0)
+			throw new Error("Quantidade inválida");
 		try {
 			const schema = gql`
 				query Projects {
-					projects(first: ${limitNumberOfProjects}) {
+					projects ${limitNumberOfProjects && `(first: ${limitNumberOfProjects})`} {
 						description
 						href
 						id

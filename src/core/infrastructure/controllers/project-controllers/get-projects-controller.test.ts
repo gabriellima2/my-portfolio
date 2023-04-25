@@ -19,7 +19,7 @@ describe("GetProjectsController", () => {
 			expect((err as Error).message).toBe("Quantidade inválida");
 		}
 	});
-	it("must answer correctly if the limit number of projects is valid", async () => {
+	it("should response correctly if the limit number of projects is valid", async () => {
 		const sut = makeGetProjectsController();
 
 		const spy = vi.spyOn(GetProjectsController.prototype, "execute");
@@ -32,6 +32,35 @@ describe("GetProjectsController", () => {
 		if (typeof response === "string") return;
 
 		expect(response.body.projects!.length).toBe(LIMIT_NUMBER_OF_PROJECTS);
+		expect(response.statusCode).toBe(HttpStatusCode.ok);
+		expect(response.ok).toBeTruthy();
+	});
+	it("should response correctly if not passed a limit number", async () => {
+		const sut = makeGetProjectsController();
+
+		const spy = vi.spyOn(GetProjectsController.prototype, "execute");
+		spy.mockResolvedValue({
+			body: {
+				projects: [
+					...projectsMock,
+					{
+						href: "any_href",
+						id: "any_id",
+						tags: ["any_tag"],
+						title: "any_title",
+						description: "any_description",
+					},
+				],
+			},
+			ok: true,
+			statusCode: HttpStatusCode.ok,
+		});
+		const response = await sut.execute();
+		if (typeof response === "string") return;
+
+		expect(response.body.projects!.length).toBeGreaterThan(
+			LIMIT_NUMBER_OF_PROJECTS
+		);
 		expect(response.statusCode).toBe(HttpStatusCode.ok);
 		expect(response.ok).toBeTruthy();
 	});
