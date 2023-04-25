@@ -2,6 +2,6 @@ export interface ProjectEntity {
 	id: string;
 	title: string;
 	tags: string[];
-	description?: string;
+	description: string;
 	href: string;
 }
