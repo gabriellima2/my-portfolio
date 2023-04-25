@@ -1,14 +1,28 @@
+import { type GetStaticProps } from "next";
 import { ArrowRight } from "phosphor-react";
+
+import { makeGetProjectsController } from "@/core/main/factories/controllers/project-controllers/make-get-projects-controller";
+import type { ProjectEntity } from "@/core/domain/entities";
 
 import {
 	Article,
 	ArticlePreview,
 	BaseButton,
+	Projects,
 	TextGroup,
+	Typography,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts/default-layout";
 
-export default function Home() {
+type HomeProps = {
+	projects: {
+		data: ProjectEntity[] | null;
+		error?: string | null;
+	};
+};
+
+export default function Home(props: HomeProps) {
+	const { projects } = props;
 	return (
 		<DefaultLayout>
 			<Article>
@@ -28,7 +42,14 @@ export default function Home() {
 				</BaseButton>
 			</Article>
 			<ArticlePreview title="Projetos">
-				<p>Aqui</p>
+				{projects.data && (
+					<ul>
+						<Projects projects={projects.data} />
+					</ul>
+				)}
+				{projects.error && (
+					<Typography.Title>{projects.error}</Typography.Title>
+				)}
 			</ArticlePreview>
 			<ArticlePreview title="Blog">
 				<p>Aqui</p>
@@ -36,3 +57,18 @@ export default function Home() {
 		</DefaultLayout>
 	);
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+	const getProjectsController = makeGetProjectsController();
+	const projectsResponse = await getProjectsController.execute(3);
+	const hasErrorInProjectsResponse = typeof projectsResponse === "string";
+
+	return {
+		props: {
+			projects: hasErrorInProjectsResponse
+				? { data: null, error: projectsResponse }
+				: { data: projectsResponse.body.projects },
+		},
+		revalidate: 10,
+	};
+};
