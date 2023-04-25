@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { ToggleThemeButton } from ".";
-import { ThemeContext } from "@/contexts/theme-context";
+import { ThemeContext } from "@/shared/contexts/theme-context";
 
 type Story = StoryObj<typeof ToggleThemeButton>;
 

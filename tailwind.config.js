@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
 			backgroundImage: {
-				"gradient-dark": "url('../../public/assets/bg-dark.png')",
-				gradient: "url('../../public/assets/bg.png')"
+				"gradient-dark": "url('../../../public/assets/bg-dark.png')",
+				gradient: "url('../../../public/assets/bg.png')"
 			},
 			colors: {
 				"main-dark": "#1A1A1A",

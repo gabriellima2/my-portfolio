@@ -1,6 +1,7 @@
+import "@/shared/styles/globals.css";
+
 import type { AppProps } from "next/app";
-import "../styles/globals.css";
-import { Providers } from "@/contexts/providers";
+import { Providers } from "@/shared/contexts/providers";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

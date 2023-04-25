@@ -1,8 +1,8 @@
-import { Header, MaxWidthContainer } from "@/components/common";
+import { Header, MaxWidthContainer } from "@/presentation/components/common";
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
-import { defaultAnchors } from "@/assets";
-import { IAnchor } from "@/interfaces/IAnchor";
+import { defaultAnchors } from "@/shared/assets";
+import { IAnchor } from "@/shared/interfaces/IAnchor";
 
 type DefaultLayoutProps = LayoutDefaultProps & {
 	anchors?: IAnchor[];

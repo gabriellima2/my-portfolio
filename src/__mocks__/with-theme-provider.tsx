@@ -1,4 +1,7 @@
-import { ThemeContext, type IThemeProperties } from "@/contexts/theme-context";
+import {
+	ThemeContext,
+	type IThemeProperties,
+} from "@/shared/contexts/theme-context";
 import type { TWithChildren } from "@/@types/TWithChildren";
 
 type WithThemeProviderProps = TWithChildren & {

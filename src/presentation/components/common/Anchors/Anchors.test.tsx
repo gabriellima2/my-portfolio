@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
 import { Anchors } from "./Anchors";
-import type { IAnchor } from "@/interfaces/IAnchor";
+import type { IAnchor } from "@/shared/interfaces/IAnchor";
 
 const anchors: IAnchor[] = [{ href: "any_href", title: "any_title" }];
 

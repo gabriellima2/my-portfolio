@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import type { IAnchor } from "@/interfaces/IAnchor";
+import type { IAnchor } from "@/shared/interfaces/IAnchor";
 
 type AnchorsProps = IAnchor & {
 	position: number;

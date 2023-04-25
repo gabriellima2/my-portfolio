@@ -1,7 +1,12 @@
 import { ArrowRight } from "phosphor-react";
 
-import { Article, ArticlePreview, BaseButton, TextGroup } from "@/components";
-import { DefaultLayout } from "@/layouts/default-layout";
+import {
+	Article,
+	ArticlePreview,
+	BaseButton,
+	TextGroup,
+} from "@/presentation/components";
+import { DefaultLayout } from "@/presentation/layouts/default-layout";
 
 export default function Home() {
 	return (

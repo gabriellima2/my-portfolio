@@ -3,7 +3,7 @@ import * as router from "next/navigation";
 import { vi, Mock } from "vitest";
 
 import { Anchor } from "./Anchor";
-import type { IAnchor } from "@/interfaces/IAnchor";
+import type { IAnchor } from "@/shared/interfaces/IAnchor";
 
 vi.spyOn(router, "usePathname");
 const usePathnameMocked = router.usePathname as Mock;

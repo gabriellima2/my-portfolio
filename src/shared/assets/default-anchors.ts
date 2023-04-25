@@ -1,4 +1,4 @@
-import { IAnchor } from "@/interfaces/IAnchor";
+import { IAnchor } from "@/shared/interfaces/IAnchor";
 
 export const defaultAnchors: IAnchor[] = [
 	{ href: "/", title: "Início" },

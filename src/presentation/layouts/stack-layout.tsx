@@ -1,4 +1,7 @@
-import { MaxWidthContainer, StackHeader } from "@/components/common";
+import {
+	MaxWidthContainer,
+	StackHeader,
+} from "@/presentation/components/common";
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
 export const StackLayout = (props: LayoutDefaultProps) => {

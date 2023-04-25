@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { SunDim, Moon } from "phosphor-react";
 
-import { useThemeContext } from "@/contexts/theme-context";
+import { useThemeContext } from "@/shared/contexts/theme-context";
 
 export const ToggleThemeButton = () => {
 	const { currentTheme, handleToggleTheme } = useThemeContext();

@@ -1,5 +1,5 @@
 import { Anchor } from "./components";
-import type { IAnchor } from "@/interfaces/IAnchor";
+import type { IAnchor } from "@/shared/interfaces/IAnchor";
 
 type AnchorsProps = {
 	anchors: IAnchor[];
