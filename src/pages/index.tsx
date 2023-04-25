@@ -43,7 +43,7 @@ export default function Home(props: HomeProps) {
 			</Article>
 			<ArticlePreview title="Projetos">
 				{projects.data && (
-					<ul>
+					<ul className="grid grid-rows-3 gap-6">
 						<Projects projects={projects.data} />
 					</ul>
 				)}

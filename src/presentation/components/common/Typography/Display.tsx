@@ -14,7 +14,7 @@ export const Display = (props: DisplayProps) => {
 			className={`${className} ${
 				isSmallSize
 					? "text-4xl leading-[56px]"
-					: "text-4xl leading-[56px] md:text-6xl md:leading-[104px]"
+					: "text-5xl leading-[68px] md:text-6xl md:leading-[104px]"
 			} font-medium`}
 		/>
 	);
