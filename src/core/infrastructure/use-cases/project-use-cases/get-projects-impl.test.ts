@@ -13,7 +13,7 @@ const query = gql`
 			title
 			description
 			href
-			tags
+			techs
 		}
 	}
 `;

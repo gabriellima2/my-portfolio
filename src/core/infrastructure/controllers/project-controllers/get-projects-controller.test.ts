@@ -46,7 +46,7 @@ describe("GetProjectsController", () => {
 					{
 						href: "any_href",
 						id: "any_id",
-						tags: ["any_tag"],
+						techs: ["any_tech"],
 						title: "any_title",
 						description: "any_description",
 					},

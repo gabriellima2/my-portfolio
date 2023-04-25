@@ -9,7 +9,7 @@ const projects: ProjectEntity[] = [
 		id: "0",
 		title: "any_title_1",
 		description: "any_description",
-		tags: ["any_tag"],
+		techs: ["any_tech"],
 	},
 ];
 
@@ -25,7 +25,7 @@ describe("<Projects />", () => {
 
 				expect(projectEl).toHaveAttribute("href", project.href);
 				expect(screen.getByText(project.title)).toBeInTheDocument();
-				expect(screen.getByText(project.tags[0])).toBeInTheDocument();
+				expect(screen.getByText(project.techs[0])).toBeInTheDocument();
 				expect(screen.getByText(project.description)).toBeInTheDocument();
 			});
 		});

@@ -14,7 +14,7 @@ export const Projects = (props: ProjectsProps) => {
 					key={project.id}
 					title={project.title}
 					description={project.description}
-					tags={project.tags}
+					tags={project.techs}
 					href={project.href}
 					linkTitle={`Visitar projeto ${project.title}`}
 				/>

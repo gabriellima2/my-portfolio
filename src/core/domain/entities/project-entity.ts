@@ -1,7 +1,7 @@
 export interface ProjectEntity {
 	id: string;
 	title: string;
-	tags: string[];
+	techs: string[];
 	description: string;
 	href: string;
 }
