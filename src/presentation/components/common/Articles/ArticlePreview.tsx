@@ -12,7 +12,7 @@ export const ArticlePreview = (props: ArticlePreviewProps) => {
 			{...rest}
 			className={`${className} flex flex-col gap-21 lg:flex-row`}
 		>
-			<div className="w-full max-w-[590px] pr-21 lg:border-r-2 border-util-secondary dark:border-util-secondary-dark">
+			<div className="w-full max-w-[590px] lg:center--row pr-21 lg:border-r-2 border-util-secondary dark:border-util-secondary-dark">
 				<Typography.Display>{title}</Typography.Display>
 			</div>
 			{children}
