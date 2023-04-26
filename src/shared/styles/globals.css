@@ -6,6 +6,10 @@ body {
 	@apply bg-main text-text bg-gradient bg-fixed bg-cover bg-no-repeat font-default text-normal dark:bg-main-dark dark:text-text-dark dark:bg-gradient-dark;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 li {
 	list-style: none;
 }
