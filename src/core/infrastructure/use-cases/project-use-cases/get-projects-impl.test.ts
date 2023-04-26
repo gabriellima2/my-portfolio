@@ -4,7 +4,7 @@ import { GetProjectsImpl } from "./get-projects-impl";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
 import { servicesMock } from "./mocks/services-mock";
-import { projectsMock } from "./mocks/projects-mock";
+import { projectsMock } from "@/__mocks__/projects-mock";
 
 const query = gql`
 	query GetProjects {

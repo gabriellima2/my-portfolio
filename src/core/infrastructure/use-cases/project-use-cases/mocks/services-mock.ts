@@ -3,7 +3,7 @@ import { vi } from "vitest";
 import { IHttpClientGateway } from "@/core/domain/gateways";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
-import { projectsMock } from "./projects-mock";
+import { projectsMock } from "@/__mocks__/projects-mock";
 
 const success: IHttpClientGateway = {
 	get: vi.fn().mockResolvedValue({

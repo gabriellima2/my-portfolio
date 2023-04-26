@@ -1,26 +1,16 @@
 import { render, screen } from "@testing-library/react";
 
 import { Projects } from "./Projects";
-import { ProjectEntity } from "@/core/domain/entities";
+import { projectsMock } from "@/__mocks__/projects-mock";
 
-const projects: ProjectEntity[] = [
-	{
-		href: "any_href",
-		id: "0",
-		title: "any_title_1",
-		description: "any_description",
-		techs: ["any_tech"],
-	},
-];
-
-const renderComponent = () => render(<Projects projects={projects} />);
+const renderComponent = () => render(<Projects projects={projectsMock} />);
 
 describe("<Projects />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
 
-			projects.forEach((project) => {
+			projectsMock.forEach((project) => {
 				const projectEl = screen.getByTitle(`Visitar projeto ${project.title}`);
 
 				expect(projectEl).toHaveAttribute("href", project.href);

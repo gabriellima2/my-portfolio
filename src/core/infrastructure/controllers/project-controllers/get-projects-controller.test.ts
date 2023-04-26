@@ -3,9 +3,9 @@ import { vi } from "vitest";
 import { GetProjectsController } from "./get-projects-controller";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
-import { projectsMock } from "./mocks/projects-mock";
+import { projectsMock } from "@/__mocks__/projects-mock";
 
-const LIMIT_NUMBER_OF_PROJECTS = 2;
+const LIMIT_NUMBER_OF_PROJECTS = projectsMock.length;
 const makeGetProjectsController = () => new GetProjectsController();
 
 describe("GetProjectsController", () => {
