@@ -7,6 +7,7 @@ import {
 	ArrowRightLink,
 	Article,
 	ArticlePreview,
+	ComingSoon,
 	Projects,
 	TextGroup,
 	Typography,
@@ -53,7 +54,7 @@ export default function Home(props: HomeProps) {
 				)}
 			</ArticlePreview>
 			<ArticlePreview title="Blog">
-				<p>Aqui</p>
+				<ComingSoon />
 			</ArticlePreview>
 		</DefaultLayout>
 	);
