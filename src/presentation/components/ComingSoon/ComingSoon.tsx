@@ -1,4 +1,4 @@
-import { Typography } from "./common/Typography";
+import { Typography } from "../common/Typography";
 
 export const ComingSoon = () => (
 	<Typography.Title className="!text-xl">
