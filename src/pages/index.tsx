@@ -1,13 +1,12 @@
 import { type GetStaticProps } from "next";
-import { ArrowRight } from "phosphor-react";
 
 import { makeGetProjectsController } from "@/core/main/factories/controllers/project-controllers/make-get-projects-controller";
 import type { ProjectEntity } from "@/core/domain/entities";
 
 import {
+	ArrowRightLink,
 	Article,
 	ArticlePreview,
-	BaseButton,
 	Projects,
 	TextGroup,
 	Typography,
@@ -26,26 +25,28 @@ export default function Home(props: HomeProps) {
 	return (
 		<DefaultLayout>
 			<Article>
-				<TextGroup
-					title="Gabriel Lima"
-					paragraphs={[
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-					]}
-				/>
-				<BaseButton
-					as="a"
-					href="/sobre"
-					rightIcon={() => <ArrowRight />}
-					className="mt-21"
-				>
-					Saber Mais
-				</BaseButton>
+				<div className="max-w-[587px]">
+					<TextGroup
+						title="Gabriel Lima"
+						paragraphs={[
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+						]}
+					/>
+					<ArrowRightLink href="/sobre" className="mt-21">
+						Saber Mais
+					</ArrowRightLink>
+				</div>
 			</Article>
 			<ArticlePreview title="Projetos">
 				{projects.data && (
-					<ul className="grid grid-rows-3 gap-6">
-						<Projects projects={projects.data} />
-					</ul>
+					<section>
+						<ul className="grid grid-rows-3 gap-6">
+							<Projects projects={projects.data} />
+						</ul>
+						<ArrowRightLink href="/projetos" className="mt-16">
+							Ver Todos
+						</ArrowRightLink>
+					</section>
 				)}
 				{projects.error && (
 					<Typography.Title>{projects.error}</Typography.Title>
