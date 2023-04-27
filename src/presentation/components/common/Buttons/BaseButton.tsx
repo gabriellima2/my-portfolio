@@ -21,7 +21,7 @@ type BaseButtonProps = HTMLElementProps &
 	};
 
 const modifiers = {
-	square: "w-fit p-3 gap-3 rounded-[8px]",
+	square: "!w-fit !p-2 !gap-3 !rounded-[8px]",
 	default: "",
 };
 
