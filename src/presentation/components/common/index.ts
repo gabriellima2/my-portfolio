@@ -5,6 +5,7 @@ export * from "./Buttons";
 export * from "./TextGroup";
 export * from "./Articles";
 export * from "./Anchors";
+export * from "./Footer";
 export * from "./Tags";
 export * from "./Icon";
 export * from "./Card";

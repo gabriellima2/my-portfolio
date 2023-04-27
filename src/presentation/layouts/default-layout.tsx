@@ -1,9 +1,12 @@
-import { Header, MaxWidthContainer } from "@/presentation/components/common";
+import {
+	Footer,
+	Header,
+	MaxWidthContainer,
+} from "@/presentation/components/common";
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
 import { defaultAnchors } from "@/shared/assets";
 import { IAnchor } from "@/shared/interfaces/IAnchor";
-import { GoTopButton } from "../components";
 
 type DefaultLayoutProps = LayoutDefaultProps & {
 	anchors?: IAnchor[];
@@ -15,9 +18,7 @@ export const DefaultLayout = (props: DefaultLayoutProps) => {
 		<MaxWidthContainer>
 			<Header anchors={anchors} />
 			<main>{children}</main>
-			<footer>
-				<GoTopButton />
-			</footer>
+			<Footer />
 		</MaxWidthContainer>
 	);
 };
