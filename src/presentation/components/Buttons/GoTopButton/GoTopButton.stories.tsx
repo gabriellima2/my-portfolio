@@ -8,11 +8,6 @@ const meta: Meta<typeof GoTopButton> = {
 	title: "Components/Buttons/GoTopButton",
 	component: GoTopButton,
 	tags: ["autodocs"],
-	argTypes: {
-		withLabelText: {
-			defaultValue: true,
-		},
-	},
 };
 
 export const Default: Story = {};
