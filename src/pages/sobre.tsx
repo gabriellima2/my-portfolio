@@ -9,7 +9,7 @@ import { DefaultLayout } from "@/presentation/layouts/default-layout";
 export default function About() {
 	return (
 		<DefaultLayout>
-			<Article className="flex flex-col justify-between gap-21 lg:flex-row">
+			<Article className="flex flex-col justify-between gap-21 lg:items-center lg:flex-row">
 				<div className="order-0 lg:order-1 w-[456px] h-[456px] rounded-2xl bg-util-primary  dark:bg-util-primary-dark" />
 				<TextGroup
 					title="Gabriel Lima"
