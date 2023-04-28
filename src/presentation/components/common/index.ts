@@ -7,6 +7,7 @@ export * from "./TextGroup";
 export * from "./Articles";
 export * from "./Anchors";
 export * from "./Footer";
+export * from "./Avatar";
 export * from "./Tags";
 export * from "./Icon";
 export * from "./Card";

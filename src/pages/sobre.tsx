@@ -1,6 +1,7 @@
 import {
 	Article,
 	ArticlePreview,
+	Avatar,
 	TextGroup,
 	Typography,
 } from "@/presentation/components";
@@ -10,7 +11,11 @@ export default function About() {
 	return (
 		<DefaultLayout>
 			<Article className="flex flex-col justify-between gap-21 lg:items-center lg:flex-row">
-				<div className="order-0 lg:order-1 w-[456px] h-[456px] rounded-2xl bg-util-primary  dark:bg-util-primary-dark" />
+				<Avatar
+					src="/assets/photo.jpg"
+					alt="Foto de Gabriel Lima"
+					className="lg:order-1"
+				/>
 				<TextGroup
 					title="Gabriel Lima"
 					paragraphs={[
