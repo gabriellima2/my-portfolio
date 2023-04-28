@@ -5,7 +5,7 @@ import { HttpStatusCode } from "@/core/domain/helpers";
 
 import { projectsMock } from "@/__mocks__/projects-mock";
 
-const LIMIT_NUMBER_OF_PROJECTS = projectsMock.length;
+const PROJECTS_LIMIT = projectsMock.length;
 const makeGetProjectsController = () => new GetProjectsController();
 
 describe("GetProjectsController", () => {
@@ -28,10 +28,10 @@ describe("GetProjectsController", () => {
 			ok: true,
 			statusCode: HttpStatusCode.ok,
 		});
-		const response = await sut.execute(LIMIT_NUMBER_OF_PROJECTS);
+		const response = await sut.execute(PROJECTS_LIMIT);
 		if (typeof response === "string") return;
 
-		expect(response.body.projects!.length).toBe(LIMIT_NUMBER_OF_PROJECTS);
+		expect(response.body.projects!.length).toBe(PROJECTS_LIMIT);
 		expect(response.statusCode).toBe(HttpStatusCode.ok);
 		expect(response.ok).toBeTruthy();
 	});
@@ -58,9 +58,7 @@ describe("GetProjectsController", () => {
 		const response = await sut.execute();
 		if (typeof response === "string") return;
 
-		expect(response.body.projects!.length).toBeGreaterThan(
-			LIMIT_NUMBER_OF_PROJECTS
-		);
+		expect(response.body.projects!.length).toBeGreaterThan(PROJECTS_LIMIT);
 		expect(response.statusCode).toBe(HttpStatusCode.ok);
 		expect(response.ok).toBeTruthy();
 	});
