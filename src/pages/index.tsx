@@ -8,6 +8,7 @@ import {
 	Article,
 	ArticlePreview,
 	ComingSoon,
+	GradientBackground,
 	Projects,
 	TextGroup,
 	Typography,
@@ -24,39 +25,41 @@ type HomeProps = {
 export default function Home(props: HomeProps) {
 	const { projects } = props;
 	return (
-		<DefaultLayout>
-			<Article>
-				<div className="max-w-[587px]">
-					<TextGroup
-						title="Gabriel Lima"
-						paragraphs={[
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-						]}
-					/>
-					<ArrowRightLink href="/sobre" className="mt-21">
-						Saber Mais
-					</ArrowRightLink>
-				</div>
-			</Article>
-			<ArticlePreview title="Projetos">
-				{projects.data && (
-					<section>
-						<ul className="grid grid-rows-3 gap-6">
-							<Projects projects={projects.data} />
-						</ul>
-						<ArrowRightLink href="/projetos" className="mt-16">
-							Ver Todos
+		<GradientBackground>
+			<DefaultLayout>
+				<Article>
+					<div className="max-w-[587px]">
+						<TextGroup
+							title="Gabriel Lima"
+							paragraphs={[
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+							]}
+						/>
+						<ArrowRightLink href="/sobre" className="mt-21">
+							Saber Mais
 						</ArrowRightLink>
-					</section>
-				)}
-				{projects.error && (
-					<Typography.Title>{projects.error}</Typography.Title>
-				)}
-			</ArticlePreview>
-			<ArticlePreview title="Blog">
-				<ComingSoon />
-			</ArticlePreview>
-		</DefaultLayout>
+					</div>
+				</Article>
+				<ArticlePreview title="Projetos">
+					{projects.data && (
+						<section>
+							<ul className="grid grid-rows-3 gap-6">
+								<Projects projects={projects.data} />
+							</ul>
+							<ArrowRightLink href="/projetos" className="mt-16">
+								Ver Todos
+							</ArrowRightLink>
+						</section>
+					)}
+					{projects.error && (
+						<Typography.Title>{projects.error}</Typography.Title>
+					)}
+				</ArticlePreview>
+				<ArticlePreview title="Blog">
+					<ComingSoon />
+				</ArticlePreview>
+			</DefaultLayout>
+		</GradientBackground>
 	);
 }
 
