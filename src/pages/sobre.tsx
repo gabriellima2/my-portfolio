@@ -3,9 +3,10 @@ import {
 	ArticlePreview,
 	Avatar,
 	TextGroup,
-	Typography,
 } from "@/presentation/components";
+import { Contacts } from "@/presentation/components/Contacts/Contacts";
 import { DefaultLayout } from "@/presentation/layouts/default-layout";
+import { contacts } from "@/shared/assets";
 
 export default function About() {
 	return (
@@ -25,7 +26,9 @@ export default function About() {
 				/>
 			</Article>
 			<ArticlePreview title="Contatos">
-				<Typography.Paragraph>Aqui</Typography.Paragraph>
+				<ul>
+					<Contacts contacts={contacts} variants="with-mask" />
+				</ul>
 			</ArticlePreview>
 		</DefaultLayout>
 	);

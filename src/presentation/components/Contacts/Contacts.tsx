@@ -1,16 +1,16 @@
 import type { IContact } from "@/shared/interfaces/IContact";
-import { Contact } from "./components";
+import { Contact, ContactProps } from "./components";
 
-type ContactsProps = {
+type ContactsProps = Pick<ContactProps, "variants"> & {
 	contacts: IContact[];
 };
 
 export const Contacts = (props: ContactsProps) => {
-	const { contacts } = props;
+	const { contacts, variants = "default" } = props;
 	return (
 		<>
 			{contacts.map((contact) => (
-				<Contact key={contact.title} {...contact} />
+				<Contact key={contact.title} variants={variants} {...contact} />
 			))}
 		</>
 	);
