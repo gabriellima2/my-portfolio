@@ -1,6 +1,9 @@
-export class EmptyDataError extends Error {
-	constructor(name: string) {
-		super(`Ocorreu um erro, não encontramos nenhum ${name}!`);
+import { DefaultError } from "./default-error";
+import { HttpStatusCode } from "../helpers";
+
+export class EmptyDataError extends DefaultError {
+	constructor() {
+		super(HttpStatusCode.notFound, "Desculpe, não encontramos nenhum dado!");
 		this.name = "EmptyDataError";
 	}
 }
