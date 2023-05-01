@@ -25,7 +25,7 @@ export const TextGroup = (props: GroupTextProps) => {
 	);
 
 	return (
-		<section className="flex flex-col gap-6 md:gap-10 w-full max-w-[590px]">
+		<section className="flex w-full max-w-[590px] flex-col gap-6 md:gap-10">
 			<Typography.Display>{title}</Typography.Display>
 			<div className="flex flex-col gap-6">
 				{paragraphsWithID.map((paragraph) => (

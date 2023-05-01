@@ -11,7 +11,7 @@ import { contacts } from "@/shared/assets";
 export default function About() {
 	return (
 		<DefaultLayout>
-			<Article className="flex flex-col justify-between gap-21 lg:items-center lg:flex-row">
+			<Article className="flex flex-col justify-between gap-21 lg:flex-row lg:items-center">
 				<Avatar
 					src="/assets/photo.jpg"
 					alt="Foto de Gabriel Lima"

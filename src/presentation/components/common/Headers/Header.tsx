@@ -7,7 +7,7 @@ type HeaderProps = Pick<Parameters<typeof Anchors>[0], "anchors">;
 export const Header = (props: HeaderProps) => {
 	const { anchors } = props;
 	return (
-		<BaseHeader className="overflow-x-auto gap-11">
+		<BaseHeader className="gap-11 overflow-x-auto">
 			<ToggleThemeButton />
 			<nav>
 				<Anchors anchors={anchors} />

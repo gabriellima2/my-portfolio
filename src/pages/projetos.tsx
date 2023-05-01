@@ -30,9 +30,9 @@ export default function Projects(props: ProjectsProps) {
 					]}
 				/>
 			</Article>
-			<section className="py-21 border-b-2 border-b-util-secondary dark:border-b-util-secondary-dark">
+			<section className="border-b-2 border-b-util-secondary py-21 dark:border-b-util-secondary-dark">
 				{projects.data && (
-					<ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+					<ul className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
 						<ProjectList projects={projects.data} />
 					</ul>
 				)}

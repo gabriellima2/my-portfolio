@@ -7,7 +7,7 @@ export const Article = (props: ArticleProps) => {
 	return (
 		<article
 			{...rest}
-			className={`${className} py-21 border-b-2 border-b-util-secondary dark:border-b-util-secondary-dark`}
+			className={`${className} border-b-2 border-b-util-secondary py-21 dark:border-b-util-secondary-dark`}
 		/>
 	);
 };

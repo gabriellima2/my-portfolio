@@ -23,7 +23,7 @@ export const Anchor = (props: AnchorsProps) => {
 				tabIndex={isCurrentPath ? -1 : 0}
 				className={`${
 					isCurrentPath && "cursor-default text-heading dark:text-heading-dark"
-				} font-medium whitespace-nowrap hover:text-heading focus:text-heading focus:dark:text-heading-dark hover:dark:text-heading-dark`}
+				} whitespace-nowrap font-medium hover:text-heading focus:text-heading hover:dark:text-heading-dark focus:dark:text-heading-dark`}
 			>
 				<span className="mr-2">{position}</span> {title}
 			</Link>

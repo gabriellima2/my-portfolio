@@ -50,14 +50,14 @@ export const BaseButton = (props: BaseButtonProps) => {
 
 	return (
 		<Element
-			className={`group w-full flex items-center justify-between gap-2 border-2 border-util-secondary rounded-full p-2 font-medium text-normal text-heading transition-colors hover:bg-util-primary focus:bg-util-primary dark:text-heading-dark dark:border-util-secondary-dark dark:hover:bg-util-primary-dark dark:focus:bg-util-primary-dark ${
+			className={`group flex w-full items-center justify-between gap-2 rounded-full border-2 border-util-secondary p-2 text-normal font-medium text-heading transition-colors hover:bg-util-primary focus:bg-util-primary dark:border-util-secondary-dark dark:text-heading-dark dark:hover:bg-util-primary-dark dark:focus:bg-util-primary-dark ${
 				hasRightIcon && "pl-6"
 			} ${modifier} ${className}`}
 			{...rest}
 		>
 			{children}
 			{hasRightIcon && (
-				<i className="center--row rounded-full w-[36px] h-[36px] bg-util-primary border-2 border-util-secondary dark:border-util-secondary-dark dark:bg-util-primary-dark group-hover:border-transparent group-focus:border-transparent">
+				<i className="center--row h-[36px] w-[36px] rounded-full border-2 border-util-secondary bg-util-primary group-hover:border-transparent group-focus:border-transparent dark:border-util-secondary-dark dark:bg-util-primary-dark">
 					{rightIcon()}
 				</i>
 			)}
