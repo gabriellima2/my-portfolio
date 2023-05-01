@@ -66,13 +66,14 @@ export default function Home(props: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
 	const getProjectsController = makeGetProjectsController();
 	const projectsResponse = await getProjectsController.execute(3);
-	const hasErrorInProjectsResponse = typeof projectsResponse === "string";
+	const hasErrorMessageInProjectsResponse =
+		typeof projectsResponse.body === "string";
 
 	return {
 		props: {
-			projects: hasErrorInProjectsResponse
-				? { data: null, error: projectsResponse }
-				: { data: projectsResponse.body.projects },
+			projects: hasErrorMessageInProjectsResponse
+				? { data: null, error: projectsResponse.body }
+				: { data: projectsResponse.body },
 		},
 		revalidate: 10,
 	};
