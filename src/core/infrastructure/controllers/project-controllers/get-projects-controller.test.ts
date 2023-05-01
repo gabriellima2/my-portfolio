@@ -64,7 +64,7 @@ describe("GetProjectsController", () => {
 		});
 	});
 	describe("Success", () => {
-		it("should response correctly if not passed a limit number", async () => {
+		it("should response correctly without limit number", async () => {
 			const sut = makeGetProjectsController();
 			executeMocked.mockReturnValueOnce({
 				body: [
@@ -86,5 +86,18 @@ describe("GetProjectsController", () => {
 			expect(response.statusCode).toBe(HttpStatusCode.ok);
 			expect(response.ok).toBeTruthy();
 		});
+	});
+	it("should response correctly with limit number valid", async () => {
+		const sut = makeGetProjectsController();
+		executeMocked.mockReturnValueOnce({
+			body: projectsMock,
+			ok: true,
+		});
+		const response = await sut.execute();
+		if (typeof response.body === "string") return;
+
+		expect(response.body.length).toBeGreaterThan(PROJECTS_LIMIT);
+		expect(response.statusCode).toBe(HttpStatusCode.ok);
+		expect(response.ok).toBeTruthy();
 	});
 });
