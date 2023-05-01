@@ -1,6 +1,10 @@
 import { vi } from "vitest";
 
-import { InvalidDataLimitError, UnexpectedError } from "@/core/domain/errors";
+import {
+	EmptyDataError,
+	InvalidDataLimitError,
+	UnexpectedError,
+} from "@/core/domain/errors";
 
 import { GetProjectsController } from "./get-projects-controller";
 import { HttpStatusCode } from "@/core/domain/helpers";
@@ -63,6 +67,21 @@ describe("GetProjectsController", () => {
 				"Ocorreu um erro enquanto buscavamos pelos dados. Tente novamente"
 			);
 			expect(error.statusCode).toBe(HttpStatusCode.badRequest);
+		}
+	});
+	it("should throw an unexpected error if ok is false", async () => {
+		try {
+			const sut = makeGetProjectsController();
+			executeMocked.mockReturnValueOnce({
+				body: null,
+				ok: true,
+			});
+			await sut.execute();
+		} catch (err) {
+			expect(err).toThrow(Error);
+			const error = err as EmptyDataError;
+			expect(error.message).toBe("Desculpe, não encontramos nenhum dado!");
+			expect(error.statusCode).toBe(HttpStatusCode.notFound);
 		}
 	});
 });

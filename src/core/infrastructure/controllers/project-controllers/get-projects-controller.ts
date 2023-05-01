@@ -5,7 +5,11 @@ import { ProjectEntity } from "@/core/domain/entities";
 import { IGetProjectsController } from "@/core/domain/controllers/project-controllers";
 import { HttpClientGateway } from "@/core/domain/gateways";
 
-import { InvalidDataLimitError, UnexpectedError } from "@/core/domain/errors";
+import {
+	EmptyDataError,
+	InvalidDataLimitError,
+	UnexpectedError,
+} from "@/core/domain/errors";
 import { DefaultError } from "@/core/domain/errors/default-error";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
@@ -51,8 +55,9 @@ export class GetProjectsController implements IGetProjectsController {
 			});
 
 			if (!response.ok) throw new UnexpectedError();
+			if (!response.body.projects) throw new EmptyDataError();
 
-			return { ...response, body: response.body.projects! };
+			return { ...response, body: response.body.projects };
 		} catch (err) {
 			const isApolloError = err instanceof ApolloError;
 			const error = {
