@@ -1,7 +1,9 @@
 import { type GetStaticProps } from "next";
+import { useMemo } from "react";
 
 import { makeGetProjectsController } from "@/core/main/factories/controllers/project-controllers/make-get-projects-controller";
 import type { ProjectEntity } from "@/core/domain/entities";
+import { EmptyDataError } from "@/core/domain/errors";
 
 import {
 	ArrowRightLink,
@@ -9,9 +11,9 @@ import {
 	ArticlePreview,
 	ComingSoon,
 	GradientBackground,
+	HandleError,
 	Projects,
 	TextGroup,
-	Typography,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts/default-layout";
 
@@ -24,6 +26,11 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
 	const { projects } = props;
+	const errorForEmptyProjects = useMemo(
+		() => (!projects.data ? new EmptyDataError().message : null),
+		[projects.data]
+	);
+
 	return (
 		<GradientBackground>
 			<DefaultLayout>
@@ -41,19 +48,16 @@ export default function Home(props: HomeProps) {
 					</div>
 				</Article>
 				<ArticlePreview title="Projetos">
-					{projects.data && (
+					<HandleError error={projects.error || errorForEmptyProjects}>
 						<section>
 							<ul className="grid grid-rows-3 gap-6">
-								<Projects projects={projects.data} />
+								<Projects projects={projects.data!} />
 							</ul>
 							<ArrowRightLink href="/projetos" className="mt-16">
 								Ver Todos
 							</ArrowRightLink>
 						</section>
-					)}
-					{projects.error && (
-						<Typography.Title>{projects.error}</Typography.Title>
-					)}
+					</HandleError>
 				</ArticlePreview>
 				<ArticlePreview title="Blog">
 					<ComingSoon />
