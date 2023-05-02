@@ -1,13 +1,15 @@
-import { GetStaticProps } from "next";
+import { type GetStaticProps } from "next";
+import { useMemo } from "react";
 
 import { makeGetProjectsController } from "@/core/main/factories/controllers/project-controllers/make-get-projects-controller";
 import type { ProjectEntity } from "@/core/domain/entities";
+import { EmptyDataError } from "@/core/domain/errors";
 
 import {
-	Typography,
 	Projects as ProjectList,
 	Article,
 	TextGroup,
+	HandleError,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts/default-layout";
 
@@ -20,6 +22,11 @@ type ProjectsProps = {
 
 export default function Projects(props: ProjectsProps) {
 	const { projects } = props;
+	const errorForEmptyProjects = useMemo(
+		() => (!projects.data ? new EmptyDataError().message : null),
+		[projects.data]
+	);
+
 	return (
 		<DefaultLayout>
 			<Article>
@@ -31,14 +38,11 @@ export default function Projects(props: ProjectsProps) {
 				/>
 			</Article>
 			<section className="border-b-2 border-b-util-secondary py-21 dark:border-b-util-secondary-dark">
-				{projects.data && (
+				<HandleError error={projects.error || errorForEmptyProjects}>
 					<ul className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-						<ProjectList projects={projects.data} />
+						<ProjectList projects={projects.data!} />
 					</ul>
-				)}
-				{projects.error && (
-					<Typography.Title>{projects.error}</Typography.Title>
-				)}
+				</HandleError>
 			</section>
 		</DefaultLayout>
 	);
