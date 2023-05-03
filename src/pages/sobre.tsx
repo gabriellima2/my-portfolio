@@ -26,9 +26,7 @@ export default function About() {
 				/>
 			</Article>
 			<ArticlePreview title="Contatos">
-				<ul>
-					<Contacts contacts={contacts} variants="with-mask" />
-				</ul>
+				<Contacts contacts={contacts} variants="with-mask" />
 			</ArticlePreview>
 		</DefaultLayout>
 	);
