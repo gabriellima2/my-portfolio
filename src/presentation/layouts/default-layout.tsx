@@ -10,15 +10,16 @@ import { IAnchor } from "@/shared/interfaces/IAnchor";
 
 type DefaultLayoutProps = LayoutDefaultProps & {
 	anchors?: IAnchor[];
+	withoutFooter?: boolean;
 };
 
 export const DefaultLayout = (props: DefaultLayoutProps) => {
-	const { children, anchors = defaultAnchors } = props;
+	const { children, anchors = defaultAnchors, withoutFooter = false } = props;
 	return (
 		<MaxWidthContainer>
 			<Header anchors={anchors} />
 			<main>{children}</main>
-			<Footer />
+			{!withoutFooter && <Footer />}
 		</MaxWidthContainer>
 	);
 };
