@@ -9,7 +9,7 @@ type AvatarProps = Pick<
 
 const modifiers = {
 	thumbnail: "w-16 h-16 rounded-full",
-	default: "w-full max-w-[456px] rounded-2xl",
+	default: "w-full max-w-[400px] h-full rounded-2xl",
 };
 
 export const Avatar = (props: AvatarProps) => {
@@ -20,7 +20,6 @@ export const Avatar = (props: AvatarProps) => {
 			{...rest}
 			width={100}
 			height={100}
-			quality={100}
 			sizes="100%"
 			priority
 			className={`${className} ${modifier}`}
