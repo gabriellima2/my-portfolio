@@ -13,11 +13,10 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts/default-layout";
 
+import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
+
 type ProjectsProps = {
-	projects: {
-		data: ProjectEntity[] | null;
-		error?: string | null;
-	};
+	projects: IAsyncData<ProjectEntity[]>;
 };
 
 export default function Projects(props: ProjectsProps) {
