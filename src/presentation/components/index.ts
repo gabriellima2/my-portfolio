@@ -5,3 +5,4 @@ export * from "./Projects";
 export * from "./ComingSoon";
 export * from "./Copyright";
 export * from "./HandleError";
+export * from "./Head";
