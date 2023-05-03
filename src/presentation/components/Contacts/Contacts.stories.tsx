@@ -5,7 +5,7 @@ import { Contacts } from ".";
 type Story = StoryObj<typeof Contacts>;
 
 const meta: Meta<typeof Contacts> = {
-	title: "Components/Contacts",
+	title: "Components/Contacts/Contacts",
 	component: Contacts,
 	tags: ["autodocs"],
 	args: {
@@ -16,6 +16,13 @@ const meta: Meta<typeof Contacts> = {
 		],
 		variants: "default",
 		className: "!flex-row",
+	},
+	argTypes: {
+		variants: {
+			control: {
+				type: "inline-radio",
+			},
+		},
 	},
 };
 
