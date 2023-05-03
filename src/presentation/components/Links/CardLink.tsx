@@ -12,6 +12,8 @@ export const CardLink = (props: CardLinkProps) => {
 		<Link
 			{...rest}
 			title={linkTitle}
+			target="_blank"
+			rel="noreferrer"
 			className="group transition-all hover:brightness-110 focus:brightness-110"
 		>
 			<Card

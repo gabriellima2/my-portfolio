@@ -11,6 +11,8 @@ export const Contact = (props: ContactProps) => {
 		<li>
 			<a
 				href={href}
+				target="_blank"
+				rel="noreferrer"
 				title={`Entrar em contato via ${title}`}
 				className="font-medium text-heading transition-opacity hover:underline hover:opacity-80 focus:underline focus:opacity-80 dark:text-heading-dark"
 			>
