@@ -1,7 +1,7 @@
 import NextHead from "next/head";
 
 type HeadProps = {
-	description: string;
+	description?: string;
 	title?: string;
 	path?: string;
 	keywords: string;
@@ -9,8 +9,8 @@ type HeadProps = {
 
 export const Head = (props: HeadProps) => {
 	const {
-		description,
 		keywords,
+		description = "Me chamo Gabriel e sou um desenvolvedor front-end. Desenvolvo aplicações para plataformas Web e Mobile. Possuo diversos projetos desde pessoais até freelances. Sendo, sites para negócios, sites educacionais e aplicativos. Venha saber mais...",
 		path = "Portfólio",
 		title = "Gabriel Lima",
 	} = props;

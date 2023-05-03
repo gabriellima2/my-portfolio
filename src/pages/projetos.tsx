@@ -30,7 +30,6 @@ export default function Projects(props: ProjectsProps) {
 	return (
 		<>
 			<Head
-				description="Possuo diversos projetos desde pessoais até freelances. Sites para negócios, sites educacionais e aplicativos. Veja e teste essas aplicações!"
 				keywords="Sites, Aplicativos, Typescript, ReactJS, NextJS, VueJS, React Native"
 				path="Projetos"
 			/>

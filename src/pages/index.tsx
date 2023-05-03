@@ -33,10 +33,7 @@ export default function Home(props: HomeProps) {
 
 	return (
 		<>
-			<Head
-				description="Me chamo Gabriel e sou um desenvolvedor front-end. Desenvolvo aplicações para plataformas Web e Mobile. Venha saber mais..."
-				keywords="Desenvolvedor, Frontend, Typescript, ReactJS, React Native, Mobile, Web"
-			/>
+			<Head keywords="Desenvolvedor, Frontend, Typescript, ReactJS, React Native, Mobile, Web" />
 			<GradientBackground>
 				<DefaultLayout>
 					<Article>
