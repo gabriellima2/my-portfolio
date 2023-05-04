@@ -19,5 +19,7 @@ export class CookiesAdapter implements ICookiesAdapter {
 		});
 	}
 
-	remove<T>(key: string): T | null {}
+	remove(key: string) {
+		destroyCookie(null, key);
+	}
 }
