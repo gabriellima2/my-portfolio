@@ -33,7 +33,10 @@ export default function Home(props: HomeProps) {
 
 	return (
 		<>
-			<Head keywords="Desenvolvedor, Frontend, Typescript, ReactJS, React Native, Mobile, Web" />
+			<Head
+				keywords="Desenvolvedor, Front-end, Criativo, Experiência, Sites, Aplicativos, Clientes, Problemas, Facilitar, Design, Codificação, Deploy, Mobile, React Native, ReactJS, Typescript, Redux"
+				description="Sou um desenvolvedor front-end criativo com experiência em criar sites modernos para clientes que desejam aumentar sua visibilidade online. Além disso, gosto de criar projetos pessoais..."
+			/>
 			<GradientBackground>
 				<DefaultLayout>
 					<Article>
@@ -41,7 +44,7 @@ export default function Home(props: HomeProps) {
 							<TextGroup
 								title="Gabriel Lima"
 								paragraphs={[
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+									"Sou um desenvolvedor front-end criativo com experiência em criar sites modernos para clientes que desejam aumentar sua visibilidade online. Além disso, gosto de criar projetos pessoais resolvendo problemas que encontro diariamente, focando em facilitar a experiência e a vida das pessoas.",
 								]}
 							/>
 							<ArrowRightLink href="/sobre" className="mt-21">
