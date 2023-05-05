@@ -24,6 +24,8 @@ export default function About() {
 						src="/assets/photo.jpg"
 						alt="Foto de Gabriel Lima"
 						className="lg:order-1"
+						placeholder="blur"
+						blurDataURL="/assets/cover.png"
 					/>
 					<TextGroup
 						title="Gabriel Lima"
