@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Typography } from "../Typography";
+import { Typography } from "../common/Typography";
 import { generateID } from "@/shared/helpers/generate-id";
 
 type GroupTextProps = {

@@ -5,7 +5,7 @@ import { ComingSoon } from ".";
 type Story = StoryObj<typeof ComingSoon>;
 
 const meta: Meta<typeof ComingSoon> = {
-	title: "Components/ComingSoon",
+	title: "Components/Text/ComingSoon",
 	component: ComingSoon,
 	tags: ["autodocs"],
 };

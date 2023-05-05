@@ -1,4 +1,4 @@
-import { ToggleThemeButton } from "../../Buttons";
+import { ToggleThemeButton } from "../Buttons";
 import { BaseHeader } from "./BaseHeader";
 import { Anchors } from "../Anchors";
 

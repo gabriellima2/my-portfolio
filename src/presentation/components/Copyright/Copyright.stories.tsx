@@ -5,7 +5,7 @@ import { Copyright } from ".";
 type Story = StoryObj<typeof Copyright>;
 
 const meta: Meta<typeof Copyright> = {
-	title: "Components/Copyright",
+	title: "Components/Text/Copyright",
 	component: Copyright,
 	tags: ["autodocs"],
 };

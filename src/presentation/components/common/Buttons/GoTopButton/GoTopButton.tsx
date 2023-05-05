@@ -1,6 +1,6 @@
 import { ArrowUp } from "phosphor-react";
 
-import { BaseButton } from "../../common";
+import { BaseButton } from "../BaseButton";
 import { changeDistanceToTopOfPage } from "@/shared/helpers/change-distance-to-top-of-page";
 
 export const GoTopButton = () => (

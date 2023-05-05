@@ -5,7 +5,7 @@ import { GoTopButton } from ".";
 type Story = StoryObj<typeof GoTopButton>;
 
 const meta: Meta<typeof GoTopButton> = {
-	title: "Components/Buttons/GoTopButton",
+	title: "Components/Common/Buttons/GoTopButton",
 	component: GoTopButton,
 	tags: ["autodocs"],
 };

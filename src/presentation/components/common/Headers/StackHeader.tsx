@@ -1,4 +1,4 @@
-import { GoBackButton, ToggleThemeButton } from "../../Buttons";
+import { GoBackButton, ToggleThemeButton } from "../Buttons";
 import { BaseHeader } from "./BaseHeader";
 
 export const StackHeader = () => {

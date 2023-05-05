@@ -5,7 +5,7 @@ import { TextGroup } from ".";
 type Story = StoryObj<typeof TextGroup>;
 
 const meta: Meta<typeof TextGroup> = {
-	title: "Components/Common/Text/TextGroup",
+	title: "Components/Text/TextGroup",
 	component: TextGroup,
 	tags: ["autodocs"],
 	args: {

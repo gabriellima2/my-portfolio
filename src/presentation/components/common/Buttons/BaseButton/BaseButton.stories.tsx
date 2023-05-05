@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "phosphor-react";
 
-import { BaseButton } from ".";
+import { BaseButton } from "..";
 
 type Story = StoryObj<typeof BaseButton>;
 
