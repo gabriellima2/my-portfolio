@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-import { GetProjectsImpl } from "./get-projects-impl";
+import { GetProjectsImpl } from ".";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
 import { servicesMock } from "./mocks/services-mock";

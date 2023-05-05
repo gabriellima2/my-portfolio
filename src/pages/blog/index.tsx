@@ -1,5 +1,5 @@
 import { ComingSoon, Head } from "@/presentation/components";
-import { DefaultLayout } from "@/presentation/layouts/default-layout";
+import { DefaultLayout } from "@/presentation/layouts";
 
 export default function Blog() {
 	return (

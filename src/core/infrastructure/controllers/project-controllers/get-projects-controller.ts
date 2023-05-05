@@ -2,8 +2,9 @@ import { ApolloError, gql } from "@apollo/client";
 
 import { ProjectEntity } from "@/core/domain/entities";
 
-import { IGetProjectsController } from "@/core/domain/controllers/project-controllers";
+import { IGetProjectsController } from "@/core/domain/controllers";
 import { HttpClientGateway } from "@/core/domain/gateways";
+import { IGetProjects } from "@/core/domain/use-cases";
 
 import {
 	EmptyDataError,
@@ -12,8 +13,6 @@ import {
 } from "@/core/domain/errors";
 import { DefaultError } from "@/core/domain/errors/default-error";
 import { HttpStatusCode } from "@/core/domain/helpers";
-
-import { IGetProjects } from "@/core/domain/use-cases/project-use-cases";
 
 const COMMON_FIELDS_SCHEMA = `
 	description

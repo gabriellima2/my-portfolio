@@ -1,5 +1,5 @@
-import { GetProjectsImpl } from "@/core/infrastructure/use-cases/project-use-cases";
-import { makeHttpClientGatewayImpl } from "@/core/main/factories/gateways/make-http-client-gateway-impl";
+import { GetProjectsImpl } from "@/core/infrastructure/use-cases";
+import { makeHttpClientGatewayImpl } from "@/core/main/factories/gateways";
 
 export const makeGetProjectsImpl = () => {
 	const httpClientGatewayImpl = makeHttpClientGatewayImpl();

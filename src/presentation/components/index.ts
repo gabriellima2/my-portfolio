@@ -6,3 +6,4 @@ export * from "./ComingSoon";
 export * from "./Copyright";
 export * from "./HandleError";
 export * from "./Head";
+export * from "./Contacts";

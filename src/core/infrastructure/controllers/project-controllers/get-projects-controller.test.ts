@@ -6,7 +6,7 @@ import {
 	UnexpectedError,
 } from "@/core/domain/errors";
 
-import { GetProjectsController } from "./get-projects-controller";
+import { GetProjectsController } from ".";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
 import { projectsMock } from "@/__mocks__/projects-mock";

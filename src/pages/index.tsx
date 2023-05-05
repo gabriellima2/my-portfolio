@@ -1,7 +1,7 @@
 import { type GetStaticProps } from "next";
 import { useMemo } from "react";
 
-import { makeGetProjectsController } from "@/core/main/factories/controllers/project-controllers/make-get-projects-controller";
+import { makeGetProjectsController } from "@/core/main/factories/controllers";
 import type { ProjectEntity } from "@/core/domain/entities";
 import { EmptyDataError } from "@/core/domain/errors";
 
@@ -16,7 +16,7 @@ import {
 	Projects,
 	TextGroup,
 } from "@/presentation/components";
-import { DefaultLayout } from "@/presentation/layouts/default-layout";
+import { DefaultLayout } from "@/presentation/layouts";
 
 import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
 

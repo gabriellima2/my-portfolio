@@ -4,9 +4,10 @@ import {
 	Avatar,
 	Head,
 	TextGroup,
+	Contacts,
 } from "@/presentation/components";
-import { Contacts } from "@/presentation/components/Contacts/Contacts";
-import { DefaultLayout } from "@/presentation/layouts/default-layout";
+import { DefaultLayout } from "@/presentation/layouts";
+
 import { contacts } from "@/shared/assets";
 
 export default function About() {
