@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	@apply transition-all;
+}
+
 body {
 	@apply bg-main text-text font-default text-normal dark:bg-main-dark dark:text-text-dark;
 }
