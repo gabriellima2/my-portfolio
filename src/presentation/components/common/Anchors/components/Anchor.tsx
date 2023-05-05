@@ -12,7 +12,6 @@ export const Anchor = (props: AnchorsProps) => {
 	const pathname = usePathname();
 
 	const isCurrentPath = pathname === href;
-	console.log(pathname, href);
 
 	return (
 		<li>
