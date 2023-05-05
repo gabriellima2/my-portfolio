@@ -30,15 +30,16 @@ export default function Projects(props: ProjectsProps) {
 	return (
 		<>
 			<Head
-				keywords="Sites, Aplicativos, Typescript, ReactJS, NextJS, VueJS, React Native"
+				keywords="Sites, Profissionais, Criativas, Aprimorar, Desenvolver, Aplicativos, Typescript, ReactJS, NextJS, VueJS, React Native, Redux"
 				path="Projetos"
+				description="Confira os sites profissionais e pessoais que desenvolvi, bem como a documentação dos aplicativos que criei..."
 			/>
 			<DefaultLayout>
 				<Article>
 					<TextGroup
 						title="Projetos"
 						paragraphs={[
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+							"Confira os sites profissionais e pessoais que desenvolvi, bem como a documentação dos aplicativos que criei. Me concentro em tecnologias que quero me aprimorar para desenvolver aplicações criativas com essas tecnologias.",
 						]}
 					/>
 				</Article>
