@@ -2,7 +2,7 @@ import NextHead from "next/head";
 
 type HeadProps = {
 	description?: string;
-	path: string;
+	path?: string;
 	keywords: string;
 };
 
