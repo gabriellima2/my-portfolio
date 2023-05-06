@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import {
 	Article,
 	ArticlePreview,
@@ -20,13 +22,19 @@ export default function About() {
 			/>
 			<DefaultLayout>
 				<Article className="flex flex-col justify-between gap-21 lg:flex-row lg:items-center">
-					<Avatar
-						src="/assets/photo.jpg"
-						alt="Foto de Gabriel Lima"
-						className="lg:order-1"
-						placeholder="blur"
-						blurDataURL="/assets/cover.png"
-					/>
+					<motion.div
+						className="lg:order-1 lg:flex lg:w-full lg:justify-end"
+						initial={{ opacity: 0, translateY: 35 }}
+						whileInView={{ opacity: 1, translateY: 0 }}
+					>
+						<Avatar
+							src="/assets/photo.jpg"
+							alt="Foto de Gabriel Lima"
+							placeholder="blur"
+							blurDataURL="/assets/cover.png"
+						/>
+					</motion.div>
+
 					<TextGroup
 						title="Gabriel Lima"
 						paragraphs={[

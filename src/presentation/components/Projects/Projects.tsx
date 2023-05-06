@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { CardLink } from "../Links";
 import type { ProjectEntity } from "@/core/domain/entities";
 
@@ -10,14 +12,19 @@ export const Projects = (props: ProjectsProps) => {
 	return (
 		<>
 			{projects.map((project) => (
-				<CardLink
+				<motion.li
 					key={project.id}
-					title={project.title}
-					description={project.description}
-					tags={project.techs}
-					href={project.href}
-					linkTitle={`Visitar projeto ${project.title}`}
-				/>
+					initial={{ opacity: 0, translateY: 35 }}
+					whileInView={{ opacity: 1, translateY: -0 }}
+				>
+					<CardLink
+						title={project.title}
+						description={project.description}
+						tags={project.techs}
+						href={project.href}
+						linkTitle={`Visitar projeto ${project.title}`}
+					/>
+				</motion.li>
 			))}
 		</>
 	);

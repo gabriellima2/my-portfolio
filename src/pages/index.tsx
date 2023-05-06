@@ -1,5 +1,6 @@
 import { type GetStaticProps } from "next";
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 
 import { makeGetProjectsController } from "@/core/main/factories/controllers";
 import type { ProjectEntity } from "@/core/domain/entities";
@@ -40,7 +41,11 @@ export default function Home(props: HomeProps) {
 			<GradientBackground>
 				<DefaultLayout>
 					<Article>
-						<div className="max-w-[587px]">
+						<motion.div
+							className="max-w-[587px]"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+						>
 							<TextGroup
 								title="Gabriel Lima"
 								paragraphs={[
@@ -50,7 +55,7 @@ export default function Home(props: HomeProps) {
 							<ArrowRightLink href="/sobre" className="mt-21">
 								Saber Mais
 							</ArrowRightLink>
-						</div>
+						</motion.div>
 					</Article>
 					<ArticlePreview title="Projetos">
 						<HandleError error={projects.error || errorForEmptyProjects}>

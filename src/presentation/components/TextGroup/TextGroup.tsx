@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 
 import { Typography } from "../common/Typography";
 import { generateID } from "@/shared/helpers/generate-id";
@@ -25,7 +26,11 @@ export const TextGroup = (props: GroupTextProps) => {
 	);
 
 	return (
-		<section className="flex w-full max-w-[590px] flex-col gap-6 md:gap-10">
+		<motion.section
+			className="flex w-full max-w-[590px] flex-col gap-6 md:gap-10"
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+		>
 			<Typography.Display>{title}</Typography.Display>
 			<div className="flex flex-col gap-6">
 				{paragraphsWithID.map((paragraph) => (
@@ -34,6 +39,6 @@ export const TextGroup = (props: GroupTextProps) => {
 					</Typography.Paragraph>
 				))}
 			</div>
-		</section>
+		</motion.section>
 	);
 };

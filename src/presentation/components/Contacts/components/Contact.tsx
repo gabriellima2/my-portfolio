@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import type { IContact } from "@/shared/interfaces/IContact";
 
 export type ContactProps = IContact & {
@@ -8,7 +10,10 @@ export const Contact = (props: ContactProps) => {
 	const { title, href, mask, variants = "default" } = props;
 	const isToRenderTheMask = variants === "with-mask" && mask;
 	return (
-		<li>
+		<motion.li
+			initial={{ opacity: 0, translateY: 35 }}
+			whileInView={{ opacity: 1, translateY: -0 }}
+		>
 			<a
 				href={href}
 				target="_blank"
@@ -26,6 +31,6 @@ export const Contact = (props: ContactProps) => {
 					</>
 				)}
 			</a>
-		</li>
+		</motion.li>
 	);
 };

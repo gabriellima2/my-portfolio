@@ -9,7 +9,7 @@ type AvatarProps = Pick<
 
 const modifiers = {
 	thumbnail: "w-16 h-16 rounded-full",
-	default: "w-full max-w-[400px] h-full rounded-2xl",
+	default: "w-full sm:max-w-[400px] h-full rounded-2xl",
 };
 
 export const Avatar = (props: AvatarProps) => {
