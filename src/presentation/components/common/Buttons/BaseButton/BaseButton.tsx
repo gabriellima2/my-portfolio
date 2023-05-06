@@ -50,7 +50,7 @@ export const BaseButton = (props: BaseButtonProps) => {
 
 	return (
 		<Element
-			className={`group flex w-full items-center justify-between gap-2 rounded-full border-2 border-util-secondary p-2 text-normal font-medium text-heading transition-colors hover:bg-util-primary focus:bg-util-primary dark:border-util-secondary-dark dark:text-heading-dark dark:hover:bg-util-primary-dark dark:focus:bg-util-primary-dark ${
+			className={`group flex w-full items-center justify-between gap-2 rounded-full border-2 border-util-secondary p-2 text-normal font-medium text-heading transition-[background-color] hover:bg-util-primary focus:bg-util-primary dark:border-util-secondary-dark dark:text-heading-dark dark:hover:bg-util-primary-dark dark:focus:bg-util-primary-dark ${
 				hasRightIcon && "pl-6"
 			} ${modifier} ${className}`}
 			{...rest}

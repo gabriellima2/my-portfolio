@@ -14,7 +14,7 @@ type CardProps = {
 export const Card = (props: CardProps) => {
 	const { title, description, hasArrowIcon, tags } = props;
 	return (
-		<section className="flex h-full flex-col gap-8 rounded-default border-2 border-transparent bg-util-primary p-6 transition-all dark:bg-util-primary-dark sm:p-7">
+		<section className="flex h-full flex-col gap-8 rounded-default border-2 border-transparent bg-util-primary p-6 dark:bg-util-primary-dark sm:p-7">
 			<header className="center--row justify-between gap-2">
 				{tags && <Tags items={tags} />}
 				{hasArrowIcon && (
