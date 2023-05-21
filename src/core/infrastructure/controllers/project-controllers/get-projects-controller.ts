@@ -10,8 +10,8 @@ import {
 	EmptyDataError,
 	InvalidDataLimitError,
 	UnexpectedError,
+	DefaultError,
 } from "@/core/domain/errors";
-import { DefaultError } from "@/core/domain/errors/default-error";
 import { HttpStatusCode } from "@/core/domain/helpers";
 
 const COMMON_FIELDS_SCHEMA = `
@@ -22,6 +22,24 @@ const COMMON_FIELDS_SCHEMA = `
 	title
 `;
 
+const getSchema = (limit?: number) => {
+	return limit
+		? gql`
+			query Projects {
+				projects (first: ${limit}) {
+					${COMMON_FIELDS_SCHEMA}
+				}
+			}
+		`
+		: gql`
+						query Projects {
+							projects {
+								${COMMON_FIELDS_SCHEMA}
+							}
+						}
+				  `;
+};
+
 export class GetProjectsController implements IGetProjectsController {
 	constructor(private readonly getProjects: IGetProjects) {}
 
@@ -29,45 +47,28 @@ export class GetProjectsController implements IGetProjectsController {
 		projectsLimit?: number | undefined
 	): Promise<HttpClientGateway.Response<string | ProjectEntity[]>> {
 		const hasProjectsLimit = !!projectsLimit;
-		if (hasProjectsLimit && projectsLimit <= 0)
-			throw new InvalidDataLimitError();
 
 		try {
-			const schema = hasProjectsLimit
-				? gql`
-			query Projects {
-				projects (first: ${projectsLimit}) {
-					${COMMON_FIELDS_SCHEMA}
-				}
-			}
-		`
-				: gql`
-						query Projects {
-							projects {
-								${COMMON_FIELDS_SCHEMA}
-							}
-						}
-				  `;
+			if (hasProjectsLimit && projectsLimit <= 0)
+				throw new InvalidDataLimitError();
+
+			const schema = getSchema(projectsLimit);
 			const response = await this.getProjects.execute({
 				url: "",
 				body: schema,
 			});
-
 			if (!response.ok) throw new UnexpectedError();
 			if (!response.body.projects) throw new EmptyDataError();
 
 			return { ...response, body: response.body.projects };
 		} catch (err) {
-			const isApolloError = err instanceof ApolloError;
 			const error = {
-				message: isApolloError
-					? (err as ApolloError).message
-					: (err as DefaultError).message,
-				code: isApolloError
-					? HttpStatusCode.serverError
-					: (err as DefaultError).statusCode,
+				message: (err as DefaultError).message,
+				code:
+					err instanceof ApolloError
+						? HttpStatusCode.serverError
+						: (err as DefaultError).statusCode,
 			};
-
 			return {
 				ok: false,
 				body: error.message,
