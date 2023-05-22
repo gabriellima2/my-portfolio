@@ -2,7 +2,7 @@ import { Typography } from "../common";
 import type { TWithChildren } from "@/@types/TWithChildren";
 
 export type HandleErrorProps = TWithChildren & {
-	error: string | null;
+	error: string | null | undefined;
 };
 
 export const HandleError = (props: HandleErrorProps) => {

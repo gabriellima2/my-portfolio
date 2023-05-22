@@ -1,9 +1,6 @@
 import { type GetStaticProps } from "next";
-import { useMemo } from "react";
 
-import { makeGetProjectsController } from "@/core/main/factories/controllers";
 import type { ProjectEntity } from "@/core/domain/entities";
-import { EmptyDataError } from "@/core/domain/errors";
 
 import {
 	Projects as ProjectList,
@@ -14,6 +11,7 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
+import { makeProjectServices } from "@/shared/factories";
 import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
 
 type ProjectsProps = {
@@ -22,10 +20,6 @@ type ProjectsProps = {
 
 export default function Projects(props: ProjectsProps) {
 	const { projects } = props;
-	const errorForEmptyProjects = useMemo(
-		() => (!projects.data ? new EmptyDataError().message : null),
-		[projects.data]
-	);
 
 	return (
 		<>
@@ -44,7 +38,7 @@ export default function Projects(props: ProjectsProps) {
 					/>
 				</Article>
 				<section className="border-b-2 border-b-util-secondary py-21 dark:border-b-util-secondary-dark">
-					<HandleError error={projects.error || errorForEmptyProjects}>
+					<HandleError error={projects.error}>
 						<ul className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
 							<ProjectList projects={projects.data!} />
 						</ul>
@@ -56,17 +50,15 @@ export default function Projects(props: ProjectsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const getProjectsController = makeGetProjectsController();
-	const projectsResponse = await getProjectsController.execute();
-	const hasErrorMessageInProjectsResponse =
-		typeof projectsResponse.body === "string";
-
-	return {
-		props: {
-			projects: hasErrorMessageInProjectsResponse
-				? { data: null, error: projectsResponse.body }
-				: { data: projectsResponse.body },
-		},
-		revalidate: 15,
-	};
+	try {
+		const projectsResponse = await makeProjectServices().getAll();
+		return {
+			props: { projects: { data: projectsResponse.body.projects } },
+			revalidate: 10,
+		};
+	} catch (err) {
+		return {
+			props: { projects: { data: null, error: (err as Error).message } },
+		};
+	}
 };

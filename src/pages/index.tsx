@@ -1,10 +1,7 @@
 import { type GetStaticProps } from "next";
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 
-import { makeGetProjectsController } from "@/core/main/factories/controllers";
 import type { ProjectEntity } from "@/core/domain/entities";
-import { EmptyDataError } from "@/core/domain/errors";
 
 import {
 	ArrowRightLink,
@@ -19,6 +16,7 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
+import { makeProjectServices } from "@/shared/factories";
 import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
 
 type HomeProps = {
@@ -27,10 +25,6 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
 	const { projects } = props;
-	const errorForEmptyProjects = useMemo(
-		() => (!projects.data ? new EmptyDataError().message : null),
-		[projects.data]
-	);
 
 	return (
 		<>
@@ -58,7 +52,7 @@ export default function Home(props: HomeProps) {
 						</motion.div>
 					</Article>
 					<ArticlePreview title="Projetos">
-						<HandleError error={projects.error || errorForEmptyProjects}>
+						<HandleError error={projects.error}>
 							<section>
 								<ul className="grid grid-rows-3 gap-6">
 									<Projects projects={projects.data!} />
@@ -79,17 +73,15 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const getProjectsController = makeGetProjectsController();
-	const projectsResponse = await getProjectsController.execute(3);
-	const hasErrorMessageInProjectsResponse =
-		typeof projectsResponse.body === "string";
-
-	return {
-		props: {
-			projects: hasErrorMessageInProjectsResponse
-				? { data: null, error: projectsResponse.body }
-				: { data: projectsResponse.body },
-		},
-		revalidate: 10,
-	};
+	try {
+		const projectsResponse = await makeProjectServices().getWithLimit();
+		return {
+			props: { projects: { data: projectsResponse.body.projects } },
+			revalidate: 10,
+		};
+	} catch (err) {
+		return {
+			props: { projects: { data: null, error: (err as Error).message } },
+		};
+	}
 };
