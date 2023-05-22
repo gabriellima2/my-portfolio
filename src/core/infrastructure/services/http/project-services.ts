@@ -3,8 +3,8 @@ import { GetProjectsProtocol } from "@/core/domain/protocols";
 import { EmptyDataError } from "@/core/domain/errors";
 
 import {
-	GET_PROJECTS,
-	GET_PROJECTS_WITH_LIMIT,
+	GET_PROJECTS_SCHEMA,
+	GET_PROJECTS_WITH_LIMIT_SCHEMA,
 } from "@/core/infrastructure/schemas";
 
 export class ProjectServices {
@@ -13,7 +13,7 @@ export class ProjectServices {
 	async getAll(): Promise<HttpClientGateway.Response<GetProjectsProtocol>> {
 		const response = await this.client.get<GetProjectsProtocol>({
 			url: "",
-			body: GET_PROJECTS,
+			body: GET_PROJECTS_SCHEMA,
 		});
 		if (!response.body.projects) throw new EmptyDataError();
 		return response;
@@ -24,7 +24,7 @@ export class ProjectServices {
 	> {
 		const response = await this.client.get<GetProjectsProtocol>({
 			url: "",
-			body: GET_PROJECTS_WITH_LIMIT,
+			body: GET_PROJECTS_WITH_LIMIT_SCHEMA,
 		});
 		if (!response.body.projects) throw new EmptyDataError();
 		return response;

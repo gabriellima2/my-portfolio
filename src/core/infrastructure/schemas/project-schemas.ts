@@ -8,7 +8,7 @@ const COMMON_FIELDS_SCHEMA = `
 	title
 `;
 
-export const GET_PROJECTS = gql`
+export const GET_PROJECTS_SCHEMA = gql`
 	query Projects {
 		projects {
 			${COMMON_FIELDS_SCHEMA}
@@ -16,7 +16,7 @@ export const GET_PROJECTS = gql`
 	}
 `;
 
-export const GET_PROJECTS_WITH_LIMIT = gql`
+export const GET_PROJECTS_WITH_LIMIT_SCHEMA = gql`
 	query Projects {
 		projects (first: 3) {
 			${COMMON_FIELDS_SCHEMA}
