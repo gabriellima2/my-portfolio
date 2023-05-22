@@ -1,5 +1,5 @@
 import { ThemeProvider } from "./theme-context";
-import { persistedUserThemePreference } from "../services";
+import { persistedUserThemePreference } from "../../core/infrastructure/services";
 
 import type { TWithChildren } from "@/@types/TWithChildren";
 

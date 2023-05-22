@@ -1,7 +1,8 @@
 import { type GetStaticProps } from "next";
 import { motion } from "framer-motion";
 
-import type { ProjectEntity } from "@/core/domain/entities";
+import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
+import { makeProjectServices } from "@/core/main/factories";
 
 import {
 	ArrowRightLink,
@@ -16,11 +17,8 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
-import { makeProjectServices } from "@/shared/factories";
-import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
-
 type HomeProps = {
-	projects: IAsyncData<ProjectEntity[]>;
+	projects: FetchEntity<ProjectEntity[]>;
 };
 
 export default function Home(props: HomeProps) {

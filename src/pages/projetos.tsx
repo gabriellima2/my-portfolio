@@ -1,6 +1,7 @@
 import { type GetStaticProps } from "next";
 
-import type { ProjectEntity } from "@/core/domain/entities";
+import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
+import { makeProjectServices } from "@/core/main/factories";
 
 import {
 	Projects as ProjectList,
@@ -11,11 +12,8 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
-import { makeProjectServices } from "@/shared/factories";
-import type { IAsyncData } from "@/shared/interfaces/IAsyncData";
-
 type ProjectsProps = {
-	projects: IAsyncData<ProjectEntity[]>;
+	projects: FetchEntity<ProjectEntity[]>;
 };
 
 export default function Projects(props: ProjectsProps) {

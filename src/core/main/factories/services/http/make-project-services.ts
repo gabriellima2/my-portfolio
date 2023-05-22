@@ -1,5 +1,5 @@
 import { makeHttpClientGatewayImpl } from "@/core/main/factories/gateways";
-import { ProjectServices } from "@/shared/services";
+import { ProjectServices } from "@/core/infrastructure/services";
 
 export const makeProjectServices = () => {
 	const httpClientGateway = makeHttpClientGatewayImpl();

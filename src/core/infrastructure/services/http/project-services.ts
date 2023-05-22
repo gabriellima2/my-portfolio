@@ -2,7 +2,10 @@ import { HttpClientGateway, IHttpClientGateway } from "@/core/domain/gateways";
 import { GetProjectsProtocol } from "@/core/domain/protocols";
 import { EmptyDataError } from "@/core/domain/errors";
 
-import { GET_PROJECTS, GET_PROJECTS_WITH_LIMIT } from "@/shared/schemas";
+import {
+	GET_PROJECTS,
+	GET_PROJECTS_WITH_LIMIT,
+} from "@/core/infrastructure/schemas";
 
 export class ProjectServices {
 	constructor(private readonly client: IHttpClientGateway) {}
