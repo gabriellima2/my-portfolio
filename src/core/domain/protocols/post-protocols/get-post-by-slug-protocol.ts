@@ -1,7 +1,7 @@
 import { PostEntity } from "@/core/domain/entities";
 
-export namespace GetPostsProtocol {
+export namespace GetPostBySlugProtocol {
 	export type Response = {
-		posts: Omit<PostEntity, "tags">[] | null;
+		post: PostEntity | null;
 	};
 }
