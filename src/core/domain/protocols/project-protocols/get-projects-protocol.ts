@@ -1,5 +1,7 @@
 import { ProjectEntity } from "@/core/domain/entities";
 
-export interface GetProjectsProtocol {
-	projects: ProjectEntity[] | null;
+export namespace GetProjectsProtocol {
+	export type Response = {
+		projects: ProjectEntity[] | null;
+	};
 }

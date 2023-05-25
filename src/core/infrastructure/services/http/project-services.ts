@@ -10,8 +10,10 @@ import {
 export class ProjectServices {
 	constructor(private readonly client: IHttpClientGateway) {}
 
-	async getAll(): Promise<HttpClientGateway.Response<GetProjectsProtocol>> {
-		const response = await this.client.get<GetProjectsProtocol>({
+	async getAll(): Promise<
+		HttpClientGateway.Response<GetProjectsProtocol.Response>
+	> {
+		const response = await this.client.get<GetProjectsProtocol.Response>({
 			url: "",
 			body: GET_PROJECTS_SCHEMA,
 		});
@@ -20,11 +22,11 @@ export class ProjectServices {
 	}
 
 	async getWithLimit(): Promise<
-		HttpClientGateway.Response<GetProjectsProtocol>
+		HttpClientGateway.Response<GetProjectsProtocol.Response>
 	> {
-		const response = await this.client.get<GetProjectsProtocol>({
+		const response = await this.client.get<GetProjectsProtocol.Response>({
 			url: "",
-			body: GET_PROJECTS_WITH_LIMIT_SCHEMA,
+			body: GET_PROJECTS_WITH_LIMIT_SCHEMA(3),
 		});
 		if (!response.body.projects) throw new EmptyDataError();
 		return response;

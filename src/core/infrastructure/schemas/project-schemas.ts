@@ -16,9 +16,9 @@ export const GET_PROJECTS_SCHEMA = gql`
 	}
 `;
 
-export const GET_PROJECTS_WITH_LIMIT_SCHEMA = gql`
+export const GET_PROJECTS_WITH_LIMIT_SCHEMA = (limit: number) => gql`
 	query Projects {
-		projects (first: 3) {
+		projects (first: ${limit}) {
 			${COMMON_FIELDS_SCHEMA}
 		}
 	}
