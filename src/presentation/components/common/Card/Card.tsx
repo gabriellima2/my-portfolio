@@ -5,18 +5,18 @@ import { Icon } from "../Icon";
 import { Tags } from "../Tags";
 
 type CardProps = {
-	tags?: string[];
+	additional?: () => JSX.Element;
 	title: string;
 	description?: string;
 	hasArrowIcon?: boolean;
 };
 
 export const Card = (props: CardProps) => {
-	const { title, description, hasArrowIcon, tags } = props;
+	const { title, description, hasArrowIcon, additional } = props;
 	return (
 		<section className="flex h-full flex-col gap-8 rounded-default border-2 border-transparent bg-util-primary p-6 dark:bg-util-primary-dark sm:p-7">
 			<header className="center--row justify-between gap-2">
-				{tags && <Tags items={tags} />}
+				{!!additional && additional()}
 				{hasArrowIcon && (
 					<Icon
 						data-testid="arrow-icon"
@@ -27,7 +27,7 @@ export const Card = (props: CardProps) => {
 			</header>
 			<div>
 				<Typography.Title className="mb-5 !text-l">{title}</Typography.Title>
-				{description && (
+				{!!description && (
 					<Typography.Paragraph>{description}</Typography.Paragraph>
 				)}
 			</div>

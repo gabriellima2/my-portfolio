@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 import { CardLink } from "../Links";
+import { Tags } from "../common";
+
 import type { ProjectEntity } from "@/core/domain/entities";
 
 type ProjectsProps = {
@@ -20,9 +22,10 @@ export const Projects = (props: ProjectsProps) => {
 					<CardLink
 						title={project.title}
 						description={project.description}
-						tags={project.techs}
+						additional={() => <Tags items={project.techs} />}
 						href={project.href}
 						linkTitle={`Visitar projeto ${project.title}`}
+						withTargetBlank
 					/>
 				</motion.li>
 			))}
