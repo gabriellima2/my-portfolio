@@ -31,7 +31,8 @@ export class PostServices {
 			url: "",
 			body: GET_POSTS_WITH_LIMIT_SCHEMA(3),
 		});
-		if (!response.body.posts) throw new EmptyDataError();
+		const isEmptyArray = response.body.posts?.length === 0;
+		if (!response.body.posts || isEmptyArray) throw new EmptyDataError();
 		return response;
 	}
 }

@@ -1,14 +1,18 @@
 import { type GetStaticProps } from "next";
 import { motion } from "framer-motion";
 
-import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
-import { makeProjectServices } from "@/core/main/factories";
+import type {
+	FetchEntity,
+	PostEntity,
+	ProjectEntity,
+} from "@/core/domain/entities";
+import { makePostServices, makeProjectServices } from "@/core/main/factories";
 
 import {
 	ArrowRightLink,
 	Article,
 	ArticlePreview,
-	ComingSoon,
+	Posts,
 	GradientBackground,
 	HandleError,
 	Head,
@@ -17,12 +21,15 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
+import { getData } from "@/shared/helpers/get-data";
+
 type HomeProps = {
 	projects: FetchEntity<ProjectEntity[]>;
+	posts: FetchEntity<Omit<PostEntity, "tags">[]>;
 };
 
 export default function Home(props: HomeProps) {
-	const { projects } = props;
+	const { projects, posts } = props;
 
 	return (
 		<>
@@ -62,7 +69,16 @@ export default function Home(props: HomeProps) {
 						</HandleError>
 					</ArticlePreview>
 					<ArticlePreview title="Blog">
-						<ComingSoon />
+						<HandleError error={posts.error}>
+							<section>
+								<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+									<Posts posts={posts.data!} />
+								</ul>
+								<ArrowRightLink href="/projetos" className="mt-16">
+									Ver Todos
+								</ArrowRightLink>
+							</section>
+						</HandleError>
 					</ArticlePreview>
 				</DefaultLayout>
 			</GradientBackground>
@@ -71,15 +87,16 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	try {
-		const projectsResponse = await makeProjectServices().getWithLimit();
-		return {
-			props: { projects: { data: projectsResponse.body.projects } },
-			revalidate: 10,
-		};
-	} catch (err) {
-		return {
-			props: { projects: { data: null, error: (err as Error).message } },
-		};
-	}
+	const projects = await getData(
+		makeProjectServices(),
+		"getWithLimit",
+		"projects"
+	);
+	const posts = await getData(makePostServices(), "getWithLimit", "posts");
+	return {
+		props: {
+			projects,
+			posts,
+		},
+	};
 };

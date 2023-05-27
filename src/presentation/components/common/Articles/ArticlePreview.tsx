@@ -10,7 +10,7 @@ export const ArticlePreview = (props: ArticlePreviewProps) => {
 	return (
 		<Article
 			{...rest}
-			className={`${className} flex flex-col gap-21 lg:flex-row`}
+			className={`${className} grid grid-cols-1 gap-21 lg:grid-cols-2`}
 		>
 			<div className="lg:center--row w-full max-w-[590px] border-util-secondary pr-21 dark:border-util-secondary-dark lg:border-r-2">
 				<Typography.Display>{title}</Typography.Display>

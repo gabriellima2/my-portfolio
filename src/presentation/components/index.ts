@@ -7,3 +7,4 @@ export * from "./HandleError";
 export * from "./Head";
 export * from "./Contacts";
 export * from "./TextGroup";
+export * from "./Posts";
