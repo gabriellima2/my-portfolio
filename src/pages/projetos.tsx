@@ -1,8 +1,5 @@
 import { type GetStaticProps } from "next";
 
-import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
-import { makeProjectServices } from "@/core/main/factories";
-
 import {
 	Projects as ProjectList,
 	Article,
@@ -11,6 +8,12 @@ import {
 	Head,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
+
+import { getData } from "@/shared/helpers/get-data";
+import { makeProjectServices } from "@/core/main/factories";
+
+import type { GetProjectsProtocol } from "@/core/domain/protocols";
+import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
 
 type ProjectsProps = {
 	projects: FetchEntity<ProjectEntity[]>;
@@ -47,16 +50,17 @@ export default function Projects(props: ProjectsProps) {
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-	try {
-		const projectsResponse = await makeProjectServices().getAll();
-		return {
-			props: { projects: { data: projectsResponse.body.projects } },
-			revalidate: 10,
-		};
-	} catch (err) {
-		return {
-			props: { projects: { data: null, error: (err as Error).message } },
-		};
-	}
+export const getStaticProps: GetStaticProps<ProjectsProps> = async () => {
+	const projectServices = makeProjectServices();
+	const projects = await getData<ProjectEntity[], GetProjectsProtocol.Response>(
+		projectServices.getAll.bind(projectServices),
+		"projects"
+	);
+
+	return {
+		props: {
+			projects,
+		},
+		revalidate: 10,
+	};
 };

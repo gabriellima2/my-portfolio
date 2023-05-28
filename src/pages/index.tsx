@@ -16,6 +16,7 @@ import { DefaultLayout } from "@/presentation/layouts";
 
 import { getData } from "@/shared/helpers/get-data";
 import { makePostServices, makeProjectServices } from "@/core/main/factories";
+
 import type {
 	GetPostsPreviewProtocol,
 	GetProjectsProtocol,
@@ -107,5 +108,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 			projects,
 			posts,
 		},
+		revalidate: 10,
 	};
 };
