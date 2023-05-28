@@ -1,7 +1,7 @@
 import { HttpClientGateway, IHttpClientGateway } from "@/core/domain/gateways";
 import {
 	GetPostBySlugProtocol,
-	GetPostsProtocol,
+	GetPostsPreviewProtocol,
 } from "@/core/domain/protocols";
 import { EmptyDataError } from "@/core/domain/errors";
 
@@ -25,9 +25,9 @@ export class PostServices {
 	}
 
 	async getWithLimit(): Promise<
-		HttpClientGateway.Response<GetPostsProtocol.Response>
+		HttpClientGateway.Response<GetPostsPreviewProtocol.Response>
 	> {
-		const response = await this.client.get<GetPostsProtocol.Response>({
+		const response = await this.client.get<GetPostsPreviewProtocol.Response>({
 			url: "",
 			body: GET_POSTS_WITH_LIMIT_SCHEMA(3),
 		});

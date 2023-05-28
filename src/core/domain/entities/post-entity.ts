@@ -7,3 +7,5 @@ export interface PostEntity {
 		html: string;
 	};
 }
+
+export interface PostPreviewEntity extends Omit<PostEntity, "tags"> {}
