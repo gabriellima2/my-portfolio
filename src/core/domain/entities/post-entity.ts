@@ -8,4 +8,5 @@ export interface PostEntity {
 	};
 }
 
-export interface PostPreviewEntity extends Omit<PostEntity, "tags"> {}
+export interface PostPreviewEntity
+	extends Omit<PostEntity, "tags" | "content"> {}

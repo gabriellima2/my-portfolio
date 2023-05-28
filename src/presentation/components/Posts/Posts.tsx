@@ -1,10 +1,10 @@
 import { CardLink } from "../Links";
 
 import { formatPublishedDate } from "@/shared/helpers/format-published-date";
-import type { PostEntity } from "@/core/domain/entities";
+import type { PostPreviewEntity } from "@/core/domain/entities";
 
 type PostsProps = {
-	posts: Omit<PostEntity, "tags">[];
+	posts: PostPreviewEntity[];
 };
 
 export const Posts = (props: PostsProps) => {
