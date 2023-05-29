@@ -8,3 +8,4 @@ export * from "./Head";
 export * from "./Contacts";
 export * from "./TextGroup";
 export * from "./Posts";
+export * from "./PostsGroupedByYear";
