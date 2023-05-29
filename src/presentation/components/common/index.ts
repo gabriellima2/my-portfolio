@@ -1,5 +1,6 @@
 export * from "./MaxWidthContainer";
 export * from "./GradientBackground";
+export * from "./GroupByYear";
 export * from "./Typography";
 export * from "./Headers";
 export * from "./Buttons";
