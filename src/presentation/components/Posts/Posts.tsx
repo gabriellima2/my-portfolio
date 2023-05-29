@@ -12,15 +12,16 @@ export const Posts = (props: PostsProps) => {
 	return (
 		<>
 			{posts.map((post) => (
-				<CardLink
-					key={post.slug}
-					href={`/blog/${post.slug}`}
-					title={post.title}
-					linkTitle={post.title}
-					additional={() => (
-						<small>{formatPublishedDate(post.publishedAt)}</small>
-					)}
-				/>
+				<li key={post.slug}>
+					<CardLink
+						href={`/blog/${post.slug}`}
+						title={post.title}
+						linkTitle={post.title}
+						additional={() => (
+							<small>{formatPublishedDate(post.publishedAt)}</small>
+						)}
+					/>
+				</li>
 			))}
 		</>
 	);
