@@ -17,11 +17,20 @@ export const GET_POST_BY_SLUG_SCHEMA = (slug: string) => gql`
 	}
 `;
 
-export const GET_POSTS_WITH_LIMIT_SCHEMA = (limit: number) => gql`
+export const GET_POSTS_SCHEMA = (limit?: number) => {
+	return limit
+		? gql`
 	query Posts {
 		posts (first: ${limit}) {
 			${COMMON_FIELDS_SCHEMA}
 			tags
 		}
-	}
-`;
+	}`
+		: gql`
+	query Posts {
+		posts {
+			${COMMON_FIELDS_SCHEMA}
+			tags
+		}
+	}`;
+};

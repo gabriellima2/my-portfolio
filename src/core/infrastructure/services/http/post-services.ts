@@ -7,7 +7,7 @@ import { EmptyDataError } from "@/core/domain/errors";
 
 import {
 	GET_POST_BY_SLUG_SCHEMA,
-	GET_POSTS_WITH_LIMIT_SCHEMA,
+	GET_POSTS_SCHEMA,
 } from "@/core/infrastructure/schemas";
 
 export class PostServices {
@@ -24,12 +24,12 @@ export class PostServices {
 		return response;
 	}
 
-	async getWithLimit(): Promise<
-		HttpClientGateway.Response<GetPostsPreviewProtocol.Response>
-	> {
+	async getAll(
+		limit?: number
+	): Promise<HttpClientGateway.Response<GetPostsPreviewProtocol.Response>> {
 		const response = await this.client.get<GetPostsPreviewProtocol.Response>({
 			url: "",
-			body: GET_POSTS_WITH_LIMIT_SCHEMA(3),
+			body: GET_POSTS_SCHEMA(limit),
 		});
 		const isEmptyArray = response.body.posts?.length === 0;
 		if (!response.body.posts || isEmptyArray) throw new EmptyDataError();

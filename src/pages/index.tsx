@@ -95,13 +95,13 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const postServices = makePostServices();
 
 	const projects = await getData<ProjectEntity[], GetProjectsProtocol.Response>(
-		projectServices.getWithLimit.bind(projectServices),
+		() => projectServices.getAll.bind(projectServices)(3),
 		"projects"
 	);
 	const posts = await getData<
 		PostPreviewEntity[],
 		GetPostsPreviewProtocol.Response
-	>(postServices.getWithLimit.bind(postServices), "posts");
+	>(() => postServices.getAll.bind(postServices)(3), "posts");
 
 	return {
 		props: {
