@@ -2,22 +2,19 @@ import { render, screen } from "@testing-library/react";
 
 import { PostsGroupedByYear } from "./PostsGroupedByYear";
 import { postsMock } from "@/__mocks__/posts-mock";
+import { slicePublishedDate } from "@/shared/helpers/slice-published-date";
 
-const POSTS_GROUPED_BY_YEAR = [{ year: 2023, posts: postsMock }];
-
-const renderComponent = () =>
-	render(<PostsGroupedByYear groupedPosts={POSTS_GROUPED_BY_YEAR} />);
+const renderComponent = () => render(<PostsGroupedByYear posts={postsMock} />);
 
 describe("<PostsGroupedByYear />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
 
-			POSTS_GROUPED_BY_YEAR.forEach((group) => {
-				expect(screen.getByText(group.year)).toBeInTheDocument();
-				group.posts.forEach((post) => {
-					expect(screen.getByText(post.title));
-				});
+			postsMock.forEach((post) => {
+				const { year } = slicePublishedDate(post.publishedAt);
+				expect(screen.getByText(year)).toBeInTheDocument();
+				expect(screen.getByText(post.title));
 			});
 		});
 	});

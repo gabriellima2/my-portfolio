@@ -1,4 +1,5 @@
 import { getMonthInTextFormatFromNumber } from "./get-month-in-text-format-from-number";
+import { slicePublishedDate } from "./slice-published-date";
 
 /**
  *
@@ -6,9 +7,7 @@ import { getMonthInTextFormatFromNumber } from "./get-month-in-text-format-from-
  * @returns Value formatted as: 31 Dez 2023
  */
 export function formatPublishedDate(value: string) {
-	if (!value.includes("-")) throw new Error("Invalid date format");
-	const lastSeparatorIndex = value.lastIndexOf("-");
-	const [year, month, day] = value.slice(0, lastSeparatorIndex + 3).split("-");
+	const { year, month, day } = slicePublishedDate(value);
 	const abbrMonthText = getMonthInTextFormatFromNumber[month].slice(0, 3);
 	return `${day} ${abbrMonthText} ${year}`;
 }

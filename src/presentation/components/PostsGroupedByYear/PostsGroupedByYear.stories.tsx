@@ -12,41 +12,21 @@ const meta: Meta<typeof PostsGroupedByYear> = {
 	component: PostsGroupedByYear,
 	tags: ["autodocs"],
 	args: {
-		groupedPosts: [
+		posts: [
 			{
-				year: CURRENT_YEAR,
-				posts: [
-					{
-						title: "Lorem ipsum dolor sit amet",
-						slug: "lorem-ipsum-dolor-sit-amet-1",
-						publishedAt: `${CURRENT_YEAR}-06-17`,
-					},
-					{
-						title: "Lorem ipsum dolor sit amet",
-						slug: "lorem-ipsum-dolor-sit-amet-2",
-						publishedAt: `${CURRENT_YEAR}-06-17`,
-					},
-					{
-						title: "Lorem ipsum dolor sit amet",
-						slug: "lorem-ipsum-dolor-sit-amet-3",
-						publishedAt: `${CURRENT_YEAR}-06-17`,
-					},
-				],
+				title: "Lorem ipsum dolor sit amet",
+				slug: "lorem-ipsum-dolor-sit-amet-1",
+				publishedAt: `${CURRENT_YEAR}-06-17`,
 			},
 			{
-				year: LAST_YEAR,
-				posts: [
-					{
-						title: "Lorem ipsum dolor sit amet",
-						slug: "lorem-ipsum-dolor-sit-amet-4",
-						publishedAt: `${LAST_YEAR}-06-17`,
-					},
-					{
-						title: "Lorem ipsum dolor sit amet",
-						slug: "lorem-ipsum-dolor-sit-amet-5",
-						publishedAt: `${LAST_YEAR}-06-17`,
-					},
-				],
+				title: "Lorem ipsum dolor sit amet",
+				slug: "lorem-ipsum-dolor-sit-amet-2",
+				publishedAt: `${LAST_YEAR}-06-17`,
+			},
+			{
+				title: "Lorem ipsum dolor sit amet",
+				slug: "lorem-ipsum-dolor-sit-amet-3",
+				publishedAt: `${CURRENT_YEAR}-06-17`,
 			},
 		],
 	},
