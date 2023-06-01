@@ -17,13 +17,13 @@ export const PostsGroupedByYear = (props: PostsGroupedByYearProps) => {
 	const items = useMemo(() => Object.entries(groupedPosts), [groupedPosts]);
 
 	return (
-		<ol>
+		<ol className="w-full">
 			{items.map(([year, posts]) => (
 				<li key={year}>
 					<GroupByYear year={year}>
-						<ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+						<ol className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 							<Posts posts={posts} />
-						</ul>
+						</ol>
 					</GroupByYear>
 				</li>
 			))}

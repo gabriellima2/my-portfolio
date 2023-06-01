@@ -1,6 +1,12 @@
 import type { GetStaticProps } from "next";
 
-import { ComingSoon, Head } from "@/presentation/components";
+import {
+	Article,
+	HandleError,
+	Head,
+	PostsGroupedByYear,
+	TextGroup,
+} from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
 import { makePostServices } from "@/core/main/factories";
@@ -19,9 +25,19 @@ export default function Blog(props: BlogProps) {
 	return (
 		<>
 			<Head path="Blog" keywords="Coming soon" />
-			<DefaultLayout withoutFooter>
-				<section className="center--row pt-21">
-					<ComingSoon />
+			<DefaultLayout withoutFooter={!!posts.error}>
+				<Article>
+					<TextGroup
+						title="Blog"
+						paragraphs={[
+							"Este espaço é dedicado ao compartilhamento de conhecimentos e estudos pessoais. É uma oportunidade para praticar e aprimorar a habilidade de ensinar assuntos técnicos. Os temas abordados são aqueles que estou estudando atualmente ou pelos quais tenho curiosidade.",
+						]}
+					/>
+				</Article>
+				<section>
+					<HandleError error={posts.error} className="py-21">
+						<PostsGroupedByYear posts={posts.data!} />
+					</HandleError>
 				</section>
 			</DefaultLayout>
 		</>
