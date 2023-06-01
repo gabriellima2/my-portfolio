@@ -24,7 +24,11 @@ export default function Blog(props: BlogProps) {
 
 	return (
 		<>
-			<Head path="Blog" keywords="Coming soon" />
+			<Head
+				path="Blog"
+				keywords="Blog, Pessoal, Estudos, Desenvolvimento, Programação, Aprender, Resolver, Web, Mobile"
+				description="Este espaço é dedicado ao compartilhamento de conhecimentos e estudos pessoais. É uma oportunidade para praticar e..."
+			/>
 			<DefaultLayout withoutFooter={!!posts.error}>
 				<Article>
 					<TextGroup
