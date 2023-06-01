@@ -21,9 +21,10 @@ export const PostsGroupedByYear = (props: PostsGroupedByYearProps) => {
 			{items.map(([year, posts]) => (
 				<li key={year}>
 					<GroupByYear year={year}>
-						<ol className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-							<Posts posts={posts} />
-						</ol>
+						<Posts
+							className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+							posts={posts}
+						/>
 					</GroupByYear>
 				</li>
 			))}

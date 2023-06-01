@@ -7,12 +7,13 @@ import type { ProjectEntity } from "@/core/domain/entities";
 
 type ProjectsProps = {
 	projects: ProjectEntity[];
+	className?: string;
 };
 
 export const Projects = (props: ProjectsProps) => {
-	const { projects } = props;
+	const { projects, className } = props;
 	return (
-		<>
+		<ul className={className}>
 			{projects.map((project) => (
 				<motion.li
 					key={project.id}
@@ -29,6 +30,6 @@ export const Projects = (props: ProjectsProps) => {
 					/>
 				</motion.li>
 			))}
-		</>
+		</ul>
 	);
 };

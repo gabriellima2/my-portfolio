@@ -63,9 +63,10 @@ export default function Home(props: HomeProps) {
 					<ArticlePreview title="Projetos">
 						<HandleError error={projects.error}>
 							<section>
-								<ul className="grid grid-rows-3 gap-6">
-									<Projects projects={projects.data!} />
-								</ul>
+								<Projects
+									className="grid grid-rows-3 gap-6"
+									projects={projects.data!}
+								/>
 								<ArrowRightLink href="/projetos" className="mt-16">
 									Ver Todos
 								</ArrowRightLink>
@@ -75,9 +76,10 @@ export default function Home(props: HomeProps) {
 					<ArticlePreview title="Blog">
 						<HandleError error={posts.error}>
 							<section>
-								<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-									<Posts posts={posts.data!} />
-								</ul>
+								<Posts
+									className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+									posts={posts.data!}
+								/>
 								<ArrowRightLink href="/projetos" className="mt-16">
 									Ver Todos
 								</ArrowRightLink>

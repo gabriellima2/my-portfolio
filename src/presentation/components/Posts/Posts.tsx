@@ -5,12 +5,13 @@ import type { PostPreviewEntity } from "@/core/domain/entities";
 
 type PostsProps = {
 	posts: PostPreviewEntity[];
+	className?: string;
 };
 
 export const Posts = (props: PostsProps) => {
-	const { posts } = props;
+	const { posts, className } = props;
 	return (
-		<>
+		<ol className={className}>
 			{posts.map((post) => (
 				<li key={post.slug}>
 					<CardLink
@@ -23,6 +24,6 @@ export const Posts = (props: PostsProps) => {
 					/>
 				</li>
 			))}
-		</>
+		</ol>
 	);
 };

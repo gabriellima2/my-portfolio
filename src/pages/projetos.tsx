@@ -40,9 +40,10 @@ export default function Projects(props: ProjectsProps) {
 				</Article>
 				<section className="border-b-2 border-b-util-secondary py-21 dark:border-b-util-secondary-dark">
 					<HandleError error={projects.error}>
-						<ul className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-							<ProjectList projects={projects.data!} />
-						</ul>
+						<ProjectList
+							className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3"
+							projects={projects.data!}
+						/>
 					</HandleError>
 				</section>
 			</DefaultLayout>
