@@ -11,10 +11,12 @@ import {
 	Head,
 	Projects,
 	TextGroup,
+	SeeMoreLink,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
 import { getData } from "@/shared/helpers/get-data";
+import { POSTS_LIMIT, PROJECTS_LIMIT } from "@/shared/constants";
 import { makePostServices, makeProjectServices } from "@/core/main/factories";
 
 import type {
@@ -67,9 +69,7 @@ export default function Home(props: HomeProps) {
 									className="grid grid-rows-3 gap-6"
 									projects={projects.data!}
 								/>
-								<ArrowRightLink href="/projetos" className="mt-16">
-									Ver Todos
-								</ArrowRightLink>
+								<SeeMoreLink href="/projetos" />
 							</section>
 						</HandleError>
 					</ArticlePreview>
@@ -80,9 +80,9 @@ export default function Home(props: HomeProps) {
 									className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
 									posts={posts.data!}
 								/>
-								<ArrowRightLink href="/projetos" className="mt-16">
-									Ver Todos
-								</ArrowRightLink>
+								{posts.data!.length >= POSTS_LIMIT && (
+									<SeeMoreLink href="/blog" />
+								)}
 							</section>
 						</HandleError>
 					</ArticlePreview>
@@ -97,13 +97,13 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const postServices = makePostServices();
 
 	const projects = await getData<ProjectEntity[], GetProjectsProtocol.Response>(
-		() => projectServices.getAll.bind(projectServices)(3),
+		() => projectServices.getAll.bind(projectServices)(PROJECTS_LIMIT),
 		"projects"
 	);
 	const posts = await getData<
 		PostPreviewEntity[],
 		GetPostsPreviewProtocol.Response
-	>(() => postServices.getAll.bind(postServices)(3), "posts");
+	>(() => postServices.getAll.bind(postServices)(POSTS_LIMIT), "posts");
 
 	return {
 		props: {
