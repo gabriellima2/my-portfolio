@@ -2,8 +2,14 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import { Code, HandleError, Typography } from "@/presentation/components";
-import { DefaultLayout } from "@/presentation/layouts";
+import {
+	Article,
+	Code,
+	HandleError,
+	PostContentSkeleton,
+	Typography,
+} from "@/presentation/components";
+import { StackLayout } from "@/presentation/layouts";
 
 import { makePostServices } from "@/core/main/factories";
 import { getData } from "@/shared/helpers/get-data";
@@ -21,21 +27,30 @@ type PostWithSerializedContent = Omit<PostEntity, "content"> & {
 
 export default function Page(props: PageProps) {
 	const { post } = props;
-	if (!post) return <Typography.Subtitle>Carregando...</Typography.Subtitle>;
+	const isLoading = !post;
+
 	return (
-		<DefaultLayout>
-			<HandleError error={post.error}>
-				<MDXRemote
-					{...post.data!.content}
-					components={{
-						h1: Typography.Title,
-						h2: Typography.Subtitle,
-						p: Typography.Paragraph,
-						code: Code,
-					}}
-				/>
-			</HandleError>
-		</DefaultLayout>
+		<StackLayout>
+			<Article className="center--row">
+				<div className="flex w-[800px] flex-col gap-21">
+					{isLoading ? (
+						<PostContentSkeleton />
+					) : (
+						<HandleError error={post.error}>
+							<MDXRemote
+								{...post.data!.content}
+								components={{
+									h1: Typography.Title,
+									h2: Typography.Subtitle,
+									p: Typography.Paragraph,
+									code: Code,
+								}}
+							/>
+						</HandleError>
+					)}
+				</div>
+			</Article>
+		</StackLayout>
 	);
 }
 
@@ -64,7 +79,7 @@ export const getStaticProps: GetStaticProps<
 		"post"
 	);
 	if (post.data) {
-		const html = await serialize(post.data?.content);
+		const html = await serialize(post.data.content);
 		return {
 			props: {
 				post: { ...post, data: { ...post.data, content: html } },

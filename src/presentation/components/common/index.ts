@@ -12,3 +12,4 @@ export * from "./Tags";
 export * from "./Icon";
 export * from "./Card";
 export * from "./Code";
+export * from "./Skeletons";
