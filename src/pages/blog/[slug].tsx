@@ -1,16 +1,42 @@
-import { FetchEntity, PostEntity } from "@/core/domain/entities";
-import { GetPostBySlugProtocol } from "@/core/domain/protocols";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+
+import { Code, HandleError, Typography } from "@/presentation/components";
+import { DefaultLayout } from "@/presentation/layouts";
+
 import { makePostServices } from "@/core/main/factories";
 import { getData } from "@/shared/helpers/get-data";
-import { GetStaticPaths, GetStaticProps } from "next";
+
+import type { FetchEntity, PostEntity } from "@/core/domain/entities";
+import type { GetPostBySlugProtocol } from "@/core/domain/protocols";
 
 type PageProps = {
-	post: FetchEntity<PostEntity>;
+	post: FetchEntity<PostWithSerializedContent> | undefined;
+};
+
+type PostWithSerializedContent = Omit<PostEntity, "content"> & {
+	content: MDXRemoteSerializeResult;
 };
 
 export default function Page(props: PageProps) {
-	console.log(props.post);
-	return <div></div>;
+	const { post } = props;
+	if (!post) return <Typography.Subtitle>Carregando...</Typography.Subtitle>;
+	return (
+		<DefaultLayout>
+			<HandleError error={post.error}>
+				<MDXRemote
+					{...post.data!.content}
+					components={{
+						h1: Typography.Title,
+						h2: Typography.Subtitle,
+						p: Typography.Paragraph,
+						code: Code,
+					}}
+				/>
+			</HandleError>
+		</DefaultLayout>
+	);
 }
 
 type GetStaticPropsContextParams = {
@@ -25,16 +51,30 @@ export const getStaticProps: GetStaticProps<
 	PageProps,
 	GetStaticPropsContextParams
 > = async ({ params }) => {
-	if (!params || !params.slug)
+	if (!params || !params.slug) {
 		return {
 			props: { post: { data: null } },
 			redirect: { destination: "/blog" },
 		};
+	}
 
 	const postServices = makePostServices();
 	const post = await getData<PostEntity, GetPostBySlugProtocol.Response>(
 		() => postServices.getBySlug.bind(postServices)(params.slug),
 		"post"
 	);
-	return { props: { post }, revalidate: 10 };
+	if (post.data) {
+		const html = await serialize(post.data?.content);
+		return {
+			props: {
+				post: { ...post, data: { ...post.data, content: html } },
+			},
+			revalidate: 10,
+		};
+	}
+	return {
+		props: { post: { ...post, data: null } },
+		revalidate: 10,
+		notFound: true,
+	};
 };

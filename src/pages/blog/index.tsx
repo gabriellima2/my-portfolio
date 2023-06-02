@@ -21,7 +21,6 @@ type BlogProps = {
 
 export default function Blog(props: BlogProps) {
 	const { posts } = props;
-
 	return (
 		<>
 			<Head
