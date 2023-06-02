@@ -80,7 +80,7 @@ export default function Home(props: HomeProps) {
 									className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
 									posts={posts.data!}
 								/>
-								{posts.data!.length >= POSTS_LIMIT && (
+								{posts.data && posts.data.length >= POSTS_LIMIT && (
 									<SeeMoreLink href="/blog" />
 								)}
 							</section>
