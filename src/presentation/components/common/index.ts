@@ -11,3 +11,4 @@ export * from "./Avatar";
 export * from "./Tags";
 export * from "./Icon";
 export * from "./Card";
+export * from "./Code";
