@@ -15,7 +15,7 @@ export const EstimatedReadingTime = ClientOnly(
 
 		return (
 			<span aria-label="Tempo de leitura estimado">
-				<small>{readingTime}</small>
+				<small>{readingTime} Min. de leitura</small>
 			</span>
 		);
 	}
