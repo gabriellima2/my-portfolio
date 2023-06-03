@@ -18,7 +18,9 @@ export const Posts = (props: PostsProps) => {
 						href={`/blog/${post.slug}`}
 						title={post.title}
 						linkTitle={post.title}
-						additional={() => <Date date={post.publishedAt} />}
+						additional={() => (
+							<Date date={post.publishedAt} label="Data de publicação" />
+						)}
 					/>
 				</li>
 			))}

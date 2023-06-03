@@ -13,3 +13,4 @@ export * from "./Icon";
 export * from "./Card";
 export * from "./Code";
 export * from "./Skeletons";
+export * from "./Date";
