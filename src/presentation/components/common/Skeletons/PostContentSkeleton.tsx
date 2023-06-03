@@ -2,7 +2,7 @@ import { TextBlockSkeleton, TextSkeleton } from ".";
 
 export const PostContentSkeleton = () => (
 	<>
-		<header className="flex flex-row items-start gap-8">
+		<header className="mb-21 flex flex-row items-start gap-8">
 			<TextSkeleton className="w-36" />
 			<TextSkeleton className="w-28" />
 		</header>
