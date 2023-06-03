@@ -6,6 +6,6 @@ export const postsMock: PostEntity[] = [
 		tags: ["any_tag"],
 		slug: "aplicando-testes-unitarios-no-reactjs-com-vitest",
 		publishedAt: "2023-06-17",
-		content: { html: "any_html" },
+		content: "any_content",
 	},
 ];

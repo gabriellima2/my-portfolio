@@ -1,6 +1,6 @@
+import { Date } from "../common/Date/Date";
 import { CardLink } from "../Links";
 
-import { formatPublishedDate } from "@/shared/helpers/format-published-date";
 import type { PostPreviewEntity } from "@/core/domain/entities";
 
 type PostsProps = {
@@ -18,9 +18,7 @@ export const Posts = (props: PostsProps) => {
 						href={`/blog/${post.slug}`}
 						title={post.title}
 						linkTitle={post.title}
-						additional={() => (
-							<small>{formatPublishedDate(post.publishedAt)}</small>
-						)}
+						additional={() => <Date date={post.publishedAt} />}
 					/>
 				</li>
 			))}
