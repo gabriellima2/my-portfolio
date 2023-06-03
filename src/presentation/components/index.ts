@@ -9,3 +9,4 @@ export * from "./Contacts";
 export * from "./TextGroup";
 export * from "./Posts";
 export * from "./PostsGroupedByYear";
+export * from "./EstimatedReadingTime";
