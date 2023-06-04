@@ -7,6 +7,7 @@ import {
 	Code,
 	HandleError,
 	PostContentSkeleton,
+	ProfileSkeleton,
 	Typography,
 } from "@/presentation/components";
 import { StackLayout } from "@/presentation/layouts";
@@ -34,7 +35,10 @@ export default function Page(props: PageProps) {
 			<Article className="center--row">
 				<div className="flex w-[800px] flex-col gap-21">
 					{isLoading ? (
-						<PostContentSkeleton />
+						<>
+							<PostContentSkeleton />
+							<ProfileSkeleton />
+						</>
 					) : (
 						<HandleError error={post.error}>
 							<MDXRemote
