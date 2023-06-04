@@ -44,7 +44,7 @@ export default function About() {
 					/>
 				</Article>
 				<ArticlePreview title="Contatos">
-					<Contacts contacts={contacts} variants="with-mask" />
+					<Contacts contacts={contacts} variants="with-mask" hasAnimation />
 				</ArticlePreview>
 			</DefaultLayout>
 		</>
