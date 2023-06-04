@@ -8,7 +8,7 @@ type AvatarProps = Pick<
 };
 
 const modifiers = {
-	thumbnail: "w-16 h-16 rounded-full",
+	thumbnail: "w-16 h-16 rounded-full object-cover",
 	default: "w-full sm:max-w-[400px] h-full rounded-2xl",
 };
 

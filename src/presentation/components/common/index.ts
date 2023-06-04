@@ -14,3 +14,4 @@ export * from "./Card";
 export * from "./Code";
 export * from "./Skeletons";
 export * from "./Date";
+export * from "./Profile";
