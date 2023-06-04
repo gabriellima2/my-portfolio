@@ -10,3 +10,4 @@ export * from "./TextGroup";
 export * from "./Posts";
 export * from "./PostsGroupedByYear";
 export * from "./EstimatedReadingTime";
+export * from "./PostEls";

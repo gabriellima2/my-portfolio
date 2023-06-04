@@ -10,6 +10,7 @@ import {
 	ProfileSkeleton,
 	Typography,
 } from "@/presentation/components";
+import * as PostEls from "@/presentation/components/PostEls";
 import { StackLayout } from "@/presentation/layouts";
 
 import { makePostServices } from "@/core/main/factories";
@@ -48,6 +49,10 @@ export default function Page(props: PageProps) {
 									h2: Typography.Subtitle,
 									p: Typography.Paragraph,
 									code: Code,
+									a: PostEls.Anchor,
+									img: PostEls.Image,
+									li: PostEls.ListItem,
+									strong: PostEls.Strong,
 								}}
 							/>
 						</HandleError>
