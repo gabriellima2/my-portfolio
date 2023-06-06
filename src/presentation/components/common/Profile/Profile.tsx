@@ -11,7 +11,7 @@ export type ProfileProps = {
 export const Profile = (props: ProfileProps) => {
 	const { name, description, avatarSrc, additional } = props;
 	return (
-		<section className="flex w-fit flex-row gap-6">
+		<section className="flex w-fit  flex-row flex-wrap gap-6">
 			<Avatar src={avatarSrc} alt={`Foto de ${name}`} variants="thumbnail" />
 			<section className="flex flex-col gap-6">
 				<div className="flex flex-col gap-2">

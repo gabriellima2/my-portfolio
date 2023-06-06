@@ -1,4 +1,5 @@
 import {
+	Footer,
 	MaxWidthContainer,
 	StackHeader,
 } from "@/presentation/components/common";
@@ -10,7 +11,7 @@ export const StackLayout = (props: LayoutDefaultProps) => {
 		<MaxWidthContainer>
 			<StackHeader />
 			<main>{children}</main>
-			<footer></footer>
+			<Footer />
 		</MaxWidthContainer>
 	);
 };

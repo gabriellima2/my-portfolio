@@ -1,12 +1,13 @@
 type TagsProps = {
 	items: string[];
+	className?: string;
 };
 
 export const Tags = (props: TagsProps) => {
-	const { items } = props;
+	const { items, className } = props;
 	const itemsLength = items.length - 1;
 	return (
-		<ul className="flex flex-wrap">
+		<ul className={`flex flex-1 ${className}`}>
 			{items.map((item, i) => (
 				<li key={item} className="text-s">
 					{item}
