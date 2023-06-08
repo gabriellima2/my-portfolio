@@ -2,7 +2,6 @@ import { ArrowUpRight } from "phosphor-react";
 
 import { Typography } from "../Typography";
 import { Icon } from "../Icon";
-import { Tags } from "../Tags";
 
 type CardProps = {
 	additional?: () => JSX.Element;

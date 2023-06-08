@@ -3,7 +3,7 @@ export interface PostEntity {
 	title: string;
 	tags: string[];
 	publishedAt: string;
-	content: string
+	content: string;
 }
 
 export interface PostPreviewEntity
