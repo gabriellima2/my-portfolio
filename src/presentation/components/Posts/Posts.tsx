@@ -1,4 +1,6 @@
-import { Date } from "../common/Date/Date";
+import { motion } from "framer-motion";
+
+import { Date } from "../common/Date";
 import { CardLink } from "../Links";
 
 import type { PostPreviewEntity } from "@/core/domain/entities";
@@ -13,7 +15,11 @@ export const Posts = (props: PostsProps) => {
 	return (
 		<ol className={className}>
 			{posts.map((post) => (
-				<li key={post.slug}>
+				<motion.li
+					key={post.slug}
+					initial={{ opacity: 0, translateY: 35 }}
+					whileInView={{ opacity: 1, translateY: -0 }}
+				>
 					<CardLink
 						href={`/blog/${post.slug}`}
 						title={post.title}
@@ -22,7 +28,7 @@ export const Posts = (props: PostsProps) => {
 							<Date date={post.publishedAt} label="Data de publicação" />
 						)}
 					/>
-				</li>
+				</motion.li>
 			))}
 		</ol>
 	);
