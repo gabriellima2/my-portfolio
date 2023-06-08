@@ -1,12 +1,12 @@
 import { DefaultError } from "./default-error";
 import { HttpStatusCode } from "../helpers";
 
-export class EmptyDataError extends DefaultError {
+export class ComingSoonError extends DefaultError {
 	constructor() {
 		super(
 			HttpStatusCode.notFound,
-			"Desculpe, não encontramos nenhuma informação!"
+			"Em breve você poderá explorar esse conteúdo!"
 		);
-		this.name = "EmptyDataError";
+		this.name = "ComingSoonError";
 	}
 }

@@ -3,7 +3,7 @@ import {
 	GetPostBySlugProtocol,
 	GetPostsPreviewProtocol,
 } from "@/core/domain/protocols";
-import { EmptyDataError } from "@/core/domain/errors";
+import { ComingSoonError } from "@/core/domain/errors";
 
 import {
 	GET_POST_BY_SLUG_SCHEMA,
@@ -20,7 +20,7 @@ export class PostServices {
 			url: "",
 			body: GET_POST_BY_SLUG_SCHEMA(slug),
 		});
-		if (!response.body.post) throw new EmptyDataError();
+		if (!response.body.post) throw new ComingSoonError();
 		return response;
 	}
 
@@ -32,7 +32,7 @@ export class PostServices {
 			body: GET_POSTS_SCHEMA(limit),
 		});
 		const isEmptyArray = response.body.posts?.length === 0;
-		if (!response.body.posts || isEmptyArray) throw new EmptyDataError();
+		if (!response.body.posts || isEmptyArray) throw new ComingSoonError();
 		return response;
 	}
 }
