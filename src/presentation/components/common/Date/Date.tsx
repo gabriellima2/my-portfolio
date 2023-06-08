@@ -11,9 +11,5 @@ export const Date = (props: DateProps) => {
 	if (!formmatedDate) return null;
 
 	const { day, month, year } = formmatedDate;
-	return (
-		<span aria-label={label}>
-			<small>{`${day} ${month} ${year}`}</small>
-		</span>
-	);
+	return <small aria-label={label}>{`${day} ${month} ${year}`}</small>;
 };

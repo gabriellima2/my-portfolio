@@ -49,16 +49,17 @@ export default function Page(props: PageProps) {
 						</>
 					) : (
 						<HandleError error={post.error}>
-							<header className="flex flex-col gap-8">
-								<div className="flex items-center gap-8">
+							<header className="flex flex-row flex-wrap justify-between gap-8">
+								<div className="flex items-center gap-4">
 									<Date
 										date={post.data!.publishedAt}
 										label="Data de publicação"
 									/>
+									<small>|</small>
 									<EstimatedReadingTime articleId="post-article" />
 								</div>
-								<div className="center--row flex-wrap justify-start gap-1">
-									<small>Tags:</small>
+								<div className="center--row gap-[6px]">
+									<small className="font-medium">Tags:</small>
 									<Tags items={post.data!.tags} />
 								</div>
 							</header>
@@ -81,7 +82,7 @@ export default function Page(props: PageProps) {
 							<footer>
 								<Profile
 									name="Gabriel Lima"
-									description="Desenvoledor Front-end Web e Mobile"
+									description="Desenvolvedor Front-end Web e Mobile"
 									avatarSrc="/assets/photo.jpg"
 									additional={() => (
 										<Contacts
