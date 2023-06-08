@@ -2,7 +2,9 @@ import { useMemo } from "react";
 import { SunDim, Moon } from "phosphor-react";
 
 import { useThemeContext } from "@/shared/contexts/theme-context";
+
 import { ClientOnly } from "@/presentation/hocs";
+import { ButtonSkeleton } from "../../Skeletons";
 
 export const ToggleThemeButton = ClientOnly(() => {
 	const { currentTheme, handleToggleTheme } = useThemeContext();
@@ -19,4 +21,4 @@ export const ToggleThemeButton = ClientOnly(() => {
 			{isDark ? <SunDim size={24} /> : <Moon size={24} />}
 		</button>
 	);
-});
+}, ButtonSkeleton);
