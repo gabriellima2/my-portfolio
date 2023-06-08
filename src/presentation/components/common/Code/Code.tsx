@@ -6,7 +6,9 @@ import {
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { useThemeContext } from "@/shared/contexts/theme-context";
+
 import { ClientOnly } from "@/presentation/hocs";
+import { Pre, CodeLine } from "./components";
 
 type CodeProps = HTMLAttributes<HTMLElement> & {
 	language?: string;
@@ -23,17 +25,8 @@ export const Code = ClientOnly((props: CodeProps) => {
 		<Prism
 			language={language}
 			style={codeBlockTheme}
-			PreTag={(props) => (
-				<pre
-					{...props}
-					className={`${props.className} rounded-2xl border-2 border-util-secondary bg-util-primary dark:border-util-secondary-dark dark:!bg-util-primary-dark`}
-				>
-					{props.children}
-				</pre>
-			)}
-			CodeTag={(props) => (
-				<code {...props} className={`${props.className} !text-sm`} />
-			)}
+			PreTag={Pre}
+			CodeTag={CodeLine}
 			wrapLongLines
 		>
 			{children.toString()}
