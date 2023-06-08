@@ -20,6 +20,7 @@ import { StackLayout } from "@/presentation/layouts";
 
 import { makePostServices } from "@/core/main/factories";
 import { getData } from "@/shared/helpers/get-data";
+import { REVALIDATE } from "@/shared/constants";
 import { contacts } from "@/shared/assets";
 
 import type { FetchEntity, PostEntity } from "@/core/domain/entities";
@@ -125,15 +126,13 @@ export const getStaticProps: GetStaticProps<
 	if (post.data) {
 		const html = await serialize(post.data.content);
 		return {
-			props: {
-				post: { ...post, data: { ...post.data, content: html } },
-			},
-			revalidate: 10,
+			props: { post: { ...post, data: { ...post.data, content: html } } },
+			revalidate: REVALIDATE,
 		};
 	}
 	return {
 		props: { post: { ...post, data: null } },
-		revalidate: 10,
+		revalidate: REVALIDATE,
 		notFound: true,
 	};
 };

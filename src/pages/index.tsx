@@ -15,9 +15,10 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
-import { getData } from "@/shared/helpers/get-data";
-import { POSTS_LIMIT, PROJECTS_LIMIT } from "@/shared/constants";
 import { makePostServices, makeProjectServices } from "@/core/main/factories";
+import { POSTS_LIMIT, PROJECTS_LIMIT } from "@/shared/constants";
+import { getData } from "@/shared/helpers/get-data";
+import { REVALIDATE } from "@/shared/constants";
 
 import type {
 	GetPostsPreviewProtocol,
@@ -105,11 +106,5 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 		GetPostsPreviewProtocol.Response
 	>(() => postServices.getAll.bind(postServices)(POSTS_LIMIT), "posts");
 
-	return {
-		props: {
-			projects,
-			posts,
-		},
-		revalidate: 10,
-	};
+	return { props: { projects, posts }, revalidate: REVALIDATE };
 };

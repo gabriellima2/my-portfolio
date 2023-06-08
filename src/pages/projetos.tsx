@@ -9,8 +9,9 @@ import {
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 
-import { getData } from "@/shared/helpers/get-data";
 import { makeProjectServices } from "@/core/main/factories";
+import { getData } from "@/shared/helpers/get-data";
+import { REVALIDATE } from "@/shared/constants";
 
 import type { GetProjectsProtocol } from "@/core/domain/protocols";
 import type { FetchEntity, ProjectEntity } from "@/core/domain/entities";
@@ -58,10 +59,5 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async () => {
 		"projects"
 	);
 
-	return {
-		props: {
-			projects,
-		},
-		revalidate: 10,
-	};
+	return { props: { projects }, revalidate: REVALIDATE };
 };

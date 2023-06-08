@@ -11,6 +11,7 @@ import { DefaultLayout } from "@/presentation/layouts";
 
 import { makePostServices } from "@/core/main/factories";
 import { getData } from "@/shared/helpers/get-data";
+import { REVALIDATE } from "@/shared/constants";
 
 import type { FetchEntity, PostPreviewEntity } from "@/core/domain/entities";
 import type { GetPostsPreviewProtocol } from "@/core/domain/protocols";
@@ -49,14 +50,10 @@ export default function Blog(props: BlogProps) {
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
 	const postServices = makePostServices();
-
 	const posts = await getData<
 		PostPreviewEntity[],
 		GetPostsPreviewProtocol.Response
 	>(postServices.getAll.bind(postServices), "posts");
 
-	return {
-		props: { posts },
-		revalidate: 10,
-	};
+	return { props: { posts }, revalidate: REVALIDATE };
 };
