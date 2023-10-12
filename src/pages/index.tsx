@@ -14,6 +14,7 @@ import {
 	SeeMoreLink,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
+import { WithFakeLoading } from "@/presentation/hocs";
 
 import { makePostServices, makeProjectServices } from "@/core/main/factories";
 import { POSTS_LIMIT, PROJECTS_LIMIT } from "@/shared/constants";
@@ -35,7 +36,7 @@ type HomeProps = {
 	posts: FetchEntity<PostPreviewEntity[]>;
 };
 
-export default function Home(props: HomeProps) {
+export default WithFakeLoading((props: HomeProps) => {
 	const { projects, posts } = props;
 
 	return (
@@ -91,7 +92,7 @@ export default function Home(props: HomeProps) {
 			</GradientBackground>
 		</>
 	);
-}
+});
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const projectServices = makeProjectServices();
