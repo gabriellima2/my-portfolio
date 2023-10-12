@@ -1,1 +1,1 @@
-export * from "./cookies-adapter";
+export * from "./storage-adapter";

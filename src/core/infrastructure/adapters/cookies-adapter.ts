@@ -1,7 +1,7 @@
 import { setCookie, destroyCookie, parseCookies } from "nookies";
-import { ICookiesAdapter } from "@/core/domain/adapters";
+import { IStorageAdapter } from "@/core/domain/adapters";
 
-export class CookiesAdapter implements ICookiesAdapter {
+export class CookiesAdapter implements IStorageAdapter {
 	get<T>(key: string): T | null {
 		const { [key]: valueInJSON } = parseCookies();
 		if (!valueInJSON) return null;
