@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-li {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-}
-
 @layer components {
 	.center--row {
 		@apply flex items-center justify-center;

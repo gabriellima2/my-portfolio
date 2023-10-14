@@ -12,6 +12,7 @@ import {
 	Projects,
 	TextGroup,
 	SeeMoreLink,
+	Introduction,
 } from "@/presentation/components";
 import { DefaultLayout } from "@/presentation/layouts";
 import { WithFakeLoading } from "@/presentation/hocs";
@@ -92,7 +93,7 @@ export default WithFakeLoading((props: HomeProps) => {
 			</GradientBackground>
 		</>
 	);
-});
+}, Introduction);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const projectServices = makeProjectServices();
