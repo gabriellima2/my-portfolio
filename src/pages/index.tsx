@@ -57,7 +57,7 @@ export default WithFakeLoading((props: HomeProps) => {
 							<TextGroup
 								title="Gabriel Lima"
 								paragraphs={[
-									"Sou um desenvolvedor front-end criativo com experiência em criar sites modernos para clientes que desejam aumentar sua visibilidade online. Além disso, gosto de criar projetos pessoais resolvendo problemas que encontro diariamente, focando em facilitar a experiência e a vida das pessoas.",
+									"Sou um desenvolvedor inovador e criativo. Tenho experiência em desenvolver soluções digitais únicas e personalizadas. Através do meu trabalho, busco ajudar os clientes a aumentar sua visibilidade e presença no mundo digital. Minha área de atuação se concentra no desenvolvimento front-end de websites e de aplicativos.",
 								]}
 							/>
 							<ArrowRightLink href="/sobre" className="mt-21">
