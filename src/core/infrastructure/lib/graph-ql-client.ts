@@ -1,10 +1,10 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export const graphQLClient = new ApolloClient({
-	uri: process.env.NEXT_PUBLIC_API_URL,
+	uri: process.env.API_URL,
 	cache: new InMemoryCache(),
 	headers: {
-		Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+		Authorization: `Bearer ${process.env.API_TOKEN}`,
 	},
 });
 

@@ -38,8 +38,8 @@ $ git clone https://github.com/gabriellima2/my-portfolio.git
 
 2. Adicione as credenciais para sua API do Hygraph em um arquivo .env.local
 .env.local
-NEXT_PUBLIC_API_TOKEN=Token de autenticação.
-NEXT_PUBLIC_API_URL=URL da API.
+API_TOKEN=Token de autenticação.
+API_URL=URL da API.
 
 3. Acesse a pasta e instale as dependências via terminal:
 $ yarn || npm i
