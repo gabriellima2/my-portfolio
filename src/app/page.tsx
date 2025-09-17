@@ -146,6 +146,10 @@ interface GetAllProjectsResponse {
 async function getProjects(): Promise<Project[]> {
 	const response = await fetch(process.env.API_URL as string, {
 		method: 'POST',
+		cache: 'force-cache',
+		next: {
+			revalidate: 3600, // 1 hour
+		},
 		headers: {
 			Authorization: `Bearer ${process.env.API_KEY as string}`,
 			'Content-Type': 'application/json',
