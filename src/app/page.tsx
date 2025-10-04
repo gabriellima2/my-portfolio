@@ -17,7 +17,9 @@ export default function Home() {
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
 							>
 								Github
-								<ArrowUpRight aria-hidden className="size-4" />
+								<i aria-hidden>
+									<ArrowUpRight className="size-4" />
+								</i>
 							</a>
 						</li>
 						<li>
@@ -28,7 +30,9 @@ export default function Home() {
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
 							>
 								LinkedIn
-								<ArrowUpRight aria-hidden className="size-4" />
+								<i aria-hidden>
+									<ArrowUpRight className="size-4" />
+								</i>
 							</a>
 						</li>
 						<li>
