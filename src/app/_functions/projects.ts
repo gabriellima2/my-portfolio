@@ -1,7 +1,7 @@
 'server-only'
 
 import { Project } from '../_types/projects'
-import { env } from '@/env'
+import { env } from '@/lib/env'
 
 interface GetAllProjectsResponse {
 	data: {

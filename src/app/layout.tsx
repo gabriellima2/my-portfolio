@@ -1,8 +1,9 @@
-import { env } from '@/env'
 import './globals.css'
 
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
+
+import { env } from '@/lib/env'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
