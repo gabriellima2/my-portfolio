@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import './globals.css'
 
 import type { Metadata } from 'next'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 		'React Native',
 	],
 	applicationName: 'Gabriel Lima Portfólio',
-	authors: [{ name: 'Gabriel Lima', url: process.env.GITHUB }],
+	authors: [{ name: 'Gabriel Lima', url: env.CONTACTS.GITHUB }],
 	creator: 'Gabriel Lima',
 }
 

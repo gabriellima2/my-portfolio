@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
 import { Skeleton } from './_components/skeleton'
+import { env } from '@/env'
 
 export default function Home() {
 	return (
@@ -11,7 +12,7 @@ export default function Home() {
 					<ul className="flex items-center justify-end gap-8 text-zinc-500">
 						<li>
 							<a
-								href={process.env.GITHUB}
+								href={env.CONTACTS.GITHUB}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
@@ -24,7 +25,7 @@ export default function Home() {
 						</li>
 						<li>
 							<a
-								href={process.env.LINKEDIN}
+								href={env.CONTACTS.LINKEDIN}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
@@ -37,10 +38,10 @@ export default function Home() {
 						</li>
 						<li>
 							<a
-								href={`mailto:${process.env.EMAIL}`}
+								href={`mailto:${env.CONTACTS.EMAIL}`}
 								className="transition-colors hover:text-black focus:text-black"
 							>
-								{process.env.EMAIL}
+								{env.CONTACTS.EMAIL}
 							</a>
 						</li>
 					</ul>
@@ -80,7 +81,7 @@ export default function Home() {
 					<p>
 						Tem uma ideia bacana?{' '}
 						<a
-							href={process.env.EMAIL}
+							href={env.CONTACTS.EMAIL}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="font-semibold underline transition-opacity hover:opacity-85 focus:opacity-85"
@@ -164,14 +165,14 @@ interface GetAllProjectsResponse {
 }
 
 async function getProjects(): Promise<Project[]> {
-	const response = await fetch(process.env.API_URL as string, {
+	const response = await fetch(env.API_URL as string, {
 		method: 'POST',
 		cache: 'force-cache',
 		next: {
 			revalidate: 3600, // 1 hour
 		},
 		headers: {
-			Authorization: `Bearer ${process.env.API_KEY as string}`,
+			Authorization: `Bearer ${env.API_KEY as string}`,
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
