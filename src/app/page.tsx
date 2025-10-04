@@ -11,7 +11,7 @@ export default function Home() {
 					<ul className="flex items-center justify-end gap-8 text-zinc-500">
 						<li>
 							<a
-								href="#"
+								href={process.env.GITHUB}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
@@ -22,21 +22,21 @@ export default function Home() {
 						</li>
 						<li>
 							<a
-								href="#"
+								href={process.env.LINKEDIN}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
 							>
-								Linkedin
+								LinkedIn
 								<ArrowUpRight aria-hidden className="size-4" />
 							</a>
 						</li>
 						<li>
 							<a
-								href="mailto:gabriel.rslima10@gmail.com"
+								href={`mailto:${process.env.EMAIL}`}
 								className="transition-colors hover:text-black focus:text-black"
 							>
-								gabriel.rslima10@gmail.com
+								{process.env.EMAIL}
 							</a>
 						</li>
 					</ul>
@@ -44,28 +44,44 @@ export default function Home() {
 				<article className="space-y-8 text-lg">
 					<h1 className="sr-only">Gabriel Lima</h1>
 					<p>
-						Salve! Aqui quem fala é o Gabriel, um desenvolvedor front-end
-						inovador e criativo. Atuo como Desenvolvedor Front-end Júnior na{' '}
-						<a
-							href="#"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="font-semibold underline transition-opacity hover:opacity-85 focus:opacity-85"
-						>
-							Jet Soluções Web
-						</a>
-						, onde contribuo para o desenvolvimento de sistemas em diversos
-						nichos.
+						Salve! Aqui quem fala é o Gabriel. Atuo como Desenvolvedor Front-end
+						Júnior na{' '}
+						<strong className="font-semibold">Jet Soluções Web</strong>, onde
+						participo do desenvolvimento e manutenção de sistemas em diversos
+						nichos. Tenho autonomia para sugerir melhorias e novas
+						funcionalidades.
 					</p>
 					<p>
-						Possui alguma ideia mirabolante?{' '}
+						Participo de um projeto focado na evolução de um sistema legado que
+						já passou por várias tecnologias ao longo do tempo. Como cada versão
+						funciona de forma isolada, nosso trabalho envolve refazer e
+						aprimorar telas importantes, além de desenvolver novas
+						funcionalidades que automatizam e simplificam tarefas repetitivas ou
+						complexas do dia a dia dos usuários. Utilizamos tecnologias modernas
+						como NextJS, TypeScript, TailwindCSS e TanStack Query. Até agora,
+						conseguimos melhorar significativamente a performance, desde o
+						carregamento inicial até a fluidez nas interações com os elementos
+						em tela, evitando travamentos no front-end e garantindo uma
+						experiência mais leve e responsiva, mesmo lidando com grandes
+						volumes de dados. Tudo isso mantendo um código limpo, bem
+						estruturado e fácil de manter. Também definimos um boilerplate que
+						padroniza o desenvolvimento e aumenta a produtividade na criação de
+						novas telas e funcionalidades.
+					</p>
+					<p>
+						Também atuo no desenvolvimento de um projeto com suporte bilíngue
+						(inglês e espanhol), utilizando i18n para oferecer uma experiência
+						fluida e adaptada aos usuários nos EUA.
+					</p>
+					<p>
+						Tem uma ideia bacana?{' '}
 						<a
-							href="#"
+							href={process.env.EMAIL}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="font-semibold underline transition-opacity hover:opacity-85 focus:opacity-85"
 						>
-							Vamos conversar!
+							Bora colocar no ar!
 						</a>
 					</p>
 				</article>
@@ -109,7 +125,7 @@ async function Projects() {
 								{project.techs.map((tech) => (
 									<li
 										key={tech}
-										className="rounded-4xl border border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-500"
+										className="rounded-4xl border border-zinc-300 px-3 py-1 text-center text-sm font-medium text-zinc-500"
 									>
 										{tech}
 									</li>
