@@ -2,7 +2,9 @@ import { Suspense } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
 import { Skeleton } from './_components/skeleton'
-import { env } from '@/env'
+
+import { getProjects } from './_functions/projects'
+import { env } from '@/lib/env'
 
 export default function Home() {
 	return (
@@ -148,48 +150,4 @@ async function Projects() {
 			))}
 		</ul>
 	)
-}
-
-interface Project {
-	id: string
-	title: string
-	description: string
-	techs: string[]
-	href: string
-}
-
-interface GetAllProjectsResponse {
-	data: {
-		projects: Project[]
-	}
-}
-
-async function getProjects(): Promise<Project[]> {
-	const response = await fetch(env.API_URL as string, {
-		method: 'POST',
-		cache: 'force-cache',
-		next: {
-			revalidate: 3600, // 1 hour
-		},
-		headers: {
-			Authorization: `Bearer ${env.API_KEY as string}`,
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			query: `
-  			query Projects {
-          projects {
-            id
-            title
-            description
-            techs
-            href
-          }
-        }
-      `,
-		}),
-	})
-
-	const json = (await response.json()) as GetAllProjectsResponse
-	return json.data.projects
 }
