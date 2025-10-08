@@ -9,10 +9,10 @@ import { env } from '@/lib/env'
 
 export default function Home() {
 	return (
-		<main className="flex justify-center p-8 font-sans">
+		<main className="flex justify-center p-6 font-sans sm:p-8">
 			<div className="container max-w-4xl space-y-8">
 				<header className="w-full pb-4">
-					<ul className="text-secondary-foreground flex items-center justify-end gap-8">
+					<ul className="text-secondary-foreground flex flex-wrap items-center justify-end gap-6 gap-y-8 sm:gap-8">
 						<li>
 							<a
 								href={env.CONTACTS.GITHUB}
@@ -124,28 +124,34 @@ async function Projects() {
 						href={project.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="border-border bg-card-background flex items-start gap-4 rounded-4xl border p-8 transition-opacity hover:opacity-85 focus:opacity-85"
+						className="border-border bg-card-background flex rounded-4xl border px-6 py-6 transition-opacity hover:opacity-85 focus:opacity-85 sm:px-8"
 					>
-						<div className="space-y-4">
-							<h1 className="text-secondary-foreground">{project.title}</h1>
-							<p className="text-xl font-medium">{project.description}</p>
-							<ul className="flex items-center gap-2">
-								{project.techs.map((tech) => (
-									<li
-										key={tech}
-										className="border-border text-secondary-foreground rounded-4xl border px-3 py-1 text-center text-sm font-medium"
-									>
-										{tech}
-									</li>
-								))}
-							</ul>
+						<div className="space-y-1">
+							<div className="flex items-center justify-between">
+								<h1 className="text-secondary-foreground">{project.title}</h1>
+								<i
+									aria-hidden
+									className="border-border flex items-center justify-center rounded-full border p-3 sm:p-4"
+								>
+									<ArrowUpRight className="size-5 sm:size-6" />
+								</i>
+							</div>
+							<div className="space-y-6">
+								<p className="text-lg font-medium sm:text-xl">
+									{project.description}
+								</p>
+								<ul className="flex flex-wrap items-center gap-x-2 gap-y-3">
+									{project.techs.map((tech) => (
+										<li
+											key={tech}
+											className="border-border text-secondary-foreground rounded-4xl border px-3 py-1 text-center text-sm font-medium"
+										>
+											{tech}
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
-						<i
-							aria-hidden
-							className="border-border flex items-center justify-center rounded-full border p-4"
-						>
-							<ArrowUpRight />
-						</i>
 					</a>
 				</li>
 			))}
