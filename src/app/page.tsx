@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
+import { AccentText } from './_components/accent-text'
 import { Skeleton } from './_components/skeleton'
 
 import { getProjects } from './_functions/projects'
@@ -52,11 +53,9 @@ export default function Home() {
 					<h1 className="sr-only">Gabriel Lima</h1>
 					<p>
 						Salve! Aqui quem fala é o Gabriel. Atuo como Desenvolvedor Front-end
-						Júnior na{' '}
-						<strong className="font-semibold">Jet Soluções Web</strong>, onde
-						participo do desenvolvimento e manutenção de sistemas em diversos
-						nichos. Tenho autonomia para sugerir melhorias e novas
-						funcionalidades.
+						Júnior na <AccentText>Jet Soluções Web</AccentText>, onde participo
+						do desenvolvimento e manutenção de sistemas em diversos nichos.
+						Tenho autonomia para sugerir melhorias e novas funcionalidades.
 					</p>
 					<p>
 						Participo de um projeto focado na evolução de um sistema legado que
@@ -65,20 +64,22 @@ export default function Home() {
 						aprimorar telas importantes, além de desenvolver novas
 						funcionalidades que automatizam e simplificam tarefas repetitivas ou
 						complexas do dia a dia dos usuários. Utilizamos tecnologias modernas
-						como NextJS, TypeScript, TailwindCSS e TanStack Query. Até agora,
-						conseguimos melhorar significativamente a performance, desde o
-						carregamento inicial até a fluidez nas interações com os elementos
-						em tela, evitando travamentos no front-end e garantindo uma
-						experiência mais leve e responsiva, mesmo lidando com grandes
-						volumes de dados. Tudo isso mantendo um código limpo, bem
-						estruturado e fácil de manter. Também definimos um boilerplate que
-						padroniza o desenvolvimento e aumenta a produtividade na criação de
-						novas telas e funcionalidades.
+						como <AccentText>NextJS</AccentText>,{' '}
+						<AccentText>TypeScript</AccentText>,{' '}
+						<AccentText>TailwindCSS</AccentText> e{' '}
+						<AccentText>TanStack Query</AccentText>. Até agora, conseguimos
+						melhorar significativamente a performance, desde o carregamento
+						inicial até a fluidez nas interações com os elementos em tela,
+						evitando travamentos no front-end e garantindo uma experiência mais
+						leve e responsiva, mesmo lidando com grandes volumes de dados. Tudo
+						isso mantendo um código limpo, bem estruturado e fácil de manter.
+						Também definimos um boilerplate que padroniza o desenvolvimento e
+						aumenta a produtividade na criação de novas telas e funcionalidades.
 					</p>
 					<p>
 						Também atuo no desenvolvimento de um projeto com suporte bilíngue
-						(inglês e espanhol), utilizando i18n para oferecer uma experiência
-						fluida e adaptada aos usuários nos EUA.
+						(inglês e espanhol), utilizando <AccentText>i18n</AccentText> para
+						oferecer uma experiência fluida e adaptada aos usuários nos EUA.
 					</p>
 					<p>
 						Tem uma ideia bacana?{' '}
@@ -86,9 +87,9 @@ export default function Home() {
 							href={env.CONTACTS.EMAIL}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="font-semibold underline transition-opacity hover:opacity-85 focus:opacity-85"
+							className="underline transition-opacity hover:opacity-85 focus:opacity-85"
 						>
-							Bora colocar no ar!
+							<AccentText>Bora colocar no ar!</AccentText>
 						</a>
 					</p>
 				</article>
