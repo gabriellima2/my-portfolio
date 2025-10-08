@@ -11,13 +11,13 @@ export default function Home() {
 		<main className="flex justify-center p-8 font-sans">
 			<div className="container max-w-4xl space-y-8">
 				<header className="w-full pb-4">
-					<ul className="flex items-center justify-end gap-8 text-zinc-500">
+					<ul className="text-secondary-foreground flex items-center justify-end gap-8">
 						<li>
 							<a
 								href={env.CONTACTS.GITHUB}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
+								className="hover:text-accent focus:text-accent flex items-center gap-2 transition-colors"
 							>
 								Github
 								<i aria-hidden>
@@ -30,7 +30,7 @@ export default function Home() {
 								href={env.CONTACTS.LINKEDIN}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-center gap-2 transition-colors hover:text-black focus:text-black"
+								className="hover:text-accent focus:text-accent flex items-center gap-2 transition-colors"
 							>
 								LinkedIn
 								<i aria-hidden>
@@ -41,7 +41,7 @@ export default function Home() {
 						<li>
 							<a
 								href={`mailto:${env.CONTACTS.EMAIL}`}
-								className="transition-colors hover:text-black focus:text-black"
+								className="hover:text-accent focus:text-accent transition-colors"
 							>
 								{env.CONTACTS.EMAIL}
 							</a>
@@ -93,7 +93,7 @@ export default function Home() {
 					</p>
 				</article>
 				<article className="space-y-4 text-lg">
-					<h2 className="text-zinc-500">Projetos Significativos</h2>
+					<h2 className="text-secondary-foreground">Projetos Significativos</h2>
 					<Suspense fallback={<ProjectsSkeleton />}>
 						<Projects />
 					</Suspense>
@@ -123,16 +123,16 @@ async function Projects() {
 						href={project.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-start gap-4 rounded-4xl border border-zinc-300 bg-zinc-50 p-8 transition-opacity hover:opacity-85 focus:opacity-85"
+						className="border-border bg-card-background flex items-start gap-4 rounded-4xl border p-8 transition-opacity hover:opacity-85 focus:opacity-85"
 					>
 						<div className="space-y-4">
-							<h1 className="text-zinc-500">{project.title}</h1>
+							<h1 className="text-secondary-foreground">{project.title}</h1>
 							<p className="text-xl font-medium">{project.description}</p>
 							<ul className="flex items-center gap-2">
 								{project.techs.map((tech) => (
 									<li
 										key={tech}
-										className="rounded-4xl border border-zinc-300 px-3 py-1 text-center text-sm font-medium text-zinc-500"
+										className="border-border text-secondary-foreground rounded-4xl border px-3 py-1 text-center text-sm font-medium"
 									>
 										{tech}
 									</li>
@@ -141,7 +141,7 @@ async function Projects() {
 						</div>
 						<i
 							aria-hidden
-							className="flex items-center justify-center rounded-full border border-zinc-300 p-4"
+							className="border-border flex items-center justify-center rounded-full border p-4"
 						>
 							<ArrowUpRight />
 						</i>
