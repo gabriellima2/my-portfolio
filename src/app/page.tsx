@@ -58,23 +58,20 @@ export default function Home() {
 						Tenho autonomia para sugerir melhorias e novas funcionalidades.
 					</p>
 					<p>
-						Participo de um projeto focado na evolução de um sistema legado que
-						já passou por várias tecnologias ao longo do tempo. Como cada versão
-						funciona de forma isolada, nosso trabalho envolve refazer e
-						aprimorar telas importantes, além de desenvolver novas
-						funcionalidades que automatizam e simplificam tarefas repetitivas ou
-						complexas do dia a dia dos usuários. Utilizamos tecnologias modernas
-						como <AccentText>NextJS</AccentText>,{' '}
-						<AccentText>TypeScript</AccentText>,{' '}
-						<AccentText>TailwindCSS</AccentText> e{' '}
-						<AccentText>TanStack Query</AccentText>. Até agora, conseguimos
-						melhorar significativamente a performance, desde o carregamento
-						inicial até a fluidez nas interações com os elementos em tela,
-						evitando travamentos no front-end e garantindo uma experiência mais
-						leve e responsiva, mesmo lidando com grandes volumes de dados. Tudo
-						isso mantendo um código limpo, bem estruturado e fácil de manter.
-						Também definimos um boilerplate que padroniza o desenvolvimento e
-						aumenta a produtividade na criação de novas telas e funcionalidades.
+						Atuo na modernização de um sistema legado que já passou por várias
+						tecnologias ao longo do tempo. Como cada versão funciona de forma
+						isolada, nosso trabalho envolve refazer e aprimorar telas
+						importantes, além de criar novas funcionalidades que automatizam
+						tarefas repetitivas e complexas do dia a dia dos usuários. Nessa
+						nova versão, utilizamos tecnologias modernas como{' '}
+						<AccentText>NextJS</AccentText>, <AccentText>TypeScript</AccentText>
+						, <AccentText>TailwindCSS</AccentText> e{' '}
+						<AccentText>TanStack Query</AccentText>. Conseguimos melhorar
+						significativamente a performance, desde o carregamento inicial até a
+						fluidez nas interações, evitando travamentos no front-end e
+						garantindo uma experiência mais leve e responsiva, mesmo lidando com
+						grandes volumes de dados. Também padronizamos o desenvolvimento com
+						um boilerplate, acelerando entregas e facilitando a manutenção.
 					</p>
 					<p>
 						Também atuo no desenvolvimento de um projeto com suporte bilíngue
