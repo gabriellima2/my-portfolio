@@ -29,6 +29,7 @@ export async function getProjects(): Promise<Project[]> {
             description
             techs
             href
+            order
           }
         }
       `,
@@ -36,5 +37,5 @@ export async function getProjects(): Promise<Project[]> {
 	})
 
 	const json = (await response.json()) as GetAllProjectsResponse
-	return json.data.projects
+	return json.data.projects.sort((a, b) => a.order - b.order)
 }
