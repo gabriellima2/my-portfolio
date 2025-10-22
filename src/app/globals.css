@@ -9,6 +9,8 @@
 
 	--card-background: oklch(98.5% 0 0);
 	--border: oklch(87.1% 0.006 286.286);
+
+  --skeleton-background: oklch(98.5% 0 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +23,8 @@
 
 		--card-background: oklch(21% 0.006 285.885);
 		--border: oklch(37% 0.013 285.805);
+
+    --skeleton-background: oklch(21% 0.006 285.885);
 	}
 }
 
@@ -34,6 +38,8 @@
 
 	--color-card-background: var(--card-background);
 	--color-border: var(--border);
+
+  --color-skeleton-background: var(--skeleton-background);
 }
 
 body {
