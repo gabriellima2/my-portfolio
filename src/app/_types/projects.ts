@@ -4,4 +4,5 @@ export interface Project {
 	description: string
 	techs: string[]
 	href: string
+	order: number
 }
