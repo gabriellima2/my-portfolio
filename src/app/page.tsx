@@ -52,31 +52,23 @@ export default function Home() {
 				<article className="space-y-8 text-lg">
 					<h1 className="sr-only">Gabriel Lima</h1>
 					<p>
-						Salve! Aqui quem fala é o Gabriel. Atuo como Desenvolvedor Front-end
-						Júnior na <AccentText>Jet Soluções Web</AccentText>, onde participo
-						do desenvolvimento e manutenção de sistemas em diversos nichos.
-						Tenho autonomia para sugerir melhorias e novas funcionalidades.
+						Salve! Aqui quem fala é o Gabriel. Sou Desenvolvedor Front-end, e
+						gosto de transformar ideias em interfaces rápidas, bem estruturadas
+						e fáceis de evoluir.
 					</p>
 					<p>
-						Atuo na modernização de um sistema legado que já passou por várias
-						tecnologias ao longo do tempo. Como cada versão funciona de forma
-						isolada, nosso trabalho envolve refazer e aprimorar telas
-						importantes, além de criar novas funcionalidades que automatizam
-						tarefas repetitivas e complexas do dia a dia dos usuários. Nessa
-						nova versão, utilizamos tecnologias modernas como{' '}
-						<AccentText>NextJS</AccentText>, <AccentText>TypeScript</AccentText>
-						, <AccentText>TailwindCSS</AccentText> e{' '}
-						<AccentText>TanStack Query</AccentText>. Conseguimos melhorar
-						significativamente a performance, desde o carregamento inicial até a
-						fluidez nas interações, evitando travamentos no front-end e
-						garantindo uma experiência mais leve e responsiva, mesmo lidando com
-						grandes volumes de dados. Também padronizamos o desenvolvimento com
-						um boilerplate, acelerando entregas e facilitando a manutenção.
+						Já atuei na evolução de sistemas em produção e na criação de
+						aplicações usadas no dia a dia de empresas e pessoas, lidando com
+						código real, requisitos em mudança e decisões técnicas pensadas para
+						o longo prazo.
 					</p>
 					<p>
-						Também atuo no desenvolvimento de um projeto com suporte bilíngue
-						(inglês e espanhol), utilizando <AccentText>i18n</AccentText> para
-						oferecer uma experiência fluida e adaptada aos usuários nos EUA.
+						Em paralelo, desenvolvo projetos pessoais para testar ideias,
+						explorar abordagens técnicas e colocar conceitos em prática.
+					</p>
+					<p>
+						Atualmente faço parte do time da{' '}
+						<AccentText>Jet Soluções Web</AccentText>.
 					</p>
 					<p>
 						Tem uma ideia bacana?{' '}
